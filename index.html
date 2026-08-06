@@ -1,0 +1,184 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI競馬予想 Ver.5</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="header"><a class="logo-area" href="/"><div class="logo-mark">🏇</div>
+<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<nav class="navigation">
+<a class="nav-button active" href="/">ホーム</a>
+<a class="nav-button" href="/races">予想一覧</a>
+<a class="nav-button" href="/history">データ分析</a>
+<a class="nav-button" href="/admin">管理</a>
+
+</nav></header>
+<main class="main-content">
+<section class="hero-section"><div class="hero-text"><p class="hero-subtitle">AI HORSE RACING</p>
+<h2>AIが導き出す<br>最適な競馬予想</h2>
+<p class="hero-description">過去1,626,811件のレースデータをAIが分析し、各馬の能力を数値化。JV-Linkと連携し、出走馬・オッズ・人気をリアルタイムに取り込みます。</p></div>
+<div class="hero-visual"><div class="horse-icon">🏇</div></div></section>
+
+<section class="status-grid ver5-status">
+<div class="status-card"><span>過去DB</span><strong class="ok">接続済</strong></div>
+<div class="status-card"><span>JV-Link</span><strong class="ok">接続済</strong></div>
+<div class="status-card"><span>AIモデル</span><strong class="ok">学習済</strong></div>
+<div class="status-card"><span>表示中レース</span><strong>36</strong></div></section>
+
+<section class="selection-panel">
+<div class="selection-group"><label>対象日</label><input type="text" value="2026-08-02" readonly></div>
+<div><span class="selection-title">競馬場を選択</span>
+<div class="venue-buttons">
+<a class="venue-button active" href="/?sort=rating">すべて</a>
+<a class="venue-button" href="/?venue=%E4%B8%AD%E4%BA%AC&amp;sort=rating">中京</a><a class="venue-button" href="/?venue=%E6%96%B0%E6%BD%9F&amp;sort=rating">新潟</a><a class="venue-button" href="/?venue=%E6%9C%AD%E5%B9%8C&amp;sort=rating">札幌</a>
+</div></div></section>
+
+<section class="race-section"><div class="section-heading">
+<div><p class="section-label">CURRENT RACES</p><h2>2026-08-02のレース</h2></div>
+<div class="race-legend">
+<a class="active" href="/?venue=&amp;sort=rating">AI高評価レース</a>
+<a class="" href="/?venue=&amp;sort=upset">波乱期待レース</a>
+</div></div>
+<div class="race-grid">
+<a class="race-card" href="/predict/2026-08-02/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">17:50 中京</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 バリオス</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">15:25 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 リラボニート</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">15:45 新潟</p><p class="race-distance">芝1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 16 アメリカンステージ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">15:35 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 クールミラボー</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">15:01 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 アイニードユー</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">14:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 アイウィル</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">13:50 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 サトノワーグナー</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">16:55 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 ベルウッドピース</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">11:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 ゴンフィンガー</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">14:20 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 パールフロント</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">16:20 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 リポサンテ</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-02/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">12:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 タイセイジェイド</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+
+</div>
+<div style="text-align:center;margin-top:22px">
+<a class="sample-link" href="/races">全レース一覧を見る →</a></div>
+</section>
+
+<section class="dashboard-grid">
+<article class="dashboard-panel"><div class="panel-title"><span>🏆</span><h2>AI本命馬 TOP5</h2></div>
+<div class="ranking-row"><strong class="ranking-number">1</strong>
+<span class="race-badge">◎</span>
+<div class="ranking-horse"><h3>バリオス</h3><p>中京11R　</p></div>
+<span class="grade grade-s">S</span><strong>96</strong></div>
+<div class="ranking-row"><strong class="ranking-number">2</strong>
+<span class="race-badge">◎</span>
+<div class="ranking-horse"><h3>リラボニート</h3><p>札幌11R　北海道新聞杯クイーンステークス</p></div>
+<span class="grade grade-s">S</span><strong>94</strong></div>
+<div class="ranking-row"><strong class="ranking-number">3</strong>
+<span class="race-badge">◎</span>
+<div class="ranking-horse"><h3>アメリカンステージ</h3><p>新潟7R　アイビスサマーダッシュ</p></div>
+<span class="grade grade-s">S</span><strong>94</strong></div>
+<div class="ranking-row"><strong class="ranking-number">4</strong>
+<span class="race-badge">◎</span>
+<div class="ranking-horse"><h3>クールミラボー</h3><p>中京7R　名鉄杯</p></div>
+<span class="grade grade-s">S</span><strong>94</strong></div>
+<div class="ranking-row"><strong class="ranking-number">5</strong>
+<span class="race-badge">◎</span>
+<div class="ranking-horse"><h3>アイニードユー</h3><p>中京6R　中京スポニチ賞</p></div>
+<span class="grade grade-s">S</span><strong>93</strong></div>
+
+<a class="sample-link" style="margin-top:16px" href="/races">AI本命馬ランキングをもっと見る →</a>
+</article>
+<div class="right-column">
+<article class="dashboard-panel"><div class="panel-title"><span>🔔</span><h2>AIからのお知らせ</h2></div>
+<div class="notice-row"><p>AIモデル学習日：2026-08-06T18:42:26（学習1,626,811件）</p></div>
+<div class="notice-row"><p>JV-Linkから36件のレースを自動取得しました。</p></div>
+<div class="notice-row"><span class="notice-tag">NEW</span><p>直前オッズはまだ配信されていません。レース当日にJV2AIを起動しておくと自動反映されます。</p></div>
+</article>
+<article class="dashboard-panel"><div class="panel-title"><span>📈</span><h2>的中実績（直近30日）</h2></div>
+<div class="results-grid">
+<div class="result-item"><span>対象レース</span><strong>360</strong></div>
+<div class="result-item"><span>単勝的中率</span><strong>40.0%</strong></div>
+<div class="result-item"><span>回収率</span><strong>142.5%</strong></div></div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">AI本命(◎)を単勝100円で購入した場合の実績。過去の確定結果から自動集計した参考値で、将来の成績を保証するものではありません。</p>
+
+</article></div></section>
+</main></body></html>
