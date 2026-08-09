@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="/static/style.css"></head>
 <body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<span class="scope-switch-button scope-switch-disabled" title="準備中">地方競馬</span>
+<span class="scope-switch-button scope-switch-disabled" title="準備中">海外競馬</span>
+</div>
 <nav class="navigation">
 <a class="nav-button active" href="/">ホーム</a>
 
@@ -19,12 +24,6 @@
 <h2>AIが導き出す<br>最適な競馬予想</h2></div></section>
 
 <section class="selection-panel">
-<div><span class="selection-title">レース区分</span>
-<div class="venue-buttons">
-<a class="venue-button active" href="/?date=2026-08-09&amp;venue=&amp;sort=rating">中央競馬</a>
-<span class="venue-button scope-tab-disabled" title="準備中">地方競馬<small>準備中</small></span>
-<span class="venue-button scope-tab-disabled" title="準備中">海外競馬<small>準備中</small></span>
-</div></div>
 <form method="get" action="/" class="selection-group">
 <label>対象日</label>
 <input type="date" name="date" value="2026-08-09" min="2021-01-05" max="2026-08-09" onchange="this.form.submit()">
