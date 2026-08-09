@@ -6,10 +6,16 @@
 <link rel="stylesheet" href="/static/style.css"></head>
 <body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+<a class="scope-switch-button" href="/overseas">海外競馬</a>
+</div>
 <nav class="navigation">
 <a class="nav-button" href="/">ホーム</a>
 
 <a class="nav-button" href="/history">データ分析</a>
+<a class="nav-button" href="/review">振り返り</a>
 
 </nav></header>
 <main class="race-page">
@@ -25,8 +31,8 @@
 <div class="race-pill-row">
 <span class="pill">🕐 10:50発走</span>
 <span class="pill">芝 2000m(左)</span>
-
-
+<span class="pill">馬場 良</span>
+<span class="pill">天候 曇</span>
 <span class="pill">2回中京6日目</span>
 <span class="pill">Aコース</span>
 <span class="pill">8頭立て</span>
@@ -47,7 +53,7 @@
 <small>牡2　斤量55.0kg　栗東　福永　祐一</small></td>
 <td class="mark-cell">◎</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">87</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-gold">1着</span></td>
 <td><strong>25.7%</strong><small class="place-rate">複 68.4%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -64,7 +70,7 @@
 <small>牡2　斤量55.0kg　栗東　高野　友和</small></td>
 <td class="mark-cell">○</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">83</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-silver">2着</span></td>
 <td><strong>19.6%</strong><small class="place-rate">複 54.1%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -81,7 +87,7 @@
 <small>牝2　斤量55.0kg　栗東　宮　徹</small></td>
 <td class="mark-cell">▲</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">78</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">5着</span></td>
 <td><strong>14.4%</strong><small class="place-rate">複 41.8%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -98,7 +104,7 @@
 <small>牡2　斤量55.0kg　栗東　高橋　一哉</small></td>
 <td class="mark-cell">△</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">75</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">7着</span></td>
 <td><strong>12.2%</strong><small class="place-rate">複 36.7%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -115,7 +121,7 @@
 <small>牡2　斤量55.0kg　栗東　杉山　佳明</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">70</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-bronze">3着</span></td>
 <td><strong>9.3%</strong><small class="place-rate">複 29.9%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -132,7 +138,7 @@
 <small>牡2　斤量55.0kg　栗東　牧田　和弥</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">66</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">6着</span></td>
 <td><strong>7.1%</strong><small class="place-rate">複 24.7%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -149,7 +155,7 @@
 <small>牡2　斤量55.0kg　栗東　安田　翔伍</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">64</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">8着</span></td>
 <td><strong>6.5%</strong><small class="place-rate">複 23.3%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -166,7 +172,7 @@
 <small>牡2　斤量55.0kg　栗東　緒方　努</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">60</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">4着</span></td>
 <td><strong>5.1%</strong><small class="place-rate">複 20.0%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -187,10 +193,15 @@
 <div class="ranking-horse"><h3>ソウカイファンキー</h3><p>能力上位</p></div><span class="grade grade-b">B</span><strong>70</strong></div></article>
 <article class="dashboard-panel"><div class="panel-title"><h2>買い目の土台</h2></div>
 <div class="bet-box"><p>単勝：6</p>
-<p>馬連：6－2, 1</p>
-<p>ワイド：6－2</p>
-<p>三連複：6－2－1,4</p>
-<small>※買い目は参考表示。的中を保証しません。</small></div></article></section></main>
+<p>馬連：6－2、1</p>
+<p>馬連：6－2、1、4、7、5</p>
+<p>ワイド：6－2、1</p>
+<p>ワイド：6－4、7、5</p>
+<p>三連複：6－2、1、4、7、5</p>
+<p>三連複：6－2－1、4、7、5</p>
+<p>三連複：6－2、1－4、7、5　（2頭流し）</p>
+<small>※買い目は参考表示。的中を保証しません。</small></div>
+</article></section></main>
 <script>
 (function(){
   var el=document.getElementById('live-seconds');

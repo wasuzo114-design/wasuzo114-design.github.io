@@ -6,10 +6,16 @@
 <link rel="stylesheet" href="/static/style.css"></head>
 <body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+<a class="scope-switch-button" href="/overseas">海外競馬</a>
+</div>
 <nav class="navigation">
 <a class="nav-button" href="/">ホーム</a>
 
 <a class="nav-button" href="/history">データ分析</a>
+<a class="nav-button" href="/review">振り返り</a>
 
 </nav></header>
 <main class="race-page">
@@ -42,10 +48,10 @@
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>印</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
 <tbody><tr><td class="frame frame-3">3</td><td>6</td>
-<td class="horse-main"><strong class="horse-name-lg">レッドエヴァンス</strong><span class="mark-uma-badge" title="会場巧者">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">レッドエヴァンス</strong>
 <div class="jockey-row"><span>西村　淳也</span><span class="odds-inline">3人気　7.2倍<span class="live-dot">LIVE</span></span></div>
 <small>セ5　斤量55.0kg　栗東　東田　明士</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="会場巧者">狙</span><span class="mark-main">◎</span></div></td><td><span class="grade grade-s">S</span></td>
+<td class="mark-cell">◎</td><td><span class="grade grade-s">S</span></td>
 <td class="total-score">96</td>
 <td><span class="finish-badge finish-bronze">3着</span></td>
 <td><strong>13.4%</strong><small class="place-rate">複 39.5%</small></td>
@@ -59,10 +65,10 @@
 <div class="metric"><span>斤量 70</span><i class="bar gold" style="width:70.2%"></i></div>
 <div class="metric"><span>上がり 81</span><i class="bar pink" style="width:81.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-2">2</td><td>3</td>
-<td class="horse-main"><strong class="horse-name-lg">レイピア</strong><span class="mark-uma-badge" title="鞍上強化">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">レイピア</strong>
 <div class="jockey-row"><span>横山　武史</span><span class="odds-inline">2人気　5.5倍<span class="live-dot">LIVE</span></span></div>
 <small>牡4　斤量57.5kg　栗東　中竹　和也</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="鞍上強化">狙</span><span class="mark-main">○</span></div></td><td><span class="grade grade-s">S</span></td>
+<td class="mark-cell">○</td><td><span class="grade grade-s">S</span></td>
 <td class="total-score">96</td>
 <td><span class="finish-badge finish-silver">2着</span></td>
 <td><strong>12.8%</strong><small class="place-rate">複 38.1%</small></td>
@@ -76,12 +82,12 @@
 <div class="metric"><span>斤量 55</span><i class="bar gold" style="width:55.2%"></i></div>
 <div class="metric"><span>上がり 20</span><i class="bar pink" style="width:20%"></i></div></div></td>
 </tr><tr><td class="frame frame-4">4</td><td>7</td>
-<td class="horse-main"><strong class="horse-name-lg">ディアナザール</strong><span class="mark-uma-badge" title="鞍上強化">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">ディアナザール</strong>
 <div class="jockey-row"><span>川田　将雅</span><span class="odds-inline">1人気　3.5倍<span class="live-dot">LIVE</span></span></div>
 <small>牡4　斤量56.0kg　栗東　斉藤　崇史</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="鞍上強化">狙</span><span class="mark-main">▲</span></div></td><td><span class="grade grade-a">A</span></td>
+<td class="mark-cell">▲</td><td><span class="grade grade-a">A</span></td>
 <td class="total-score">91</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">9着</span></td>
 <td><strong>10.0%</strong><small class="place-rate">複 31.5%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -98,7 +104,7 @@
 <small>牡5　斤量58.0kg　美浦　伊藤　大士</small></td>
 <td class="mark-cell">△</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">85</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">17着</span></td>
 <td><strong>7.0%</strong><small class="place-rate">複 24.4%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -115,7 +121,7 @@
 <small>牝5　斤量52.0kg　栗東　浜田　多実雄</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">83</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">5着</span></td>
 <td><strong>6.2%</strong><small class="place-rate">複 22.6%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -132,7 +138,7 @@
 <small>牡5　斤量56.0kg　栗東　高橋　亮</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">83</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">14着</span></td>
 <td><strong>6.2%</strong><small class="place-rate">複 22.6%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -149,7 +155,7 @@
 <small>牡4　斤量55.0kg　栗東　西園　翔太</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">81</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">18着</span></td>
 <td><strong>5.5%</strong><small class="place-rate">複 20.9%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -166,7 +172,7 @@
 <small>牡3　斤量54.0kg　栗東　藤岡　健一</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">81</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">6着</span></td>
 <td><strong>5.5%</strong><small class="place-rate">複 20.9%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -178,12 +184,12 @@
 <div class="metric"><span>斤量 76</span><i class="bar gold" style="width:76.2%"></i></div>
 <div class="metric"><span>上がり 66</span><i class="bar pink" style="width:66.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-7">7</td><td>13</td>
-<td class="horse-main"><strong class="horse-name-lg">サンアントワーヌ</strong><span class="mark-uma-badge" title="上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">サンアントワーヌ</strong>
 <div class="jockey-row"><span>丸山　元気</span><span class="odds-inline">9人気　19.4倍<span class="live-dot">LIVE</span></span></div>
 <small>牝3　斤量52.0kg　美浦　鹿戸　雄一</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="上がり最速">狙</span><span class="mark-main"></span></div></td><td><span class="grade grade-b">B</span></td>
+<td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">80</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">7着</span></td>
 <td><strong>5.2%</strong><small class="place-rate">複 20.2%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -200,7 +206,7 @@
 <small>牝5　斤量53.0kg　栗東　浜田　多実雄</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">77</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">10着</span></td>
 <td><strong>4.3%</strong><small class="place-rate">複 18.1%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -217,7 +223,7 @@
 <small>牝4　斤量55.5kg　栗東　坂口　智康</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">76</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">8着</span></td>
 <td><strong>4.1%</strong><small class="place-rate">複 17.6%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -229,12 +235,12 @@
 <div class="metric"><span>斤量 67</span><i class="bar gold" style="width:67.2%"></i></div>
 <div class="metric"><span>上がり 20</span><i class="bar pink" style="width:20%"></i></div></div></td>
 </tr><tr><td class="frame frame-2">2</td><td>4</td>
-<td class="horse-main"><strong class="horse-name-lg">プロトポロス</strong><span class="mark-uma-badge" title="会場巧者・上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">プロトポロス</strong>
 <div class="jockey-row"><span>亀田　温心</span><span class="odds-inline">17人気　114.7倍<span class="live-dot">LIVE</span></span></div>
 <small>牡6　斤量53.0kg　栗東　西村　真幸</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="会場巧者・上がり最速">狙</span><span class="mark-main"></span></div></td><td><span class="grade grade-b">B</span></td>
+<td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">74</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">4着</span></td>
 <td><strong>3.7%</strong><small class="place-rate">複 16.7%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -251,7 +257,7 @@
 <small>牡4　斤量57.5kg　栗東　河嶋　宏樹</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">73</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">11着</span></td>
 <td><strong>3.4%</strong><small class="place-rate">複 16.0%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -268,7 +274,7 @@
 <small>牝5　斤量55.0kg　栗東　柴田　卓</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">73</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">13着</span></td>
 <td><strong>3.3%</strong><small class="place-rate">複 15.8%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -285,7 +291,7 @@
 <small>牝5　斤量53.0kg　栗東　羽月　友彦</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">69</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">12着</span></td>
 <td><strong>2.6%</strong><small class="place-rate">複 14.1%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -302,7 +308,7 @@
 <small>牡6　斤量57.0kg　栗東　角田　晃一</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">68</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">16着</span></td>
 <td><strong>2.5%</strong><small class="place-rate">複 13.9%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -336,7 +342,7 @@
 <small>牡7　斤量56.0kg　栗東　武　英智</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">66</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">15着</span></td>
 <td><strong>2.2%</strong><small class="place-rate">複 13.2%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
@@ -350,17 +356,22 @@
 </tr></tbody></table></section>
 <section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
 <div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">6</span>
-<div class="ranking-horse"><h3>レッドエヴァンス</h3><p>能力上位・騎手好相性・狙い馬(会場巧者)・近走好調・好調教・芝短距離血統適性</p></div><span class="grade grade-s">S</span><strong>96</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">3</span>
-<div class="ranking-horse"><h3>レイピア</h3><p>能力上位・騎手好相性・狙い馬(鞍上強化)・好調教・芝短距離血統適性</p></div><span class="grade grade-s">S</span><strong>96</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">7</span>
-<div class="ranking-horse"><h3>ディアナザール</h3><p>能力上位・騎手好相性・狙い馬(鞍上強化)・芝短距離血統適性</p></div><span class="grade grade-a">A</span><strong>91</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">12</span>
+<div class="ranking-horse"><h3>レッドエヴァンス</h3><p>能力上位・騎手好相性・近走好調・好調教・芝短距離血統適性</p></div><span class="grade grade-s">S</span><strong>96</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">3</span>
+<div class="ranking-horse"><h3>レイピア</h3><p>能力上位・騎手好相性・好調教・芝短距離血統適性</p></div><span class="grade grade-s">S</span><strong>96</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">7</span>
+<div class="ranking-horse"><h3>ディアナザール</h3><p>能力上位・騎手好相性・芝短距離血統適性</p></div><span class="grade grade-a">A</span><strong>91</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">12</span>
 <div class="ranking-horse"><h3>インビンシブルパパ</h3><p>能力上位・騎手好相性・近走好調・好調教・芝短距離血統適性</p></div><span class="grade grade-b">B</span><strong>85</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">5</span>
 <div class="ranking-horse"><h3>ジェニファー</h3><p>能力上位・好調教・芝短距離血統適性</p></div><span class="grade grade-b">B</span><strong>83</strong></div></article>
 <article class="dashboard-panel"><div class="panel-title"><h2>買い目の土台</h2></div>
 <div class="bet-box"><p>単勝：6</p>
-<p>馬連：6－3, 7</p>
-<p>ワイド：6－3</p>
-<p>三連複：6－3－7,12</p>
-<small>※買い目は参考表示。的中を保証しません。</small></div></article></section></main>
+<p>馬連：6－3、7</p>
+<p>馬連：6－3、7、12、5、15</p>
+<p>ワイド：6－3、7</p>
+<p>ワイド：6－12、5、15</p>
+<p>三連複：6－3、7、12、5、15</p>
+<p>三連複：6－3－7、12、5、15</p>
+<p>三連複：6－3、7－12、5、15　（2頭流し）</p>
+<small>※買い目は参考表示。的中を保証しません。</small></div>
+</article></section></main>
 <script>
 (function(){
   var el=document.getElementById('live-seconds');

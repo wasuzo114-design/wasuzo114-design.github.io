@@ -6,10 +6,16 @@
 <link rel="stylesheet" href="/static/style.css"></head>
 <body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+<a class="scope-switch-button" href="/overseas">海外競馬</a>
+</div>
 <nav class="navigation">
 <a class="nav-button" href="/">ホーム</a>
 
 <a class="nav-button" href="/history">データ分析</a>
+<a class="nav-button" href="/review">振り返り</a>
 
 </nav></header>
 <main class="race-page">
@@ -42,10 +48,10 @@
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>印</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
 <tbody><tr><td class="frame frame-7">7</td><td>7</td>
-<td class="horse-main"><strong class="horse-name-lg">ウップヘリーア</strong><span class="mark-uma-badge" title="鞍上強化">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">ウップヘリーア</strong>
 <div class="jockey-row"><span>戸崎　圭太</span><span class="odds-inline">2人気　2.5倍<span class="live-dot">LIVE</span></span></div>
 <small>牡3　斤量55.0kg　美浦　黒岩　陽一</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="鞍上強化">狙</span><span class="mark-main">◎</span></div></td><td><span class="grade grade-a">A</span></td>
+<td class="mark-cell">◎</td><td><span class="grade grade-a">A</span></td>
 <td class="total-score">93</td>
 <td><span class="finish-badge finish-silver">2着</span></td>
 <td><strong>26.7%</strong><small class="place-rate">複 70.7%</small></td>
@@ -93,12 +99,12 @@
 <div class="metric"><span>斤量 88</span><i class="bar gold" style="width:88.0%"></i></div>
 <div class="metric"><span>上がり 72</span><i class="bar pink" style="width:72.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-4">4</td><td>4</td>
-<td class="horse-main"><strong class="horse-name-lg">イスキオス</strong><span class="mark-uma-badge" title="上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">イスキオス</strong>
 <div class="jockey-row"><span>田辺　裕信</span><span class="odds-inline">4人気　10.4倍<span class="live-dot">LIVE</span></span></div>
 <small>牡4　斤量58.0kg　美浦　栗田　徹</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="上がり最速">狙</span><span class="mark-main">△</span></div></td><td><span class="grade grade-b">B</span></td>
+<td class="mark-cell">△</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">78</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">7着</span></td>
 <td><strong>11.4%</strong><small class="place-rate">複 34.8%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 63</span><i class="bar green" style="width:63.2%"></i></div>
@@ -110,12 +116,12 @@
 <div class="metric"><span>斤量 58</span><i class="bar gold" style="width:58.0%"></i></div>
 <div class="metric"><span>上がり 90</span><i class="bar pink" style="width:90.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-1">1</td><td>1</td>
-<td class="horse-main"><strong class="horse-name-lg">トラストモアリズム</strong><span class="mark-uma-badge" title="会場巧者">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">トラストモアリズム</strong>
 <div class="jockey-row"><span>今村　聖奈</span><span class="odds-inline">7人気　37.8倍<span class="live-dot">LIVE</span></span></div>
 <small>牝4　斤量54.0kg　美浦　高橋　文雅</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="会場巧者">狙</span><span class="mark-main">☆</span></div></td><td><span class="grade grade-c">C</span></td>
+<td class="mark-cell">☆</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">69</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">4着</span></td>
 <td><strong>6.5%</strong><small class="place-rate">複 23.3%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 82</span><i class="bar green" style="width:81.7%"></i></div>
@@ -132,7 +138,7 @@
 <small>牡4　斤量58.0kg　美浦　松山　将樹</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">55</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">5着</span></td>
 <td><strong>2.9%</strong><small class="place-rate">複 14.8%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 73</span><i class="bar green" style="width:72.6%"></i></div>
@@ -149,7 +155,7 @@
 <small>牡5　斤量58.0kg　美浦　萱野　浩二</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">53</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">6着</span></td>
 <td><strong>2.6%</strong><small class="place-rate">複 14.1%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 45</span><i class="bar green" style="width:45.4%"></i></div>
@@ -163,17 +169,22 @@
 </tr></tbody></table></section>
 <section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
 <div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">7</span>
-<div class="ranking-horse"><h3>ウップヘリーア</h3><p>能力上位・騎手好相性・狙い馬(鞍上強化)・複勝圏安定・好調教・芝中距離血統適性</p></div><span class="grade grade-a">A</span><strong>93</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">6</span>
+<div class="ranking-horse"><h3>ウップヘリーア</h3><p>能力上位・騎手好相性・複勝圏安定・好調教・芝中距離血統適性</p></div><span class="grade grade-a">A</span><strong>93</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">6</span>
 <div class="ranking-horse"><h3>オプレントジュエル</h3><p>能力上位・騎手好相性・複勝圏安定・好調教・芝中距離血統適性</p></div><span class="grade grade-a">A</span><strong>92</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">5</span>
 <div class="ranking-horse"><h3>モートンアイランド</h3><p>能力上位・騎手好相性・複勝圏安定・好調教</p></div><span class="grade grade-a">A</span><strong>91</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">4</span>
-<div class="ranking-horse"><h3>イスキオス</h3><p>騎手好相性・狙い馬(上がり最速)・好調教・芝中距離血統適性</p></div><span class="grade grade-b">B</span><strong>78</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">1</span>
-<div class="ranking-horse"><h3>トラストモアリズム</h3><p>能力上位・狙い馬(会場巧者)・好調教・芝中距離血統適性</p></div><span class="grade grade-c">C</span><strong>69</strong></div></article>
+<div class="ranking-horse"><h3>イスキオス</h3><p>騎手好相性・好調教・芝中距離血統適性</p></div><span class="grade grade-b">B</span><strong>78</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">1</span>
+<div class="ranking-horse"><h3>トラストモアリズム</h3><p>能力上位・好調教・芝中距離血統適性</p></div><span class="grade grade-c">C</span><strong>69</strong></div></article>
 <article class="dashboard-panel"><div class="panel-title"><h2>買い目の土台</h2></div>
 <div class="bet-box"><p>単勝：7</p>
-<p>馬連：7－6, 5</p>
-<p>ワイド：7－6</p>
-<p>三連複：7－6－5,4</p>
-<small>※買い目は参考表示。的中を保証しません。</small></div></article></section></main>
+<p>馬連：7－6、5</p>
+<p>馬連：7－6、5、4、1、2</p>
+<p>ワイド：7－6、5</p>
+<p>ワイド：7－4、1、2</p>
+<p>三連複：7－6、5、4、1、2</p>
+<p>三連複：7－6－5、4、1、2</p>
+<p>三連複：7－6、5－4、1、2　（2頭流し）</p>
+<small>※買い目は参考表示。的中を保証しません。</small></div>
+</article></section></main>
 <script>
 (function(){
   var el=document.getElementById('live-seconds');

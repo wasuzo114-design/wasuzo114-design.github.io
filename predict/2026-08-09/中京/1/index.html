@@ -6,10 +6,16 @@
 <link rel="stylesheet" href="/static/style.css"></head>
 <body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+<a class="scope-switch-button" href="/overseas">海外競馬</a>
+</div>
 <nav class="navigation">
 <a class="nav-button" href="/">ホーム</a>
 
 <a class="nav-button" href="/history">データ分析</a>
+<a class="nav-button" href="/review">振り返り</a>
 
 </nav></header>
 <main class="race-page">
@@ -25,8 +31,8 @@
 <div class="race-pill-row">
 <span class="pill">🕐 09:50発走</span>
 <span class="pill">芝 2000m(左)</span>
-
-
+<span class="pill">馬場 良</span>
+<span class="pill">天候 晴</span>
 <span class="pill">2回中京6日目</span>
 <span class="pill">Aコース</span>
 <span class="pill">16頭立て</span>
@@ -42,12 +48,12 @@
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>印</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
 <tbody><tr><td class="frame frame-8">8</td><td>15</td>
-<td class="horse-main"><strong class="horse-name-lg">ティタノマキア</strong><span class="mark-uma-badge" title="上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">ティタノマキア</strong>
 <div class="jockey-row"><span>松山　弘平</span><span class="odds-inline">3人気　3.9倍<span class="live-dot">LIVE</span></span></div>
 <small>牝3　斤量55.0kg　栗東　池添　学</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="上がり最速">狙</span><span class="mark-main">◎</span></div></td><td><span class="grade grade-a">A</span></td>
+<td class="mark-cell">◎</td><td><span class="grade grade-a">A</span></td>
 <td class="total-score">95</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-silver">2着</span></td>
 <td><strong>36.8%</strong><small class="place-rate">複 94.5%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 94</span><i class="bar green" style="width:94.0%"></i></div>
@@ -64,7 +70,7 @@
 <small>セ3　斤量57.0kg　栗東　友道　康夫</small></td>
 <td class="mark-cell">○</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">75</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-bronze">3着</span></td>
 <td><strong>11.6%</strong><small class="place-rate">複 35.3%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -76,12 +82,12 @@
 <div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.1%"></i></div>
 <div class="metric"><span>上がり 81</span><i class="bar pink" style="width:81.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-2">2</td><td>3</td>
-<td class="horse-main"><strong class="horse-name-lg">クロスボーダー</strong><span class="mark-uma-badge" title="鞍上強化">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">クロスボーダー</strong>
 <div class="jockey-row"><span>川田　将雅</span><span class="odds-inline">2人気　3.8倍<span class="live-dot">LIVE</span></span></div>
 <small>牝3　斤量55.0kg　栗東　小林　真也</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="鞍上強化">狙</span><span class="mark-main">▲</span></div></td><td><span class="grade grade-b">B</span></td>
+<td class="mark-cell">▲</td><td><span class="grade grade-b">B</span></td>
 <td class="total-score">72</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">5着</span></td>
 <td><strong>9.2%</strong><small class="place-rate">複 29.6%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 47</span><i class="bar green" style="width:46.7%"></i></div>
@@ -98,7 +104,7 @@
 <small>牡3　斤量57.0kg　栗東　藤原　英昭</small></td>
 <td class="mark-cell">△</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">70</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-gold">1着</span></td>
 <td><strong>8.3%</strong><small class="place-rate">複 27.5%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 72</span><i class="bar green" style="width:72.2%"></i></div>
@@ -110,12 +116,12 @@
 <div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.1%"></i></div>
 <div class="metric"><span>上がり 78</span><i class="bar pink" style="width:78.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-1">1</td><td>2</td>
-<td class="horse-main"><strong class="horse-name-lg">レイアン</strong><span class="mark-uma-badge" title="上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">レイアン</strong>
 <div class="jockey-row"><span>西村　淳也</span><span class="odds-inline">9人気　35.1倍<span class="live-dot">LIVE</span></span></div>
 <small>牝3　斤量55.0kg　栗東　笹田　和秀</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="上がり最速">狙</span><span class="mark-main">☆</span></div></td><td><span class="grade grade-c">C</span></td>
+<td class="mark-cell">☆</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">68</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">10着</span></td>
 <td><strong>7.4%</strong><small class="place-rate">複 25.4%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 80</span><i class="bar green" style="width:80.0%"></i></div>
@@ -132,7 +138,7 @@
 <small>牝3　斤量55.0kg　栗東　安田　翔伍</small></td>
 <td class="mark-cell">☆</td><td><span class="grade grade-c">C</span></td>
 <td class="total-score">62</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">4着</span></td>
 <td><strong>5.3%</strong><small class="place-rate">複 20.5%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 43</span><i class="bar green" style="width:42.7%"></i></div>
@@ -149,7 +155,7 @@
 <small>牝3　斤量55.0kg　栗東　北出　成人</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">51</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">8着</span></td>
 <td><strong>2.7%</strong><small class="place-rate">複 14.3%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 47</span><i class="bar green" style="width:46.7%"></i></div>
@@ -166,7 +172,7 @@
 <small>牡3　斤量54.0kg　栗東　牧田　和弥</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">50</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">11着</span></td>
 <td><strong>2.6%</strong><small class="place-rate">複 14.1%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 58</span><i class="bar green" style="width:58.2%"></i></div>
@@ -183,7 +189,7 @@
 <small>牡3　斤量55.0kg　栗東　中竹　和也</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">49</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">16着</span></td>
 <td><strong>2.5%</strong><small class="place-rate">複 13.9%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 49</span><i class="bar green" style="width:49.2%"></i></div>
@@ -200,7 +206,7 @@
 <small>牝3　斤量55.0kg　栗東　宮本　博</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">49</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">7着</span></td>
 <td><strong>2.4%</strong><small class="place-rate">複 13.6%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 53</span><i class="bar green" style="width:53.3%"></i></div>
@@ -217,7 +223,7 @@
 <small>牡3　斤量57.0kg　栗東　千田　輝彦</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">48</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">14着</span></td>
 <td><strong>2.2%</strong><small class="place-rate">複 13.2%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 53</span><i class="bar green" style="width:53.3%"></i></div>
@@ -234,7 +240,7 @@
 <small>牡3　斤量57.0kg　栗東　昆　貢</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">47</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">6着</span></td>
 <td><strong>2.2%</strong><small class="place-rate">複 13.2%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 46</span><i class="bar green" style="width:45.7%"></i></div>
@@ -251,7 +257,7 @@
 <small>牝3　斤量55.0kg　栗東　梅田　智之</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">46</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">13着</span></td>
 <td><strong>2.0%</strong><small class="place-rate">複 12.7%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 53</span><i class="bar green" style="width:53.3%"></i></div>
@@ -268,7 +274,7 @@
 <small>牡3　斤量57.0kg　栗東　飯田　祐史</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">43</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">12着</span></td>
 <td><strong>1.7%</strong><small class="place-rate">複 12.0%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 53</span><i class="bar green" style="width:53.3%"></i></div>
@@ -285,7 +291,7 @@
 <small>牡3　斤量55.0kg　栗東　高橋　康之</small></td>
 <td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">42</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">15着</span></td>
 <td><strong>1.6%</strong><small class="place-rate">複 11.8%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 49</span><i class="bar green" style="width:49.2%"></i></div>
@@ -297,12 +303,12 @@
 <div class="metric"><span>斤量 74</span><i class="bar gold" style="width:74.1%"></i></div>
 <div class="metric"><span>上がり 57</span><i class="bar pink" style="width:57.0%"></i></div></div></td>
 </tr><tr><td class="frame frame-6">6</td><td>11</td>
-<td class="horse-main"><strong class="horse-name-lg">キービート</strong><span class="mark-uma-badge" title="上がり最速">狙</span>
+<td class="horse-main"><strong class="horse-name-lg">キービート</strong>
 <div class="jockey-row"><span>長岡　禎仁</span><span class="odds-inline">16人気　122.0倍<span class="live-dot">LIVE</span></span></div>
 <small>牡3　斤量57.0kg　栗東　宮　徹</small></td>
-<td class="mark-cell"><div class="mark-stack"><span class="mark-uma-mini" title="上がり最速">狙</span><span class="mark-main"></span></div></td><td><span class="grade grade-d">D</span></td>
+<td class="mark-cell"></td><td><span class="grade grade-d">D</span></td>
 <td class="total-score">39</td>
-<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="finish-badge finish-plain">9着</span></td>
 <td><strong>1.4%</strong><small class="place-rate">複 11.3%</small></td>
 <td><div class="index-row">
 <div class="metric"><span>能力 40</span><i class="bar green" style="width:40.0%"></i></div>
@@ -316,17 +322,22 @@
 </tr></tbody></table></section>
 <section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
 <div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">15</span>
-<div class="ranking-horse"><h3>ティタノマキア</h3><p>能力上位・騎手好相性・狙い馬(上がり最速)・複勝圏安定・好調教・芝中距離血統適性・展開向く(逃げ)</p></div><span class="grade grade-a">A</span><strong>95</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">4</span>
+<div class="ranking-horse"><h3>ティタノマキア</h3><p>能力上位・騎手好相性・複勝圏安定・好調教・芝中距離血統適性・展開向く(逃げ)</p></div><span class="grade grade-a">A</span><strong>95</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">4</span>
 <div class="ranking-horse"><h3>マイコンプリート</h3><p>能力上位・好調教・芝中距離血統適性</p></div><span class="grade grade-b">B</span><strong>75</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">3</span>
-<div class="ranking-horse"><h3>クロスボーダー</h3><p>騎手好相性・狙い馬(鞍上強化)・芝中距離血統適性</p></div><span class="grade grade-b">B</span><strong>72</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">14</span>
+<div class="ranking-horse"><h3>クロスボーダー</h3><p>騎手好相性・芝中距離血統適性</p></div><span class="grade grade-b">B</span><strong>72</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">14</span>
 <div class="ranking-horse"><h3>フィンガーレイクス</h3><p>展開次第</p></div><span class="grade grade-c">C</span><strong>70</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">2</span>
-<div class="ranking-horse"><h3>レイアン</h3><p>能力上位・騎手好相性・狙い馬(上がり最速)・芝中距離血統適性</p></div><span class="grade grade-c">C</span><strong>68</strong></div></article>
+<div class="ranking-horse"><h3>レイアン</h3><p>能力上位・騎手好相性・芝中距離血統適性</p></div><span class="grade grade-c">C</span><strong>68</strong></div></article>
 <article class="dashboard-panel"><div class="panel-title"><h2>買い目の土台</h2></div>
 <div class="bet-box"><p>単勝：15</p>
-<p>馬連：15－4, 3</p>
-<p>ワイド：15－4</p>
-<p>三連複：15－4－3,14</p>
-<small>※買い目は参考表示。的中を保証しません。</small></div></article></section></main>
+<p>馬連：15－4、3</p>
+<p>馬連：15－4、3、14、2、1</p>
+<p>ワイド：15－4、3</p>
+<p>ワイド：15－14、2、1</p>
+<p>三連複：15－4、3、14、2、1</p>
+<p>三連複：15－4－3、14、2、1</p>
+<p>三連複：15－4、3－14、2、1　（2頭流し）</p>
+<small>※買い目は参考表示。的中を保証しません。</small></div>
+</article></section></main>
 <script>
 (function(){
   var el=document.getElementById('live-seconds');
