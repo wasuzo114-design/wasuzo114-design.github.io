@@ -7,15 +7,20 @@
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
 <nav class="navigation">
 <a class="nav-button" href="/">ホーム</a>
-<a class="nav-button" href="/races">予想一覧</a>
+
 <a class="nav-button active" href="/history">データ分析</a>
-<a class="nav-button" href="/admin">管理</a>
 
 </nav></header>
 
 <main class="main-content">
   <section class="dashboard-panel">
     <div class="panel-title"><span>📚</span><h2>過去データベース</h2></div>
+    
+    <div class="venue-buttons" style="margin-top:16px">
+      <a class="venue-button active" href="/history">すべて</a>
+      <a class="venue-button" href="/history?venue=%E4%B8%AD%E4%BA%AC">中京</a><a class="venue-button" href="/history?venue=%E4%B8%AD%E5%B1%B1">中山</a><a class="venue-button" href="/history?venue=%E4%BA%AC%E9%83%BD">京都</a><a class="venue-button" href="/history?venue=%E5%87%BD%E9%A4%A8">函館</a><a class="venue-button" href="/history?venue=%E5%B0%8F%E5%80%89">小倉</a><a class="venue-button" href="/history?venue=%E6%96%B0%E6%BD%9F">新潟</a><a class="venue-button" href="/history?venue=%E6%9C%AD%E5%B9%8C">札幌</a><a class="venue-button" href="/history?venue=%E6%9D%B1%E4%BA%AC">東京</a><a class="venue-button" href="/history?venue=%E7%A6%8F%E5%B3%B6">福島</a><a class="venue-button" href="/history?venue=%E9%98%AA%E7%A5%9E">阪神</a>
+    </div>
+    
     
       <div class="status-grid">
         <div class="status-card"><span>出走結果</span><strong class="ok">1,626,811</strong></div>
@@ -142,156 +147,102 @@
     </article>
   </section>
 
+
   <section class="dashboard-panel" style="margin-top:20px">
-    <div class="panel-title"><span>🕒</span><h2>データ内の直近出走</h2></div>
-    <div class="horse-table-wrap" style="margin-top:18px">
-      <table class="horse-table">
-        <thead><tr><th>日付</th><th>競馬場</th><th>R</th><th>レース名</th><th>馬番</th><th>馬名</th><th>着順</th><th>騎手</th><th>人気</th><th>単勝</th></tr></thead>
-        <tbody>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>1</td><td>クムシラコ</td>
-            <td>8</td><td>杉原誠人</td>
-            <td>10</td><td>50.5</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>2</td><td>カップッチョ</td>
-            <td>13</td><td>藤懸貴志</td>
-            <td>15</td><td>158.3</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>3</td><td>トーホウラデン</td>
-            <td>7</td><td>太宰啓介</td>
-            <td>9</td><td>40.6</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>4</td><td>ルンルンキャット</td>
-            <td>14</td><td>鮫島良太</td>
-            <td>16</td><td>222.0</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>5</td><td>ブランシェット</td>
-            <td>11</td><td>戸崎圭太</td>
-            <td>12</td><td>86.9</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>6</td><td>キャロライナリーパ</td>
-            <td>2</td><td>福永祐一</td>
-            <td>2</td><td>6.4</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>7</td><td>フォティノース</td>
-            <td>4</td><td>松若風馬</td>
-            <td>4</td><td>11.9</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>8</td><td>ララクリスティーヌ</td>
-            <td>1</td><td>岩田望来</td>
-            <td>3</td><td>7.2</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>9</td><td>ジネストラ</td>
-            <td>3</td><td>川田将雅</td>
-            <td>1</td><td>1.7</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>10</td><td>コミカライズ</td>
-            <td>5</td><td>和田竜二</td>
-            <td>6</td><td>17.7</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>11</td><td>アスクキングコング</td>
-            <td>12</td><td>川須栄彦</td>
-            <td>7</td><td>18.7</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>12</td><td>レリスタット</td>
-            <td>6</td><td>石橋脩</td>
-            <td>11</td><td>84.5</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>13</td><td>オプティミスモ</td>
-            <td>9</td><td>小林脩斗</td>
-            <td>5</td><td>15.3</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>14</td><td>ペリトモレノ</td>
-            <td>17</td><td>江田照男</td>
-            <td>18</td><td>330.7</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>15</td><td>クイーンカピオラニ</td>
-            <td>10</td><td>永野猛蔵</td>
-            <td>8</td><td>32.0</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>16</td><td>カケル</td>
-            <td>15</td><td>幸英明</td>
-            <td>14</td><td>109.9</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>17</td><td>オールイズスパーブ</td>
-            <td>18</td><td>嶋田純次</td>
-            <td>17</td><td>259.4</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>12R</td>
-            <td>3歳以上1勝クラス</td><td>18</td><td>ラルゲッツァ</td>
-            <td>16</td><td>藤田菜七</td>
-            <td>13</td><td>100.8</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>11R</td>
-            <td>佐渡ステークス</td><td>1</td><td>ヴィクターバローズ</td>
-            <td>17</td><td>石橋脩</td>
-            <td>11</td><td>29.7</td>
-          </tr>
-          
-          <tr>
-            <td>2021-07-31</td><td>新潟</td><td>11R</td>
-            <td>佐渡ステークス</td><td>2</td><td>ラルナブリラーレ</td>
-            <td>7</td><td>和田竜二</td>
-            <td>7</td><td>16.8</td>
-          </tr>
-          
-        </tbody>
-      </table>
+    <p class="admin-note" style="margin-bottom:14px">⚠ ここから下は配置イメージの仮画面です(数字はダミー、まだ実データではありません)</p>
+    <div class="venue-buttons">
+      <a class="venue-button active" href="#">全ての期間</a>
+      <a class="venue-button" href="#">去年</a>
+      <a class="venue-button" href="#">今年</a>
+      <a class="venue-button" href="#">先週</a>
     </div>
+  </section>
+
+  <section class="race-section"><div class="section-heading"><div><p class="section-label">CATEGORY 1</p><h2>騎手・調教師</h2></div></div>
+  <section class="dashboard-grid">
+    <article class="dashboard-panel"><div class="panel-title"><span>🏇</span><h2>騎手勝率 TOP5</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>1</strong><span>〇騎手</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>2</strong><span>〇騎手</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>3</strong><span>〇騎手</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>4</strong><span>〇騎手</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>5</strong><span>〇騎手</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+    <article class="dashboard-panel"><div class="panel-title"><span>🎽</span><h2>調教師勝率 TOP5</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>1</strong><span>〇調教師</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>2</strong><span>〇調教師</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>3</strong><span>〇調教師</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>4</strong><span>〇調教師</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>5</strong><span>〇調教師</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+  </section>
+  <section class="dashboard-panel" style="margin-top:20px"><div class="panel-title"><span>🎯</span><h2>人気別成績</h2></div>
+    <div class="results-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="result-item"><span>1番人気</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">複勝〇〇%</small></div><div class="result-item"><span>2番人気</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">複勝〇〇%</small></div><div class="result-item"><span>3番人気</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">複勝〇〇%</small></div><div class="result-item"><span>4番人気</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">複勝〇〇%</small></div><div class="result-item"><span>5番人気</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">複勝〇〇%</small></div>
+    </div>
+  </section>
+  </section>
+
+  <section class="race-section" style="margin-top:34px"><div class="section-heading"><div><p class="section-label">CATEGORY 2</p><h2>馬場・枠</h2></div></div>
+  <section class="dashboard-grid">
+    <article class="dashboard-panel"><div class="panel-title"><span>🔲</span><h2>枠番別成績</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>1枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>2枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>3枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>4枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>5枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>6枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>7枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div><div class="history-row"><strong>8枠</strong><span>&nbsp;</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+    <article class="dashboard-panel"><div class="panel-title"><span>⚖️</span><h2>馬体重増減別成績</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>増</strong><span>大幅増(+10kg以上)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>増</strong><span>増加(+1〜9kg)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>―</strong><span>変化なし</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>減</strong><span>減少(-1〜9kg)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>減</strong><span>大幅減(-10kg以上)</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+  </section>
+  <section class="dashboard-panel" style="margin-top:20px"><div class="panel-title"><span>📅</span><h2>開催日進行別の馬場傾向</h2></div>
+    <div class="results-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="result-item"><span>開催1日目</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">先行有利度</small></div><div class="result-item"><span>開催2日目</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">先行有利度</small></div><div class="result-item"><span>開催3日目</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">先行有利度</small></div><div class="result-item"><span>開催4日目</span><strong>〇〇%</strong><small style="display:block;margin-top:6px;color:var(--muted)">先行有利度</small></div>
+    </div>
+  </section>
+  </section>
+
+  <section class="race-section" style="margin-top:34px"><div class="section-heading"><div><p class="section-label">CATEGORY 3</p><h2>距離・脚質</h2></div></div>
+  <section class="dashboard-grid">
+    <article class="dashboard-panel"><div class="panel-title"><span>📏</span><h2>距離帯別成績</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>短</strong><span>短距離(〜1400m)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>マ</strong><span>マイル(1401〜1800m)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>中</strong><span>中距離(1801〜2200m)</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>長</strong><span>長距離(2201m〜)</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+    <article class="dashboard-panel"><div class="panel-title"><span>🌱</span><h2>芝・ダート別成績</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>芝</strong><span>〇騎手が芝で好成績</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>ダ</strong><span>〇騎手がダートで好成績</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+  </section>
+  <section class="dashboard-panel" style="margin-top:20px"><div class="panel-title"><span>💣</span><h2>穴馬分析(人気とのギャップ)</h2></div>
+    <div class="history-list">
+      <div class="history-row"><strong>穴</strong><span>〇番人気で3着以内に入った割合</span><small>〇〇走</small><b>〇〇%</b></div>
+      <div class="history-row"><strong>穴</strong><span>単勝〇倍以上で連対した割合</span><small>〇〇走</small><b>〇〇%</b></div>
+    </div>
+  </section>
+  </section>
+
+  <section class="race-section" style="margin-top:34px"><div class="section-heading"><div><p class="section-label">CATEGORY 4 ・ PC-KEIBA完了後</p><h2>血統・脚質<span class="notice-tag" style="margin-left:10px">準備中</span></h2></div></div>
+  <section class="dashboard-grid">
+    <article class="dashboard-panel"><div class="panel-title"><span>🧬</span><h2>種牡馬別ランキング</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>1</strong><span>〇〇(種牡馬)</span><small>〇〇産駒</small><b>〇〇%</b></div><div class="history-row"><strong>2</strong><span>〇〇(種牡馬)</span><small>〇〇産駒</small><b>〇〇%</b></div><div class="history-row"><strong>3</strong><span>〇〇(種牡馬)</span><small>〇〇産駒</small><b>〇〇%</b></div>
+      </div>
+    </article>
+    <article class="dashboard-panel"><div class="panel-title"><span>🏃</span><h2>脚質別成績</h2></div>
+      <div class="history-list">
+        <div class="history-row"><strong>逃</strong><span>逃げ</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>先</strong><span>先行</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>差</strong><span>差し</span><small>〇〇走</small><b>〇〇%</b></div>
+        <div class="history-row"><strong>追</strong><span>追込</span><small>〇〇走</small><b>〇〇%</b></div>
+      </div>
+    </article>
+  </section>
   </section>
   
 </main>
