@@ -4,12 +4,52 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>門別11R 地方競馬AI予想</title>
 <link rel="stylesheet" href="/static/style.css"></head>
-<body><header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="local";
+  var base=(scope==="local")?"チキン":"チキ";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
 <div class="scope-switch">
 <a class="scope-switch-button" href="/">中央競馬</a>
 <a class="scope-switch-button active" href="/local">地方競馬</a>
-<a class="scope-switch-button" href="/overseas">海外競馬</a>
+
 </div>
 <nav class="navigation">
 <a class="nav-button" href="/local">ホーム</a>
