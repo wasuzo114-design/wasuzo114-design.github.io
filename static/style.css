@@ -73,7 +73,7 @@ input{width:100%;height:47px;padding:0 14px;color:var(--text);background:#ffffff
 .review-table-scroll.review-table-scroll-narrow .review-table{min-width:640px}
 @media(max-width:700px){
   .review-table-scroll-narrow{overflow-x:visible}
-  .review-table-scroll-narrow .review-table{min-width:0;width:100%;display:block}
+  .review-table-scroll.review-table-scroll-narrow .review-table{min-width:0;width:100%;display:block}
   .review-table-scroll-narrow .review-table thead{display:none}
   .review-table-scroll-narrow .review-table tbody{display:block;width:100%}
   .review-table-scroll-narrow .review-table tr{display:block;width:100%;padding:10px 0;border-bottom:1px solid var(--border)}
