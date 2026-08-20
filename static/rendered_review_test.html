@@ -1,0 +1,622 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>地方競馬 結果の振り返り</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body>
+
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button" href="/">中央競馬</a>
+<a class="scope-switch-button active" href="/local">地方競馬</a>
+<a class="scope-switch-button" href="/overseas">海外競馬</a>
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/local">ホーム</a>
+
+<a class="nav-button" href="/races">予想一覧</a>
+<a class="nav-button" href="/local/history">データ分析</a>
+
+<a class="nav-button active" href="/local/review">振り返り</a>
+
+<a class="nav-button" href="/local/hit-record">的中実績</a>
+
+<a class="nav-button" href="/admin">管理</a>
+<form method="post" action="/admin/logout" style="display:inline"><button class="nav-button" type="submit">ログアウト</button></form>
+</nav></header>
+<main class="main-content">
+<section class="selection-panel">
+<div><span class="selection-title">振り返る日</span>
+<div class="venue-buttons">
+<a class="venue-button" href="/local/review?date=2026-08-20">今日</a>
+<a class="venue-button active" href="/local/review?date=2026-08-19">昨日</a>
+<a class="venue-button" href="/local/review?date=this_week">今週</a>
+<a class="venue-button" href="/local/review?date=last_week">先週</a>
+<a class="venue-button" href="/local/review?date=last_month">先月</a>
+<a class="venue-button" href="/local/review?date=all">すべて（全期間）</a>
+</div></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px">
+<form method="get" action="/local/review" class="selection-group">
+<label>日付を指定</label>
+<input type="date" name="date" value="2026-08-19" onchange="this.form.submit()">
+</form>
+<div class="recent-performance-mini">
+<span class="selection-title">的中実績（直近30日）</span>
+<div class="recent-performance-mini-row">
+<span>対象レース<strong>1248</strong></span>
+<span>単勝的中率<strong>33.3%</strong></span>
+<span>回収率<strong>76.1%</strong></span>
+</div></div>
+<div class="recent-performance-mini">
+<span class="selection-title">激熱フラグの実績（昨日・管理画面限定）</span>
+<div class="recent-performance-mini-row">
+<span>対象レース<strong>26</strong></span>
+<span>単勝的中率<strong>7.7%</strong></span>
+<span>回収率<strong>11.9%</strong></span>
+<span>馬券内確率<strong>65.4%</strong></span>
+</div></div>
+</div>
+</section>
+
+<section class="dashboard-grid">
+<article class="dashboard-panel" style="grid-column:1/-1"><div class="panel-title"><h2>◎の実績（会場別・昨日）</h2></div>
+<div class="review-table-scroll"><table class="review-table">
+<thead><tr>
+<th>会場</th><th>レース数</th><th>1着</th><th>2着</th><th>3着</th><th>単勝</th><th>複勝</th>
+<th>馬連(堅め)</th><th>馬連(広め)</th><th>ワイド(堅め)</th><th>ワイド(穴)</th>
+<th>3連複(全通り)</th><th>3連複(2軸流し)</th><th>3連複(2頭流し)</th><th>回収率</th>
+</tr></thead>
+<tbody><tr class="">
+<td style="text-align:left"><strong>名古屋</strong></td>
+<td>12</td>
+<td>1/12</td>
+<td>2/12</td>
+<td>1/12</td>
+<td>8.3%</td>
+<td>33.3%</td>
+<td>8.3%</td>
+<td>16.7%</td>
+<td>8.3%</td>
+<td>25.0%</td>
+<td>8.3%</td>
+<td>0.0%</td>
+<td>8.3%</td>
+<td style="color:#ff9a9a">20.8%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>園田</strong></td>
+<td>12</td>
+<td>3/12</td>
+<td>4/12</td>
+<td>3/12</td>
+<td>25.0%</td>
+<td>83.3%</td>
+<td>33.3%</td>
+<td>60.0%</td>
+<td>75.0%</td>
+<td>30.0%</td>
+<td>50.0%</td>
+<td>30.0%</td>
+<td>20.0%</td>
+<td style="color:#ff9a9a">31.7%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>川崎</strong></td>
+<td>12</td>
+<td>3/12</td>
+<td>4/12</td>
+<td>2/12</td>
+<td>25.0%</td>
+<td>75.0%</td>
+<td>41.7%</td>
+<td>63.6%</td>
+<td>58.3%</td>
+<td>54.5%</td>
+<td>41.7%</td>
+<td>27.3%</td>
+<td>36.4%</td>
+<td style="color:#ff9a9a">40.0%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>門別</strong></td>
+<td>12</td>
+<td>0/12</td>
+<td>2/12</td>
+<td>7/12</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>0.0%</td>
+<td>8.3%</td>
+<td>41.7%</td>
+<td>50.0%</td>
+<td>33.3%</td>
+<td>16.7%</td>
+<td>16.7%</td>
+<td style="color:#ff9a9a">0.0%</td>
+</tr><tr class="review-winner-row">
+<td style="text-align:left"><strong>全会場合計</strong></td>
+<td>48</td>
+<td>7/48</td>
+<td>12/48</td>
+<td>13/48</td>
+<td>14.6%</td>
+<td>66.7%</td>
+<td>20.8%</td>
+<td>35.6%</td>
+<td>45.8%</td>
+<td>40.0%</td>
+<td>33.3%</td>
+<td>17.8%</td>
+<td>20.0%</td>
+<td style="color:#ff9a9a">23.1%</td>
+</tr></tbody></table></div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">各予想ページの「買い目の土台」と同じ組み合わせで的中判定しています（8頭立て以上は◎○▲△☆☆の6頭、4〜7頭立ては◎○▲の3頭に簡略化）。馬連(広め)・ワイド(穴)・3連複(2軸流し)・3連複(2頭流し)は3頭簡略化では成立しない券種のため、8頭立て以上のレースだけを分母に集計しています（対象レースが無い場合は「ー」）。集計は1日1回の自動更新で、netkeibaから払戻データを取得できたレースのみが対象です（払戻データの取得機能は2026-08-11に追加したため、それ以前に取得済みのレースは順次追いつき中）。</p>
+</article>
+<div style="grid-column:1/-1"><div class="panel-title" style="padding:0;border:0;margin-bottom:14px"><h2>回収率（会場別×券種別・全期間累計）</h2></div>
+<div class="dashboard-grid">
+<article class="dashboard-panel"><div class="panel-title"><h2>単勝</h2></div>
+<table class="review-table"><thead><tr><th>会場</th><th>レース数</th><th>的中数</th><th>購入額</th><th>払戻額</th><th>収支</th><th>回収率</th></tr></thead>
+<tbody><tr class="">
+<td style="text-align:left"><strong>名古屋</strong></td>
+<td>12</td>
+<td>1</td>
+<td>1200円</td>
+<td>250円</td>
+<td style="color:#ff9a9a">-950円</td>
+<td style="color:#ff9a9a;font-weight:800">20.8%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>園田</strong></td>
+<td>12</td>
+<td>3</td>
+<td>1200円</td>
+<td>380円</td>
+<td style="color:#ff9a9a">-820円</td>
+<td style="color:#ff9a9a;font-weight:800">31.7%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>川崎</strong></td>
+<td>12</td>
+<td>3</td>
+<td>1200円</td>
+<td>480円</td>
+<td style="color:#ff9a9a">-720円</td>
+<td style="color:#ff9a9a;font-weight:800">40.0%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>門別</strong></td>
+<td>12</td>
+<td>0</td>
+<td>1200円</td>
+<td>0円</td>
+<td style="color:#ff9a9a">-1200円</td>
+<td style="color:#ff9a9a;font-weight:800">0.0%</td>
+</tr><tr class="review-winner-row">
+<td style="text-align:left"><strong>全会場合計</strong></td>
+<td>48</td>
+<td>7</td>
+<td>4800円</td>
+<td>1110円</td>
+<td style="color:#ff9a9a">-3690円</td>
+<td style="color:#ff9a9a;font-weight:800">23.1%</td>
+</tr></tbody></table>
+</article><article class="dashboard-panel"><div class="panel-title"><h2>馬連</h2></div>
+<table class="review-table"><thead><tr><th>会場</th><th>レース数</th><th>的中数</th><th>購入額</th><th>払戻額</th><th>収支</th><th>回収率</th></tr></thead>
+<tbody><tr class="">
+<td style="text-align:left"><strong>名古屋</strong></td>
+<td>12</td>
+<td>2</td>
+<td>6000円</td>
+<td>7380円</td>
+<td style="color:var(--green)">+1380円</td>
+<td style="color:var(--green);font-weight:800">123.0%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>園田</strong></td>
+<td>12</td>
+<td>7</td>
+<td>5400円</td>
+<td>8410円</td>
+<td style="color:var(--green)">+3010円</td>
+<td style="color:var(--green);font-weight:800">155.7%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>川崎</strong></td>
+<td>12</td>
+<td>7</td>
+<td>5700円</td>
+<td>3860円</td>
+<td style="color:#ff9a9a">-1840円</td>
+<td style="color:#ff9a9a;font-weight:800">67.7%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>門別</strong></td>
+<td>12</td>
+<td>1</td>
+<td>6000円</td>
+<td>280円</td>
+<td style="color:#ff9a9a">-5720円</td>
+<td style="color:#ff9a9a;font-weight:800">4.7%</td>
+</tr><tr class="review-winner-row">
+<td style="text-align:left"><strong>全会場合計</strong></td>
+<td>48</td>
+<td>17</td>
+<td>23100円</td>
+<td>19930円</td>
+<td style="color:#ff9a9a">-3170円</td>
+<td style="color:#ff9a9a;font-weight:800">86.3%</td>
+</tr></tbody></table>
+</article><article class="dashboard-panel"><div class="panel-title"><h2>ワイド</h2></div>
+<table class="review-table"><thead><tr><th>会場</th><th>レース数</th><th>的中数</th><th>購入額</th><th>払戻額</th><th>収支</th><th>回収率</th></tr></thead>
+<tbody><tr class="">
+<td style="text-align:left"><strong>名古屋</strong></td>
+<td>12</td>
+<td>4</td>
+<td>6000円</td>
+<td>2850円</td>
+<td style="color:#ff9a9a">-3150円</td>
+<td style="color:#ff9a9a;font-weight:800">47.5%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>園田</strong></td>
+<td>12</td>
+<td>16</td>
+<td>5400円</td>
+<td>5920円</td>
+<td style="color:var(--green)">+520円</td>
+<td style="color:var(--green);font-weight:800">109.6%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>川崎</strong></td>
+<td>12</td>
+<td>14</td>
+<td>5700円</td>
+<td>6830円</td>
+<td style="color:var(--green)">+1130円</td>
+<td style="color:var(--green);font-weight:800">119.8%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>門別</strong></td>
+<td>12</td>
+<td>13</td>
+<td>6000円</td>
+<td>5430円</td>
+<td style="color:#ff9a9a">-570円</td>
+<td style="color:#ff9a9a;font-weight:800">90.5%</td>
+</tr><tr class="review-winner-row">
+<td style="text-align:left"><strong>全会場合計</strong></td>
+<td>48</td>
+<td>47</td>
+<td>23100円</td>
+<td>21030円</td>
+<td style="color:#ff9a9a">-2070円</td>
+<td style="color:#ff9a9a;font-weight:800">91.0%</td>
+</tr></tbody></table>
+</article><article class="dashboard-panel"><div class="panel-title"><h2>3連複</h2></div>
+<table class="review-table"><thead><tr><th>会場</th><th>レース数</th><th>的中数</th><th>購入額</th><th>払戻額</th><th>収支</th><th>回収率</th></tr></thead>
+<tbody><tr class="">
+<td style="text-align:left"><strong>名古屋</strong></td>
+<td>12</td>
+<td>1</td>
+<td>12000円</td>
+<td>840円</td>
+<td style="color:#ff9a9a">-11160円</td>
+<td style="color:#ff9a9a;font-weight:800">7.0%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>園田</strong></td>
+<td>12</td>
+<td>6</td>
+<td>10200円</td>
+<td>13160円</td>
+<td style="color:var(--green)">+2960円</td>
+<td style="color:var(--green);font-weight:800">129.0%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>川崎</strong></td>
+<td>12</td>
+<td>5</td>
+<td>11100円</td>
+<td>18970円</td>
+<td style="color:var(--green)">+7870円</td>
+<td style="color:var(--green);font-weight:800">170.9%</td>
+</tr><tr class="">
+<td style="text-align:left"><strong>門別</strong></td>
+<td>12</td>
+<td>4</td>
+<td>12000円</td>
+<td>6760円</td>
+<td style="color:#ff9a9a">-5240円</td>
+<td style="color:#ff9a9a;font-weight:800">56.3%</td>
+</tr><tr class="review-winner-row">
+<td style="text-align:left"><strong>全会場合計</strong></td>
+<td>48</td>
+<td>16</td>
+<td>45300円</td>
+<td>39730円</td>
+<td style="color:#ff9a9a">-5570円</td>
+<td style="color:#ff9a9a;font-weight:800">87.7%</td>
+</tr></tbody></table>
+</article>
+</div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">馬連＝◎－相手5頭全通り、ワイド＝◎－相手5頭全通り、3連複＝◎－相手5頭から2頭全通り、を100円ずつ買い続けた場合の実際の払戻ベース回収率。</p>
+</div>
+</section>
+
+<section class="race-section"><div class="section-heading">
+<div><p class="section-label">RACE REVIEW（管理画面限定）</p><h2>激熱レース</h2></div></div>
+<article class="dashboard-panel">
+<div class="review-table-scroll"><table class="review-table">
+<thead><tr><th>評価</th><th>対象数</th><th>1着</th><th>2着</th><th>3着</th><th>馬券外</th><th>馬券内確率</th><th>単勝払戻</th><th>単勝回収率</th><th>複勝払戻</th><th>複勝回収率</th><th>単複払戻</th><th>単複回収率</th></tr></thead>
+<tbody><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-ss" style="width:28px;height:28px;font-size:13px">SS</span></td>
+<td data-label="対象数">0</td>
+<td data-label="1着">0/0</td>
+<td data-label="2着">0/0</td>
+<td data-label="3着">0/0</td>
+<td data-label="馬券外">0/0</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0%</td>
+<td data-label="複勝払戻">0円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">0%</td>
+<td data-label="単複払戻">0円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">0%</td>
+</tr><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-s" style="width:28px;height:28px;font-size:13px">S</span></td>
+<td data-label="対象数">12</td>
+<td data-label="1着">0/12</td>
+<td data-label="2着">4/12</td>
+<td data-label="3着">3/12</td>
+<td data-label="馬券外">5/12</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">58.3%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">940円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">78.3%</td>
+<td data-label="単複払戻">940円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">39.2%</td>
+</tr><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-a" style="width:28px;height:28px;font-size:13px">A</span></td>
+<td data-label="対象数">8</td>
+<td data-label="1着">2/8</td>
+<td data-label="2着">2/8</td>
+<td data-label="3着">3/8</td>
+<td data-label="馬券外">1/8</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">87.5%</td>
+<td data-label="単勝払戻">310円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">38.8%</td>
+<td data-label="複勝払戻">1030円</td>
+<td data-label="複勝回収率" style="color:var(--green)">128.8%</td>
+<td data-label="単複払戻">1340円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">83.8%</td>
+</tr><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-b" style="width:28px;height:28px;font-size:13px">B</span></td>
+<td data-label="対象数">5</td>
+<td data-label="1着">0/5</td>
+<td data-label="2着">1/5</td>
+<td data-label="3着">1/5</td>
+<td data-label="馬券外">3/5</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">40.0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">1130円</td>
+<td data-label="複勝回収率" style="color:var(--green)">226.0%</td>
+<td data-label="単複払戻">1130円</td>
+<td data-label="単複回収率" style="color:var(--green)">113.0%</td>
+</tr><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-c" style="width:28px;height:28px;font-size:13px">C</span></td>
+<td data-label="対象数">1</td>
+<td data-label="1着">0/1</td>
+<td data-label="2着">1/1</td>
+<td data-label="3着">0/1</td>
+<td data-label="馬券外">0/1</td>
+<td data-label="馬券内確率" style="color:var(--green)">100.0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">140円</td>
+<td data-label="複勝回収率" style="color:var(--green)">140.0%</td>
+<td data-label="単複払戻">140円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">70.0%</td>
+</tr><tr>
+<td data-label="評価" style="text-align:left"><span class="grade grade-d" style="width:28px;height:28px;font-size:13px">D</span></td>
+<td data-label="対象数">0</td>
+<td data-label="1着">0/0</td>
+<td data-label="2着">0/0</td>
+<td data-label="3着">0/0</td>
+<td data-label="馬券外">0/0</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0%</td>
+<td data-label="複勝払戻">0円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">0%</td>
+<td data-label="単複払戻">0円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">0%</td>
+</tr><tr class="review-winner-row">
+<td data-label="評価" style="text-align:left;font-weight:800">合計</td>
+<td data-label="対象数">26</td>
+<td data-label="1着">2/26</td>
+<td data-label="2着">8/26</td>
+<td data-label="3着">7/26</td>
+<td data-label="馬券外">9/26</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">65.4%</td>
+<td data-label="単勝払戻">310円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">11.9%</td>
+<td data-label="複勝払戻">3240円</td>
+<td data-label="複勝回収率" style="color:var(--green)">124.6%</td>
+<td data-label="単複払戻">3550円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">68.3%</td>
+</tr></tbody></table></div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">◎と期待値最大の馬が一致した「激熱フラグ」レースだけを対象に、AIグレード(SS〜C)別の成績を集計しています。</p>
+</article>
+<article class="dashboard-panel" style="margin-top:20px"><div class="panel-title"><h2>穴馬タグ別の実績</h2></div>
+<div class="review-table-scroll"><table class="review-table">
+<thead><tr><th>タグ</th><th>対象数</th><th>1着</th><th>2着</th><th>3着</th><th>馬券外</th><th>馬券内確率</th><th>単勝払戻</th><th>単勝回収率</th><th>複勝払戻</th><th>複勝回収率</th><th>単複払戻</th><th>単複回収率</th></tr></thead>
+<tbody><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge oo-badge">穴馬＋期待穴馬</span></td>
+<td data-label="対象数">14</td>
+<td data-label="1着">0/14</td>
+<td data-label="2着">0/14</td>
+<td data-label="3着">6/14</td>
+<td data-label="馬券外">8/14</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">42.9%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">1620円</td>
+<td data-label="複勝回収率" style="color:var(--green)">115.7%</td>
+<td data-label="単複払戻">1620円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">57.9%</td>
+</tr><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge oo-badge">大穴＋期待大穴</span></td>
+<td data-label="対象数">18</td>
+<td data-label="1着">2/18</td>
+<td data-label="2着">2/18</td>
+<td data-label="3着">2/18</td>
+<td data-label="馬券外">12/18</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">33.3%</td>
+<td data-label="単勝払戻">3460円</td>
+<td data-label="単勝回収率" style="color:var(--green)">192.2%</td>
+<td data-label="複勝払戻">3420円</td>
+<td data-label="複勝回収率" style="color:var(--green)">190.0%</td>
+<td data-label="単複払戻">6880円</td>
+<td data-label="単複回収率" style="color:var(--green)">191.1%</td>
+</tr><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge">期待穴馬</span></td>
+<td data-label="対象数">16</td>
+<td data-label="1着">1/16</td>
+<td data-label="2着">0/16</td>
+<td data-label="3着">1/16</td>
+<td data-label="馬券外">14/16</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">12.5%</td>
+<td data-label="単勝払戻">480円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">30.0%</td>
+<td data-label="複勝払戻">790円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">49.4%</td>
+<td data-label="単複払戻">1270円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">39.7%</td>
+</tr><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge">期待大穴</span></td>
+<td data-label="対象数">15</td>
+<td data-label="1着">0/15</td>
+<td data-label="2着">2/15</td>
+<td data-label="3着">2/15</td>
+<td data-label="馬券外">11/15</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">26.7%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">1840円</td>
+<td data-label="複勝回収率" style="color:var(--green)">122.7%</td>
+<td data-label="単複払戻">1840円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">61.3%</td>
+</tr><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge">穴馬</span></td>
+<td data-label="対象数">2</td>
+<td data-label="1着">0/2</td>
+<td data-label="2着">0/2</td>
+<td data-label="3着">1/2</td>
+<td data-label="馬券外">1/2</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">50.0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">220円</td>
+<td data-label="複勝回収率" style="color:var(--green)">110.0%</td>
+<td data-label="単複払戻">220円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">55.0%</td>
+</tr><tr>
+<td data-label="タグ" style="text-align:left"><span class="ana-badge">大穴</span></td>
+<td data-label="対象数">18</td>
+<td data-label="1着">0/18</td>
+<td data-label="2着">2/18</td>
+<td data-label="3着">0/18</td>
+<td data-label="馬券外">16/18</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">11.1%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">1220円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">67.8%</td>
+<td data-label="単複払戻">1220円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">33.9%</td>
+</tr><tr class="review-winner-row">
+<td data-label="タグ" style="text-align:left;font-weight:800">合計</td>
+<td data-label="対象数">83</td>
+<td data-label="1着">3/83</td>
+<td data-label="2着">6/83</td>
+<td data-label="3着">12/83</td>
+<td data-label="馬券外">62/83</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">25.3%</td>
+<td data-label="単勝払戻">3940円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">47.5%</td>
+<td data-label="複勝払戻">9110円</td>
+<td data-label="複勝回収率" style="color:var(--green)">109.8%</td>
+<td data-label="単複払戻">13050円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">78.6%</td>
+</tr></tbody></table></div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">穴馬/大穴(市場ベース)・期待穴馬/期待大穴(AIゆま能力評価ベース)・両方一致(＋表記)の6タグ別に成績を集計しています。</p>
+</article>
+<article class="dashboard-panel" style="margin-top:20px"><div class="panel-title"><h2>◎(本命)の払戻実績（会場別）</h2></div>
+<div class="review-table-scroll"><table class="review-table">
+<thead><tr><th>会場</th><th>対象数</th><th>1着</th><th>2着</th><th>3着</th><th>馬券外</th><th>馬券内確率</th><th>単勝払戻</th><th>単勝回収率</th><th>複勝払戻</th><th>複勝回収率</th><th>単複払戻</th><th>単複回収率</th></tr></thead>
+<tbody><tr>
+<td data-label="会場" style="text-align:left">名古屋</td>
+<td data-label="対象数">12</td>
+<td data-label="1着">1/12</td>
+<td data-label="2着">2/12</td>
+<td data-label="3着">1/12</td>
+<td data-label="馬券外">8/12</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">33.3%</td>
+<td data-label="単勝払戻">250円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">20.8%</td>
+<td data-label="複勝払戻">1390円</td>
+<td data-label="複勝回収率" style="color:var(--green)">115.8%</td>
+<td data-label="単複払戻">1640円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">68.3%</td>
+</tr><tr>
+<td data-label="会場" style="text-align:left">園田</td>
+<td data-label="対象数">12</td>
+<td data-label="1着">3/12</td>
+<td data-label="2着">4/12</td>
+<td data-label="3着">3/12</td>
+<td data-label="馬券外">2/12</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">83.3%</td>
+<td data-label="単勝払戻">380円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">31.7%</td>
+<td data-label="複勝払戻">1090円</td>
+<td data-label="複勝回収率" style="color:#ff9a9a">90.8%</td>
+<td data-label="単複払戻">1470円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">61.3%</td>
+</tr><tr>
+<td data-label="会場" style="text-align:left">川崎</td>
+<td data-label="対象数">12</td>
+<td data-label="1着">3/12</td>
+<td data-label="2着">4/12</td>
+<td data-label="3着">2/12</td>
+<td data-label="馬券外">3/12</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">75.0%</td>
+<td data-label="単勝払戻">480円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">40.0%</td>
+<td data-label="複勝払戻">1280円</td>
+<td data-label="複勝回収率" style="color:var(--green)">106.7%</td>
+<td data-label="単複払戻">1760円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">73.3%</td>
+</tr><tr>
+<td data-label="会場" style="text-align:left">門別</td>
+<td data-label="対象数">12</td>
+<td data-label="1着">0/12</td>
+<td data-label="2着">2/12</td>
+<td data-label="3着">7/12</td>
+<td data-label="馬券外">3/12</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">75.0%</td>
+<td data-label="単勝払戻">0円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">0.0%</td>
+<td data-label="複勝払戻">1530円</td>
+<td data-label="複勝回収率" style="color:var(--green)">127.5%</td>
+<td data-label="単複払戻">1530円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">63.7%</td>
+</tr><tr class="review-winner-row">
+<td data-label="会場" style="text-align:left;font-weight:800">合計</td>
+<td data-label="対象数">48</td>
+<td data-label="1着">7/48</td>
+<td data-label="2着">12/48</td>
+<td data-label="3着">13/48</td>
+<td data-label="馬券外">16/48</td>
+<td data-label="馬券内確率" style="color:#ff9a9a">66.7%</td>
+<td data-label="単勝払戻">1110円</td>
+<td data-label="単勝回収率" style="color:#ff9a9a">23.1%</td>
+<td data-label="複勝払戻">5290円</td>
+<td data-label="複勝回収率" style="color:var(--green)">110.2%</td>
+<td data-label="単複払戻">6400円</td>
+<td data-label="単複回収率" style="color:#ff9a9a">66.7%</td>
+</tr></tbody></table></div>
+<p style="color:var(--muted);margin-top:14px;font-size:13px">タグに関係なく、◎(本命)全体の成績を会場別に集計しています。</p>
+</article>
+</section>
+</main>
+</body></html>
