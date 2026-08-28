@@ -1,0 +1,1741 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>予想一覧</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="central";
+  var base=(scope==="local")?"chikin":"chiki";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/">ホーム</a>
+
+<a class="nav-button" href="/history">データ分析</a>
+
+
+</nav></header>
+<main class="main-content">
+<section class="section-heading"><div><p class="section-label">ALL RACES</p><h2>予想一覧</h2></div></section>
+<section class="selection-panel">
+<form method="get" action="/races" class="selection-group">
+<label>対象日</label>
+<input type="date" name="date" value="" min="2021-01-05" max="2026-08-30" onchange="this.form.submit()">
+<input type="hidden" name="venue" value="">
+</form>
+<div><span class="selection-title">競馬場を選択</span>
+<div class="venue-buttons">
+<a class="venue-button active" href="/races?date=">すべて</a>
+<a class="venue-button" href="/races?date=&amp;venue=%E4%B8%AD%E4%BA%AC">中京</a><a class="venue-button" href="/races?date=&amp;venue=%E6%96%B0%E6%BD%9F">新潟</a><a class="venue-button" href="/races?date=&amp;venue=%E6%9C%AD%E5%B9%8C">札幌</a>
+</div></div></section>
+<section class="race-section"><div class="race-grid">
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 09:50 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 ティタノマキア</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 10:20 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 リアンフィニ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 10:50 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 ドラゴンバルド</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 11:20 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 アラムシャピラス</h3>
+<div class="race-score"><span>総合指数</span><strong>99</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 11:50 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 ペプチドレオン</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 15:10 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 マイバレンタイン</h3>
+<div class="race-score"><span>総合指数</span><strong>100</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 15:45 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ディアナザール</h3>
+<div class="race-score"><span>総合指数</span><strong>100</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 16:20 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 リベッチオ</h3>
+<div class="race-score"><span>総合指数</span><strong>100</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 16:55 中京</p><p class="race-distance">3000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 メイショウソウセキ</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 17:30 中京</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ラヴネヴァーダイズ</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 18:00 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 フロムレイブン</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E4%B8%AD%E4%BA%AC/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 18:30 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 13 ビッグヒーロー</h3>
+<div class="race-score"><span>総合指数</span><strong>100</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 09:40 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 シアルナーレ</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 10:10 新潟</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 イスクメル</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 10:40 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ハングローズ</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 11:10 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 モンスターラッシュ</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 11:40 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 シュヴァルツシルト</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 15:01 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 ライヒスアドラー</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 15:35 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 マクリール</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 16:10 新潟</p><p class="race-distance">芝1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 17 クールベイビー</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 16:45 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 アスタールフナ</h3>
+<div class="race-score"><span>総合指数</span><strong>98</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 17:20 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 オプレントジュエル</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-ss">SS</span></div>
+<p class="start-time">2026-08-09 17:50 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 バンオンタイム</h3>
+<div class="race-score"><span>総合指数</span><strong>100</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 18:20 新潟</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 ルージュフィーリア</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 10:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 サルトヴェローチェ</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 10:30 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 スイーヴル</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 11:00 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 メイショウテンク</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 11:30 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 バンダムソレール</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 12:20 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 セイレイカ</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 12:50 札幌</p><p class="race-distance">芝2600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ヘイジュード</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-09 13:20 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 デルマフジ</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 13:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 メイショウコシュウ</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 14:20 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ニシノサリーナ</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 14:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 チザルピーノ</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-09 15:25 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ナムラクララ</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-09/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-09 16:01 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ディーリライズ</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 09:50 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 アイゼンフォルク</h3>
+<div class="race-score"><span>総合指数</span><strong>85</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 10:20 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 チャンピオンロード</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 10:50 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 スクールディーヴァ</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 11:20 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 モンシーク</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-15 11:50 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 エレーデサンライズ</h3>
+<div class="race-score"><span>総合指数</span><strong>74</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 15:10 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 フォーゲル</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 15:45 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 バッデレイト</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 16:25 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ショウグンマサムネ</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 17:00 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 エイシンティザー</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 17:30 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 エイシンマールス</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 18:00 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 イージーライダー</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E4%B8%AD%E4%BA%AC/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 18:30 中京</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ナムラロダン</h3>
+<div class="race-score"><span>総合指数</span><strong>75</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 09:40 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 スターマイン</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 10:10 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 コスモベスケーデン</h3>
+<div class="race-score"><span>総合指数</span><strong>79</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 10:40 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 リボンロード</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 11:10 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 レイズレガシー</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 11:40 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 グリオンヴール</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 14:50 新潟</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ブラックオリンピア</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-15 15:25 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 イリフィ</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 16:05 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ジェイエルモーダル</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 16:40 新潟</p><p class="race-distance">芝3250m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 プラチナドリーム</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 17:15 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 マーチンゲール</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-15 17:45 新潟</p><p class="race-distance">芝1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 18 ラウンドヒル</h3>
+<div class="race-score"><span>総合指数</span><strong>73</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 18:20 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 アマンヘセル</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-15 10:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 フレンチブラッサム</h3>
+<div class="race-score"><span>総合指数</span><strong>72</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 10:30 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 イッペイ</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 11:00 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 アニマレイ</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 11:30 札幌</p><p class="race-distance">ダート2400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ブロント</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 12:20 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 パーフェクトゲーム</h3>
+<div class="race-score"><span>総合指数</span><strong>80</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 12:50 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 エアヴァイブス</h3>
+<div class="race-score"><span>総合指数</span><strong>80</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 13:20 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ミッキーテネシー</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 13:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ロードアマルフィ</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-15 14:25 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 デアグランツ</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 15:01 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 ストレイトアスク</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 15:35 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 アイウィル</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-15/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-15 16:15 札幌</p><p class="race-distance">芝2600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ミッキーファルコン</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 09:50 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 アームズラムレイ</h3>
+<div class="race-score"><span>総合指数</span><strong>75</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 10:20 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ソルテヴェローチェ</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 10:55 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 ホウオウワールド</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 11:20 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 18 ホウオウモチーヴ</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 11:50 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 セッシュウ</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 15:01 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ステラクラウン</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 15:35 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 サトノシャイニング</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 16:15 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ダノンキラウェア</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 16:55 中京</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ロイドウェバー</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 17:30 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 ベルソテイラ</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 18:00 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ルージュバロン</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E4%B8%AD%E4%BA%AC/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 18:30 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 13 アイランド</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 09:40 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 サトノスプレマシー</h3>
+<div class="race-score"><span>総合指数</span><strong>73</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 10:10 新潟</p><p class="race-distance">芝2400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 アルティマローネ</h3>
+<div class="race-score"><span>総合指数</span><strong>72</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 10:40 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ラキアーヴェ</h3>
+<div class="race-score"><span>総合指数</span><strong>70</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 11:10 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 マルスレジーナ</h3>
+<div class="race-score"><span>総合指数</span><strong>79</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 11:40 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 カザンラク</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 14:50 新潟</p><p class="race-distance">芝1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 カウスリップ</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 15:25 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ヤマニンアルリフラ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 16:05 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ラストレガシー</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 16:40 新潟</p><p class="race-distance">2850m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 アウスヴァール</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 17:15 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ラショナルポイント</h3>
+<div class="race-score"><span>総合指数</span><strong>72</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 17:45 新潟</p><p class="race-distance">芝2400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ポルトフェリス</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 18:20 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 13 タマモブレイキン</h3>
+<div class="race-score"><span>総合指数</span><strong>58</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 10:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 テンレッドサン</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-16 10:30 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 リアルジャパン</h3>
+<div class="race-score"><span>総合指数</span><strong>70</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 11:00 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 クリスレジーナ</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 11:30 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 アルジェンタム</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 12:20 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 レジームチェンジ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 12:50 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ヨドノゴールド</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 13:25 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 ウイルソン</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 14:01 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ジェネラスキング</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-16 14:35 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 マイケルバローズ</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 15:10 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 パールフロント</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 15:45 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 アドマイヤテラ</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-16/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-16 16:30 札幌</p><p class="race-distance">芝2600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ジュンツバメガエシ</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 09:50 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 マーゴットマシェリ</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 10:20 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 アレストラウム</h3>
+<div class="race-score"><span>総合指数</span><strong>79</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-22 10:50 中京</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 スノースケープ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:20 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 ペガサスジルシ</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:50 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 タガノプディング</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 15:01 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 ソルチェリア</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 15:35 中京</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ピエマンソン</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 16:10 中京</p><p class="race-distance">ダート1900m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 ホールオブミラーズ</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 16:45 中京</p><p class="race-distance">3330m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 キャネル</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 17:20 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 マシン</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 17:50 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ハムタン</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E4%B8%AD%E4%BA%AC/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 18:20 中京</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 チュウワメロディー</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 09:40 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 コスモイェーガー</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-22 10:10 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ユイノリュウギ</h3>
+<div class="race-score"><span>総合指数</span><strong>73</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-22 10:40 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 ジップスパーク</h3>
+<div class="race-score"><span>総合指数</span><strong>74</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:10 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ラショナルポイント</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:40 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ココナッツコースト</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 14:50 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ジャサルディア</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 15:25 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 セフィロ</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-22 16:01 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 プルメリアリノ</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 16:35 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 マタミカンサン</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 17:15 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 タイセイアストロ</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 17:40 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 クリスタルドレス</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 18:10 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ミスタートントン</h3>
+<div class="race-score"><span>総合指数</span><strong>85</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 10:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 トゥザファイナル</h3>
+<div class="race-score"><span>総合指数</span><strong>85</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 10:30 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ランフォーザエイジ</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 リン</h3>
+<div class="race-score"><span>総合指数</span><strong>77</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 11:30 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ゴコウコイコイ</h3>
+<div class="race-score"><span>総合指数</span><strong>77</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-22 12:20 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 マシュマロデイズ</h3>
+<div class="race-score"><span>総合指数</span><strong>70</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 12:50 札幌</p><p class="race-distance">芝2600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 シャンドラファール</h3>
+<div class="race-score"><span>総合指数</span><strong>80</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 13:25 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ドリームガッサン</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 14:01 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ケープウィッカム</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 14:35 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 フレイコン</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 15:10 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 アスミル</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-22 15:45 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 スピードリッチ</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-22/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-22 16:20 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 メイショウコシュウ</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 09:50 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ベニバナ</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-23 10:20 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 キトゥンズクラフト</h3>
+<div class="race-score"><span>総合指数</span><strong>75</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 10:50 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 エイダンバローズ</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:20 中京</p><p class="race-distance">ダート1900m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 グリーンゴー</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:50 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 ヴィスコンテッサ</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 15:01 中京</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 サーディンラン</h3>
+<div class="race-score"><span>総合指数</span><strong>85</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 15:35 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 トリポリタニア</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 16:10 中京</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 16 アパレイユ</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 16:45 中京</p><p class="race-distance">3000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 メイショウゲキリン</h3>
+<div class="race-score"><span>総合指数</span><strong>85</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 17:20 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 メイショウナナシロ</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 17:50 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 ダンデノン</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E4%B8%AD%E4%BA%AC/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 18:20 中京</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 エバイダンス</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 09:40 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ノーセット</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">2026-08-23 10:10 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 スロノス</h3>
+<div class="race-score"><span>総合指数</span><strong>69</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 10:40 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ドミナント</h3>
+<div class="race-score"><span>総合指数</span><strong>78</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:10 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 12 ミエスタ</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:40 新潟</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 バンオンタイム</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 14:50 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ブレトワルダ</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 15:25 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 レッチュベルク</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 16:01 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 ナルキッソス</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 16:35 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 ホウオウルクソール</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-23 17:10 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 リポサンテ</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 17:40 新潟</p><p class="race-distance">芝1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 17 ヨドノティアラ</h3>
+<div class="race-score"><span>総合指数</span><strong>77</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 18:10 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 トルネードアイル</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 10:00 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 アイビーミャーオ</h3>
+<div class="race-score"><span>総合指数</span><strong>79</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 10:30 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ティアラード</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 アオイミズホ</h3>
+<div class="race-score"><span>総合指数</span><strong>77</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 11:30 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 リアララ</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 12:20 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 マテンロウバモス</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 12:50 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 モノポリオ</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 13:25 札幌</p><p class="race-distance">ダート2400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ダイシンレアレア</h3>
+<div class="race-score"><span>総合指数</span><strong>84</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 14:01 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 ダノンプレサージュ</h3>
+<div class="race-score"><span>総合指数</span><strong>87</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 14:35 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 エチゴドラゴン</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 15:10 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 ハイクオリティ</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 15:45 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 パンジャタワー</h3>
+<div class="race-score"><span>総合指数</span><strong>89</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-23/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-23 16:20 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ルクスジニア</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E4%B8%AD%E4%BA%AC/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 09:50 中京</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 エンルートフライト</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E4%B8%AD%E4%BA%AC/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 10:25 中京</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 オーリエイト</h3>
+<div class="race-score"><span>総合指数</span><strong>90</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E4%B8%AD%E4%BA%AC/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 10:55 中京</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 ジーティーハルカゼ</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E4%B8%AD%E4%BA%AC/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 11:25 中京</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 13 マイコンプリート</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 09:40 新潟</p><p class="race-distance">2850m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 ウインシュクラン</h3>
+<div class="race-score"><span>総合指数</span><strong>88</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 10:15 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ゴールドプレイヤー</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 10:45 新潟</p><p class="race-distance">芝1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 ノルトハウゼン</h3>
+<div class="race-score"><span>総合指数</span><strong>86</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 11:15 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 コメットサン</h3>
+<div class="race-score"><span>総合指数</span><strong>80</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 11:45 新潟</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ヤマメホープ</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 14:35 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 アビヤント</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 15:10 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 13 エリーナストーム</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 15:45 新潟</p><p class="race-distance">ダート1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 タガノバビロン</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 16:25 新潟</p><p class="race-distance">芝2200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 11 ランブルスコ</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 17:00 新潟</p><p class="race-distance">芝1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ライネリーベ</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 17:30 新潟</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 15 レッドレガリア</h3>
+<div class="race-score"><span>総合指数</span><strong>98</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%96%B0%E6%BD%9F/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 18:05 新潟</p><p class="race-distance">ダート1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 サンシュノジンギ</h3>
+<div class="race-score"><span>総合指数</span><strong>76</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/1">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 10:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 14 アーデルブリックス</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 10:30 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 フォルトゥナロッサ</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/3">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 11:00 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 ダノンキューブ</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/4">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 11:30 札幌</p><p class="race-distance">ダート1000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 アニマレイ</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/5">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">2026-08-29 12:20 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 ユーフォナイト</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/6">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 12:50 札幌</p><p class="race-distance">芝1500m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 イトシサ</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/7">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 13:20 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 グロリアスマーチ</h3>
+<div class="race-score"><span>総合指数</span><strong>94</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/8">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 13:50 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 6 レッドフロイデ</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/9">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 14:20 札幌</p><p class="race-distance">芝1800m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 グランセゾン</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/10">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">2026-08-29 14:50 札幌</p><p class="race-distance">芝1200m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 10 ヌーンベルク</h3>
+<div class="race-score"><span>総合指数</span><strong>95</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/11">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 15:25 札幌</p><p class="race-distance">芝2000m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 メイショウアイル</h3>
+<div class="race-score"><span>総合指数</span><strong>97</strong></div>
+
+</a>
+<a class="race-card" href="/predict/2026-08-29/%E6%9C%AD%E5%B9%8C/12">
+<div class="race-card-top"><strong>12R</strong><span class="grade grade-s">S</span></div>
+<p class="start-time">2026-08-29 16:00 札幌</p><p class="race-distance">ダート1700m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 アラナコア</h3>
+<div class="race-score"><span>総合指数</span><strong>96</strong></div>
+
+</a>
+
+</div></section>
+</main></body></html>
