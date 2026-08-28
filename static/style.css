@@ -107,6 +107,17 @@ input{width:100%;height:47px;padding:0 14px;color:var(--text);background:#ffffff
 .pill.live-pill{color:#0a0;border-color:#0a0;background:rgba(0,170,0,.08);font-weight:700}
 .live-caption{margin-top:10px;color:var(--muted);font-size:12px}
 .prediction-bottom{margin-top:20px}.bet-box{font-size:18px;line-height:2.1;margin-top:15px}.bet-box small{color:var(--muted)}
+.bet-candidate{font-size:14px;line-height:1.6}
+.bet-candidate .bet-group{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--card-border)}
+.bet-candidate .bet-group:last-of-type{border-bottom:0}
+.bet-candidate .bet-kind{flex:0 0 48px;font-weight:700;color:var(--blue)}
+.bet-candidate .bet-lines{flex:1;min-width:0}
+.bet-candidate .bet-lines p{margin:0 0 4px}
+.bet-candidate .bet-lines p:last-child{margin-bottom:0}
+.bet-candidate .bet-uma{white-space:nowrap}
+.bet-candidate .bet-uma b{color:var(--text);font-weight:700;margin-right:3px}
+.bet-candidate small{display:block;margin-top:10px;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:560px){.bet-candidate .bet-group{flex-direction:column;gap:2px}}
 .sample-link{display:inline-grid;place-items:center;margin-top:14px;min-height:44px;padding:0 18px;background:#eef1f7;border-radius:8px;color:var(--blue)}
 .danger-button{padding:12px 18px;background:#c0392b;color:white;border:0;border-radius:8px}.history-row a{color:var(--blue)}
 
