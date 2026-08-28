@@ -1,0 +1,311 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大井5R 地方競馬AI予想</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="local";
+  var base=(scope==="local")?"chikin":"chiki";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button" href="/">中央競馬</a>
+<a class="scope-switch-button active" href="/local">地方競馬</a>
+
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/local">ホーム</a>
+
+
+<a class="nav-button" href="/local/history">データ分析</a>
+
+
+
+</nav></header>
+<main class="race-page">
+<div class="top-back-row"><a class="back-button" href="/local">← 戻る</a>
+<div class="venue-buttons">
+<a class="venue-button active" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/1">大井</a><a class="venue-button" href="/local/predict/2026-08-31/%E7%9B%9B%E5%B2%A1/1">盛岡</a><a class="venue-button" href="/local/predict/2026-08-31/%E9%87%91%E6%B2%A2/1">金沢</a>
+</div></div>
+<div class="race-topbar">
+<div class="prediction-title">
+<div class="race-info-box">
+<div class="race-title-row"><span class="race-number-badge">5R</span>
+<h1>3歳1112</h1></div>
+<div class="race-pill-row">
+<span class="pill">🕐 16:58発走</span>
+<span class="pill">ダート 1400m</span>
+<span class="pill">2026-08-31</span>
+<span class="pill">12頭立て</span>
+<span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
+</div>
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
+</div></div></div>
+<section class="race-tabs">
+<a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/1">1R<span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/2">2R<span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/3">3R<span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/4">4R<span class="hot-flag-tab hf-green">期待馬</span><span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item active" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/5">5R<span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/6">6R<span class="grade grade-tab grade-c">C</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/7">7R<span class="grade grade-tab grade-a">A</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/8">8R<span class="hot-flag-tab hf-blue">期待馬</span><span class="grade grade-tab grade-b">B</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/9">9R<span class="grade grade-tab grade-b">B</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/10">10R<span class="hot-flag-tab hf-blue">期待馬</span><span class="grade grade-tab grade-b">B</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/11">11R<span class="grade grade-tab grade-a">A</span></a><a class="race-tab-item" href="/local/predict/2026-08-31/%E5%A4%A7%E4%BA%95/12">12R<span class="hot-flag-tab hf-gold">激熱</span><span class="grade grade-tab grade-s">S</span></a>
+</section>
+<section class="horse-table-wrap"><table class="horse-table"><thead><tr>
+<th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
+<tbody><tr><td class="frame frame-3">3</td><td>3</td>
+<td class="horse-main"><strong class="horse-name-lg">ベルベットオニキス</strong>
+<div class="jockey-row"><span>谷内貫</span><span class="odds-inline">2人気　4.3倍</span></div>
+<small>牡3　斤量55.0kg　嶋田幸晴</small>
+</td>
+<td><span class="grade grade-c">C</span></td>
+<td class="total-score">57</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>31.3%</strong><small class="place-rate">複 81.6%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 65</span><i class="bar green" style="width:65.0%"></i></div>
+<div class="metric"><span>騎手 29</span><i class="bar blue" style="width:29.2%"></i></div>
+<div class="metric"><span>斤量 68</span><i class="bar gold" style="width:68.5%"></i></div>
+<div class="metric"><span>出走実績 70</span><i class="bar red" style="width:70.3%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-5">5</td><td>5</td>
+<td class="horse-main"><strong class="horse-name-lg">ロードオブファイア</strong>
+<div class="jockey-row"><span>中村尚</span><span class="odds-inline">1人気　3.6倍</span></div>
+<small>セ3　斤量56.0kg　渡辺和雄</small>
+</td>
+<td><span class="grade grade-c">C</span></td>
+<td class="total-score">57</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>30.6%</strong><small class="place-rate">複 79.9%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 55</span><i class="bar green" style="width:55.0%"></i></div>
+<div class="metric"><span>騎手 24</span><i class="bar blue" style="width:23.9%"></i></div>
+<div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.5%"></i></div>
+<div class="metric"><span>出走実績 55</span><i class="bar red" style="width:55.0%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-4">4</td><td>4</td>
+<td class="horse-main"><strong class="horse-name-lg">ネオアオトビ</strong>
+<div class="jockey-row"><span>藤田凌</span><span class="odds-inline">3人気　5.5倍</span></div>
+<small>牡3　斤量56.0kg　立花伸</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">54</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>17.2%</strong><small class="place-rate">複 48.4%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 58</span><i class="bar green" style="width:57.8%"></i></div>
+<div class="metric"><span>騎手 40</span><i class="bar blue" style="width:40.2%"></i></div>
+<div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.5%"></i></div>
+<div class="metric"><span>出走実績 50</span><i class="bar red" style="width:50.1%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-7">7</td><td>10</td>
+<td class="horse-main"><strong class="horse-name-lg">カフジライオル</strong>
+<div class="jockey-row"><span>瀬川将</span><span class="odds-inline">5人気　7.2倍</span></div>
+<small>牡3　斤量56.0kg　松浦裕之</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">51</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>9.0%</strong><small class="place-rate">複 29.2%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 55</span><i class="bar green" style="width:55.0%"></i></div>
+<div class="metric"><span>騎手 27</span><i class="bar blue" style="width:26.9%"></i></div>
+<div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.5%"></i></div>
+<div class="metric"><span>出走実績 55</span><i class="bar red" style="width:55.0%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-1">1</td><td>1</td>
+<td class="horse-main"><strong class="horse-name-lg">デルマオンタケ</strong>
+<div class="jockey-row"><span>江里口</span><span class="odds-inline">7人気　21.5倍</span></div>
+<small>セ3　斤量56.0kg　鈴木啓之</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">48</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>5.6%</strong><small class="place-rate">複 21.2%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 55</span><i class="bar green" style="width:55.0%"></i></div>
+<div class="metric"><span>騎手 38</span><i class="bar blue" style="width:37.6%"></i></div>
+<div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.5%"></i></div>
+<div class="metric"><span>出走実績 55</span><i class="bar red" style="width:55.0%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-2">2</td><td>2</td>
+<td class="horse-main"><strong class="horse-name-lg">バイバイファイト</strong>
+<div class="jockey-row"><span>杉山海</span><span class="odds-inline">4人気　5.6倍</span></div>
+<small>牡3　斤量53.0kg　市村誠</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">43</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>2.1%</strong><small class="place-rate">複 12.9%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 34</span><i class="bar green" style="width:34.3%"></i></div>
+<div class="metric"><span>騎手 46</span><i class="bar blue" style="width:46.3%"></i></div>
+<div class="metric"><span>斤量 80</span><i class="bar gold" style="width:80.5%"></i></div>
+<div class="metric"><span>出走実績 39</span><i class="bar red" style="width:39.0%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-6">6</td><td>7</td>
+<td class="horse-main"><strong class="horse-name-lg">トゥーナルビーズ</strong>
+<div class="jockey-row"><span>増田充</span><span class="odds-inline">8人気　24.6倍</span></div>
+<small>牝3　斤量54.0kg　高野毅</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">43</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>2.0%</strong><small class="place-rate">複 12.7%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 47</span><i class="bar green" style="width:47.3%"></i></div>
+<div class="metric"><span>騎手 35</span><i class="bar blue" style="width:35.2%"></i></div>
+<div class="metric"><span>斤量 74</span><i class="bar gold" style="width:74.5%"></i></div>
+<div class="metric"><span>出走実績 43</span><i class="bar red" style="width:43.0%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-8">8</td><td>12</td>
+<td class="horse-main"><strong class="horse-name-lg">ココミサイル</strong>
+<div class="jockey-row"><span>松崎正</span><span class="odds-inline">6人気　16.5倍</span></div>
+<small>牡3　斤量56.0kg　岡野尚光</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">40</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.1%</strong><small class="place-rate">複 10.6%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 43</span><i class="bar green" style="width:43.3%"></i></div>
+<div class="metric"><span>騎手 37</span><i class="bar blue" style="width:36.9%"></i></div>
+<div class="metric"><span>斤量 62</span><i class="bar gold" style="width:62.5%"></i></div>
+<div class="metric"><span>出走実績 40</span><i class="bar red" style="width:40.4%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-6">6</td><td>8</td>
+<td class="horse-main"><strong class="horse-name-lg">チャオグラッド</strong>
+<div class="jockey-row"><span>西優哉</span><span class="odds-inline">9人気　26.2倍</span></div>
+<small>セ3　斤量53.0kg　橋本和馬</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">38</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.8%</strong><small class="place-rate">複 9.9%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 40</span><i class="bar green" style="width:40.0%"></i></div>
+<div class="metric"><span>騎手 42</span><i class="bar blue" style="width:41.6%"></i></div>
+<div class="metric"><span>斤量 80</span><i class="bar gold" style="width:80.5%"></i></div>
+<div class="metric"><span>出走実績 38</span><i class="bar red" style="width:38.1%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-8">8</td><td>11</td>
+<td class="horse-main"><strong class="horse-name-lg">ユウユウチャパティ</strong>
+<div class="jockey-row"><span>岡村健</span><span class="odds-inline">11人気　65.9倍</span></div>
+<small>牝3　斤量54.0kg　穂刈隆志</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">31</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.2%</strong><small class="place-rate">複 8.5%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 19</span><i class="bar green" style="width:18.6%"></i></div>
+<div class="metric"><span>騎手 45</span><i class="bar blue" style="width:45.2%"></i></div>
+<div class="metric"><span>斤量 74</span><i class="bar gold" style="width:74.5%"></i></div>
+<div class="metric"><span>出走実績 25</span><i class="bar red" style="width:25%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-5">5</td><td>6</td>
+<td class="horse-main"><strong class="horse-name-lg">マンゴーパフェ</strong>
+<div class="jockey-row"><span>田中洸</span><span class="odds-inline">10人気　31.8倍</span></div>
+<small>牝3　斤量54.0kg　小野寺晋</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">29</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.1%</strong><small class="place-rate">複 8.2%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 32</span><i class="bar green" style="width:32.5%"></i></div>
+<div class="metric"><span>騎手 31</span><i class="bar blue" style="width:30.8%"></i></div>
+<div class="metric"><span>斤量 74</span><i class="bar gold" style="width:74.5%"></i></div>
+<div class="metric"><span>出走実績 33</span><i class="bar red" style="width:33.1%"></i></div></div></td>
+
+</tr><tr><td class="frame frame-7">7</td><td>9</td>
+<td class="horse-main"><strong class="horse-name-lg">ラバテラダンサー</strong>
+<div class="jockey-row"><span>本村直</span><span class="odds-inline">12人気　127.6倍</span></div>
+<small>牝3　斤量54.0kg　高岩孝敏</small>
+</td>
+<td><span class="grade grade-d">D</span></td>
+<td class="total-score">28</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.1%</strong><small class="place-rate">複 8.2%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 32</span><i class="bar green" style="width:32.5%"></i></div>
+<div class="metric"><span>騎手 35</span><i class="bar blue" style="width:34.6%"></i></div>
+<div class="metric"><span>斤量 74</span><i class="bar gold" style="width:74.5%"></i></div>
+<div class="metric"><span>出走実績 38</span><i class="bar red" style="width:37.5%"></i></div></div></td>
+
+</tr>
+</tbody></table></section>
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
+<div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">3</span>
+<div class="ranking-horse"><h3>ベルベットオニキス</h3><p>複勝圏安定・ダート短距離血統適性</p></div><span class="grade grade-c">C</span><strong>57</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">5</span>
+<div class="ranking-horse"><h3>ロードオブファイア</h3><p>複勝圏安定</p></div><span class="grade grade-c">C</span><strong>57</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">4</span>
+<div class="ranking-horse"><h3>ネオアオトビ</h3><p>展開次第</p></div><span class="grade grade-d">D</span><strong>54</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">10</span>
+<div class="ranking-horse"><h3>カフジライオル</h3><p>展開次第</p></div><span class="grade grade-d">D</span><strong>51</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">1</span>
+<div class="ranking-horse"><h3>デルマオンタケ</h3><p>展開次第</p></div><span class="grade grade-d">D</span><strong>48</strong></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>AI買い目候補</h2></div>
+
+
+
+
+<div class="bet-box bet-candidate">
+<div class="bet-group"><span class="bet-kind">単勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">複勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">馬連</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>○</b> 5 ロードオブファイア</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>▲</b> 4 ネオアオトビ</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>△</b> 10 カフジライオル</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">ワイド</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>○</b> 5 ロードオブファイア</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>▲</b> 4 ネオアオトビ</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>△</b> 10 カフジライオル</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">三連複</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>○</b> 5 ロードオブファイア</span> － <span class="bet-uma"><b>▲</b> 4 ネオアオトビ</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>○</b> 5 ロードオブファイア</span> － <span class="bet-uma"><b>△</b> 10 カフジライオル</span></p>
+<p><span class="bet-uma"><b>◎</b> 3 ベルベットオニキス</span> － <span class="bet-uma"><b>○</b> 5 ロードオブファイア</span> － <span class="bet-uma"><b>☆</b> 1 デルマオンタケ</span></p>
+</div></div>
+<small>※ ◎○▲△☆ から機械的に作成した「AI買い目候補」です。地方競馬の買い目は過去成績の検証をしていません。的中や利益を保証するものではありません。金額配分はしていません。</small>
+</div></article></section></main>
+<script>
+(function(){
+  var el=document.getElementById('live-seconds');
+  if(!el) return;
+  var s=0;
+  setInterval(function(){ s++; el.textContent=s; },1000);
+  setTimeout(function(){ location.reload(); },60000);
+})();
+</script>
+
+</body></html>
