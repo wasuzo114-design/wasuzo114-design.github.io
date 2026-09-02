@@ -1,0 +1,138 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>阪神3R AI予想</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="central";
+  var base=(scope==="local")?"chikin":"chiki";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/">ホーム</a>
+
+<a class="nav-button" href="/history">データ分析</a>
+
+
+</nav></header>
+<main class="race-page">
+<div class="top-back-row"><a class="back-button" href="/">← 戻る</a>
+<div class="venue-buttons">
+<a class="venue-button" href="/predict/2026-09-05/%E4%B8%AD%E5%B1%B1/1?sort=&amp;lv=">中山</a><a class="venue-button" href="/predict/2026-09-05/%E6%9C%AD%E5%B9%8C/1?sort=&amp;lv=">札幌</a><a class="venue-button active" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/1?sort=&amp;lv=">阪神</a>
+</div></div>
+<div class="race-topbar">
+<div class="prediction-title">
+<div class="race-info-box">
+<div class="race-badge-row"><span class="race-number-badge">3R</span><span class="race-venue-badge">阪神</span></div>
+<h1>3歳未勝利</h1>
+<div class="race-pill-row">
+<span class="pill">🕐 発走</span>
+<span class="pill">ダート 1800m</span>
+
+
+
+
+<span class="pill">1頭立て</span>
+<span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
+</div>
+
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
+</div></div>
+</div>
+<section class="race-tabs">
+<a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/1?sort=&amp;lv=">1R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/2?sort=&amp;lv=">2R<span class="grade grade-tab grade-b">B</span></a><a class="active" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/3?sort=&amp;lv=">3R<span class="grade grade-tab grade-c">C</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/4?sort=&amp;lv=">4R<span class="grade grade-tab grade-c">C</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/5?sort=&amp;lv=">5R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/6?sort=&amp;lv=">6R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/7?sort=&amp;lv=">7R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/8?sort=&amp;lv=">8R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/9?sort=&amp;lv=">9R<span class="grade grade-tab grade-a">A</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/10?sort=&amp;lv=">10R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/11?sort=&amp;lv=">11R<span class="grade grade-tab grade-s">S</span></a><a class="" href="/predict/2026-09-05/%E9%98%AA%E7%A5%9E/12?sort=&amp;lv=">12R<span class="grade grade-tab grade-a">A</span></a>
+</section>
+<section class="horse-table-wrap"><table class="horse-table"><thead><tr>
+<th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
+<tbody><tr><td class="frame frame-8">0</td><td>0</td>
+<td class="horse-main"><strong class="horse-name-lg">サラサダンディー</strong>
+<div class="jockey-row"><span>国分恭介</span><span class="odds-inline">-人気　-倍</span></div>
+<small>牡3　斤量Nonekg　栗東　岡田稲男</small>
+</td>
+<td><span class="grade grade-c">C</span></td>
+<td class="total-score">67</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>50.7%</strong><small class="place-rate">複 62.2%</small></td>
+<td><div class="index-row">
+<div class="metric"><span>能力 50</span><i class="bar green" style="width:49.6%"></i></div>
+<div class="metric"><span>馬場適性 47</span><i class="bar red" style="width:47.3%"></i></div>
+<div class="metric"><span>騎手 46</span><i class="bar blue" style="width:46.2%"></i></div>
+<div class="metric"><span>調教 42</span><i class="bar orange" style="width:42.0%"></i></div>
+<div class="metric"><span>血統適性 20</span><i class="bar purple" style="width:20%"></i></div>
+<div class="metric"><span>展開(追込) 45</span><i class="bar teal" style="width:45%"></i></div>
+<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60%"></i></div>
+<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
+<div class="metric"><span>会場適性 71</span><i class="bar cyan" style="width:70.6%"></i></div>
+<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+
+</tr>
+</tbody></table></section>
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
+<div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">0</span>
+<div class="ranking-horse"><h3>サラサダンディー</h3><p>複勝圏安定</p></div><span class="grade grade-c">C</span><strong>67</strong></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>AI買い目候補</h2></div>
+
+
+
+
+<div class="bet-box bet-candidate">
+<div class="bet-group"><span class="bet-kind">単勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 0 サラサダンディー</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">複勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 0 サラサダンディー</span></p></div></div>
+
+
+<small>※ 過去成績を参考に、◎○▲△☆ から選定した「AI買い目候補」です。的中や利益を保証するものではありません。金額配分はしていません。</small>
+</div></article></section></main>
+<script>
+(function(){
+  var el=document.getElementById('live-seconds');
+  if(!el) return;
+  var s=0;
+  setInterval(function(){ s++; el.textContent=s; },1000);
+  setTimeout(function(){ location.reload(); },60000);
+})();
+</script>
+
+</body></html>
