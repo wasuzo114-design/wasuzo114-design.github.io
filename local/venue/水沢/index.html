@@ -70,48 +70,155 @@
 <section class="selection-panel">
 <form method="get" action="/local" class="selection-group">
 <label>対象日</label>
-<input type="date" name="date" value="2026-09-12" min="" max="" onchange="this.form.submit()">
+<input type="date" name="date" value="2026-09-13" min="" max="" onchange="this.form.submit()">
 <input type="hidden" name="venue" value="水沢"><input type="hidden" name="sort" value="rating">
 </form>
 <div><span class="selection-title">競馬場を選択</span>
 <div class="venue-buttons">
 
 <a class="venue-button" href="/local?sort=rating">すべて</a>
-<a class="venue-button" href="/local/venue/%E4%BD%90%E8%B3%80?sort=rating">佐賀</a><a class="venue-button" href="/local/venue/%E5%B8%AF%E5%BA%83?sort=rating">帯広</a><a class="venue-button" href="/local/venue/%E9%AB%98%E7%9F%A5?sort=rating">高知</a>
+<a class="venue-button" href="/local/venue/%E5%B8%AF%E5%BA%83?sort=rating">帯広</a><a class="venue-button active" href="/local/venue/%E6%B0%B4%E6%B2%A2?sort=rating">水沢</a><a class="venue-button" href="/local/venue/%E9%87%91%E6%B2%A2?sort=rating">金沢</a><a class="venue-button" href="/local/venue/%E9%AB%98%E7%9F%A5?sort=rating">高知</a>
 </div></div></section>
 
 <section class="race-section"><div class="section-heading">
-<div><p class="section-label">CURRENT RACES</p><h2>2026-09-12のレース</h2></div>
+<div><p class="section-label">CURRENT RACES</p><h2>2026-09-13のレース</h2></div>
 <div class="race-legend">
-<a class="" href="/local?date=2026-09-12&amp;venue=%E6%B0%B4%E6%B2%A2&amp;sort=number">レース一覧</a>
-<a class="active" href="/local?date=2026-09-12&amp;venue=%E6%B0%B4%E6%B2%A2&amp;sort=rating">AI高評価レース</a>
+<a class="" href="/local?date=2026-09-13&amp;venue=%E6%B0%B4%E6%B2%A2&amp;sort=number">レース一覧</a>
+<a class="active" href="/local?date=2026-09-13&amp;venue=%E6%B0%B4%E6%B2%A2&amp;sort=rating">AI高評価レース</a>
 
 </div></div>
 <div class="race-grid">
 
-<div class="empty-state"><h3>表示できるレースがありません</h3>
-<p>表示できる地方競馬レースがありません。</p></div>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/12?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>12R</strong><span class="grade-tag grade-tag-重賞">重賞</span><span class="grade grade-ss">SS</span><span class="hot-flag-chip hf-gold" title="激熱フラグ">激熱</span></div>
+<p class="start-time">18:05 水沢</p><p class="race-distance">ダート1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 5 ヒロシクン</h3>
+<div class="race-score"><span>総合指数</span><strong>99</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/7?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>7R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">14:50 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 サクラボーベル</h3>
+<div class="race-score"><span>総合指数</span><strong>93</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/10?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>10R</strong><span class="grade grade-a">A</span><span class="hot-flag-chip hf-red" title="激熱フラグ">激熱</span></div>
+<p class="start-time">16:50 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 リアルモハメド</h3>
+<div class="race-score"><span>総合指数</span><strong>92</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/11?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>11R</strong><span class="grade grade-a">A</span></div>
+<p class="start-time">17:30 水沢</p><p class="race-distance">ダート1600m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 3 タイセイストラーダ</h3>
+<div class="race-score"><span>総合指数</span><strong>91</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/3?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>3R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">12:40 水沢</p><p class="race-distance">ダート1300m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 1 ミッキーハッスル</h3>
+<div class="race-score"><span>総合指数</span><strong>83</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/8?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>8R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">15:25 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 ワナカ</h3>
+<div class="race-score"><span>総合指数</span><strong>82</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/4?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>4R</strong><span class="grade grade-b">B</span></div>
+<p class="start-time">13:15 水沢</p><p class="race-distance">ダート1300m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ドナアフロディテ</h3>
+<div class="race-score"><span>総合指数</span><strong>81</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/5?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>5R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">13:45 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 8 エクスペクタント</h3>
+<div class="race-score"><span>総合指数</span><strong>70</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/6?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>6R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">14:20 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 7 ナディア</h3>
+<div class="race-score"><span>総合指数</span><strong>67</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/9?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>9R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">16:05 水沢</p><p class="race-distance">ダート1400m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 9 ベルドラゴ</h3>
+<div class="race-score"><span>総合指数</span><strong>67</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/2?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>2R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">12:05 水沢</p><p class="race-distance">ダート1300m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 2 サトノメドーサ</h3>
+<div class="race-score"><span>総合指数</span><strong>67</strong></div>
+
+</a>
+
+<a class="race-card" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/1?sort=rating&amp;lv=%E6%B0%B4%E6%B2%A2">
+<div class="race-card-top"><strong>1R</strong><span class="grade grade-c">C</span></div>
+<p class="start-time">11:30 水沢</p><p class="race-distance">ダート850m</p>
+<div class="race-divider"></div>
+<p class="ai-top-label">AIおすすめトップ</p><h3>◎ 4 ファイストス</h3>
+<div class="race-score"><span>総合指数</span><strong>56</strong></div>
+
+</a>
+
 </div>
 
 </section>
 
 <section class="dashboard-grid">
 <article class="dashboard-panel"><div class="panel-title panel-title-center"><span>🏆</span><h2>今日のおすすめAI本命馬 TOP5</h2></div>
-<a class="ranking-row" href="/local/predict/2026-09-12/%E4%BD%90%E8%B3%80/3"><strong class="ranking-number">1</strong>
-<div class="ranking-horse"><p>佐賀3R　脊振山特別</p><h3>ウルトラノホシ</h3></div>
+<a class="ranking-row" href="/local/predict/2026-09-13/%E9%87%91%E6%B2%A2/7"><strong class="ranking-number">1</strong>
+<div class="ranking-horse"><p>金沢7R　やりめん七年目記念杯(B1)</p><h3>ハクサンリバーブ</h3></div>
 <span class="grade grade-ss">SS</span><strong>100点</strong></a>
-<a class="ranking-row" href="/local/predict/2026-09-12/%E9%AB%98%E7%9F%A5/3"><strong class="ranking-number">2</strong>
-<div class="ranking-horse"><p>高知3R　3歳ー1</p><h3>バリキング<span class="confident-badge" title="激熱フラグ">激熱フラグ</span></h3></div>
+<a class="ranking-row" href="/local/predict/2026-09-13/%E9%AB%98%E7%9F%A5/4"><strong class="ranking-number">2</strong>
+<div class="ranking-horse"><p>高知4R　3歳ー5</p><h3>ピコマーキス<span class="confident-badge" title="激熱フラグ">激熱フラグ</span></h3></div>
 <span class="grade grade-ss">SS</span><strong>100点</strong></a>
-<a class="ranking-row" href="/local/predict/2026-09-12/%E4%BD%90%E8%B3%80/8"><strong class="ranking-number">3</strong>
-<div class="ranking-horse"><p>佐賀8R　宇宙の日賞(C2)</p><h3>オンリーラヴ<span class="confident-badge" title="激熱フラグ">激熱フラグ</span></h3></div>
-<span class="grade grade-s">S</span><strong>99点</strong></a>
-<a class="ranking-row" href="/local/predict/2026-09-12/%E4%BD%90%E8%B3%80/5"><strong class="ranking-number">4</strong>
-<div class="ranking-horse"><p>佐賀5R　C2ー6組</p><h3>ミセスジョーンズ</h3></div>
-<span class="grade grade-s">S</span><strong>96点</strong></a>
-<a class="ranking-row" href="/local/predict/2026-09-12/%E9%AB%98%E7%9F%A5/8"><strong class="ranking-number">5</strong>
-<div class="ranking-horse"><p>高知8R　Bー4</p><h3>テーオーシリウス</h3></div>
-<span class="grade grade-s">S</span><strong>96点</strong></a>
+<a class="ranking-row" href="/local/predict/2026-09-13/%E9%AB%98%E7%9F%A5/11"><strong class="ranking-number">3</strong>
+<div class="ranking-horse"><p>高知11R　Aー2</p><h3>シャマル</h3></div>
+<span class="grade grade-ss">SS</span><strong>100点</strong></a>
+<a class="ranking-row" href="/local/predict/2026-09-13/%E6%B0%B4%E6%B2%A2/12"><strong class="ranking-number">4</strong>
+<div class="ranking-horse"><p>水沢12R　青藍賞重賞<span class="grade-tag grade-tag-重賞">重賞</span></p><h3>ヒロシクン<span class="confident-badge" title="激熱フラグ">激熱フラグ</span></h3></div>
+<span class="grade grade-ss">SS</span><strong>99点</strong></a>
+<a class="ranking-row" href="/local/predict/2026-09-13/%E9%87%91%E6%B2%A2/2"><strong class="ranking-number">5</strong>
+<div class="ranking-horse"><p>金沢2R　C24</p><h3>エイチエヌハーモニ<span class="confident-badge" title="激熱フラグ">激熱フラグ</span></h3></div>
+<span class="grade grade-s">S</span><strong>97点</strong></a>
 
 <a class="sample-link" style="margin-top:16px" href="/races">AI本命馬ランキングをもっと見る →</a>
 </article>
