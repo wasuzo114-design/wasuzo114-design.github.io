@@ -80,11 +80,13 @@
 <p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
 </div></div></div>
 
+
+
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
 <tbody><tr><td class="frame frame-4">4</td><td>4</td>
 <td class="horse-main"><strong class="horse-name-lg">ヴィヴィアンパレス</strong>
-<div class="jockey-row"><span>町田直希</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>町田直希</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牝2　斤量54.0kg　川崎久保秀男</small>
 </td>
 <td><span class="grade grade-c">C</span></td>
@@ -99,7 +101,7 @@
 
 </tr><tr><td class="frame frame-5">5</td><td>5</td>
 <td class="horse-main"><strong class="horse-name-lg">ケンリーオーウェン</strong>
-<div class="jockey-row"><span>岡村健司</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>岡村健司</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牡2　斤量55.0kg　川崎河津裕昭</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -114,7 +116,7 @@
 
 </tr><tr><td class="frame frame-6">6</td><td>6</td>
 <td class="horse-main"><strong class="horse-name-lg">ベアブレーズ</strong>
-<div class="jockey-row"><span>田中涼</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>田中涼</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牝2　斤量54.0kg　川崎鈴木義久</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -129,7 +131,7 @@
 
 </tr><tr><td class="frame frame-2">2</td><td>2</td>
 <td class="horse-main"><strong class="horse-name-lg">ダイノエイコウ</strong>
-<div class="jockey-row"><span>野畑凌</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>野畑凌</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牡2　斤量55.0kg　川崎今井輝和</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -144,7 +146,7 @@
 
 </tr><tr><td class="frame frame-1">1</td><td>1</td>
 <td class="horse-main"><strong class="horse-name-lg">ココカコニコ</strong>
-<div class="jockey-row"><span>本田紀忠</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>本田紀忠</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牝2　斤量54.0kg　川崎平田正一</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -159,7 +161,7 @@
 
 </tr><tr><td class="frame frame-3">3</td><td>3</td>
 <td class="horse-main"><strong class="horse-name-lg">デイデイト</strong>
-<div class="jockey-row"><span>△加藤雄真</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>△加藤雄真</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牡2　斤量53.0kg　川崎甲田悟史</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -174,7 +176,7 @@
 
 </tr><tr><td class="frame frame-7">7</td><td>7</td>
 <td class="horse-main"><strong class="horse-name-lg">ベラブラウニー</strong>
-<div class="jockey-row"><span>櫻井光輔</span><span class="odds-inline">-人気　-倍</span></div>
+<div class="jockey-row"><span>櫻井光輔</span><span class="odds-inline"><span class="odds-wait" style="color:#ef6c00">オッズ取得待ち</span></span></div>
 <small>牡2　斤量55.0kg　川崎八木正喜</small>
 </td>
 <td><span class="grade grade-d">D</span></td>
@@ -208,7 +210,7 @@
   if(!el) return;
   var s=0;
   setInterval(function(){ s++; el.textContent=s; },1000);
-  setTimeout(function(){ location.reload(); },60000);
+  setTimeout(function(){ location.reload(); }, document.querySelector('.odds-wait') ? 15000 : 60000);
 })();
 </script>
 

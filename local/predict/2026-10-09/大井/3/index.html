@@ -84,6 +84,8 @@
 <section class="race-tabs">
 <a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/1">1R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/2">2R</a><a class="race-tab-item active" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/3">3R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/4">4R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/5">5R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/6">6R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/7">7R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/8">8R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/9">9R</a><a class="race-tab-item" href="/local/predict/2026-10-09/%E5%A4%A7%E4%BA%95/10">10R</a>
 </section>
+
+
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
 <tbody><tr><td class="frame frame-8">8</td><td>9</td>
@@ -261,7 +263,7 @@
   if(!el) return;
   var s=0;
   setInterval(function(){ s++; el.textContent=s; },1000);
-  setTimeout(function(){ location.reload(); },60000);
+  setTimeout(function(){ location.reload(); }, document.querySelector('.odds-wait') ? 15000 : 60000);
 })();
 </script>
 
