@@ -2,7 +2,7 @@
 
 <!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>東京12R AI予想</title>
+<title>東京12R YUMA予想</title>
 <link rel="stylesheet" href="/static/style.css"></head>
 <body style="visibility:hidden">
 
@@ -45,7 +45,7 @@
 })();
 </script>
 <header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
-<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div><h1>YUMA競馬予想</h1><p>データ分析 × YUMA予想で勝率を最大化</p></div></a>
 <div class="scope-switch">
 <a class="scope-switch-button active" href="/">中央競馬</a>
 <a class="scope-switch-button" href="/local">地方競馬</a>
@@ -87,358 +87,182 @@
 </div></div>
 </div>
 <section class="race-tabs">
-<a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/1?sort=&amp;lv=">1R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/2?sort=&amp;lv=">2R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/3?sort=&amp;lv=">3R<span class="grade grade-tab grade-a">A</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/4?sort=&amp;lv=">4R<span class="grade grade-tab grade-c">C</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/5?sort=&amp;lv=">5R<span class="grade grade-tab grade-c">C</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/6?sort=&amp;lv=">6R<span class="grade grade-tab grade-c">C</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/7?sort=&amp;lv=">7R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/8?sort=&amp;lv=">8R<span class="grade grade-tab grade-a">A</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/9?sort=&amp;lv=">9R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/10?sort=&amp;lv=">10R<span class="grade grade-tab grade-b">B</span></a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/11?sort=&amp;lv=">11R</a><a class="active" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/12?sort=&amp;lv=">12R<span class="grade grade-tab grade-b">B</span></a>
+<a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/1?sort=&amp;lv=">1R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/2?sort=&amp;lv=">2R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/3?sort=&amp;lv=">3R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/4?sort=&amp;lv=">4R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/5?sort=&amp;lv=">5R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/6?sort=&amp;lv=">6R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/7?sort=&amp;lv=">7R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/8?sort=&amp;lv=">8R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/9?sort=&amp;lv=">9R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/10?sort=&amp;lv=">10R</a><a class="" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/11?sort=&amp;lv=">11R</a><a class="active" href="/predict/2026-10-11/%E6%9D%B1%E4%BA%AC/12?sort=&amp;lv=">12R</a>
 </section>
-
+<p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">30分更新</span><small style="font-weight:400;margin-left:6px">(15:44時点)</small></p>
 
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
-<th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th><th>各指数</th></tr></thead>
+<th>枠</th><th>馬番</th><th>馬名</th><th>ランク</th><th>着順</th><th>勝率</th></tr></thead>
 <tbody><tr><td class="frame frame-4">4</td><td>8</td>
-<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">◎</span><strong class="horse-name-lg">ジャックナダル</strong>
-<div class="jockey-row"><span>川田将雅</span><span class="odds-inline">1人気　3.7倍</span></div>
+<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">◎</span><strong class="horse-name-lg">ジャックナダル<span class="hpsm" data-hn="8" style="display:inline !important;width:auto !important;color:#1565c0;font-weight:bold;margin-left:.4em">▲</span></strong>
+<div class="jockey-row"><span>川田将雅</span><span class="odds-inline">1人気　2.5倍</span></div>
 <small>牡3　斤量57.0kg　馬体重526kg(+0)　美浦　伊坂重信</small>
 </td>
-<td><span class="grade grade-b">B</span></td>
-<td class="total-score">85</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>15.6%</strong><small class="place-rate">複 55.0%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 79</span><i class="bar red" style="width:79.1%"></i></div>
-<div class="metric"><span>騎手 100</span><i class="bar blue" style="width:100%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 66</span><i class="bar gold" style="width:66.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 100</span><i class="bar cyan" style="width:100%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>1位</strong></td>
+<td><span class="finish-badge finish-silver">2着</span></td>
+<td><strong>35.8%</strong></td>
 
-</tr><tr><td class="frame frame-1">1</td><td>1</td>
-<td class="horse-main"><strong class="horse-name-lg">ピコテンダー</strong>
-<div class="jockey-row"><span>荻野極</span><span class="odds-inline">4人気　8.2倍</span></div>
-<small>牝4　斤量56.0kg　馬体重494kg(+2)　美浦　上原佑紀</small>
-</td>
-<td><span class="grade grade-b">B</span></td>
-<td class="total-score">83</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>12.2%</strong><small class="place-rate">複 42.8%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 92</span><i class="bar red" style="width:92%"></i></div>
-<div class="metric"><span>騎手 70</span><i class="bar blue" style="width:70.2%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(差し) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 72</span><i class="bar gold" style="width:72.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 90</span><i class="bar cyan" style="width:89.9%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
-
-</tr><tr><td class="frame frame-3">3</td><td>6</td>
-<td class="horse-main"><strong class="horse-name-lg">ジャスティンルマン</strong>
-<div class="jockey-row"><span>戸崎圭太</span><span class="odds-inline">2人気　5.2倍</span></div>
-<small>牡3　斤量57.0kg　馬体重542kg(-2)　栗東　杉山晴紀</small>
-</td>
-<td><span class="grade grade-b">B</span></td>
-<td class="total-score">81</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>7.8%</strong><small class="place-rate">複 29.9%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 72</span><i class="bar red" style="width:72.3%"></i></div>
-<div class="metric"><span>騎手 100</span><i class="bar blue" style="width:100%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 54</span><i class="bar purple" style="width:54.3%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 66</span><i class="bar gold" style="width:66.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 80</span><i class="bar cyan" style="width:80.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
 
 </tr><tr><td class="frame frame-4">4</td><td>7</td>
-<td class="horse-main"><strong class="horse-name-lg">ラインジーク</strong>
-<div class="jockey-row"><span>横山典弘</span><span class="odds-inline">3人気　6.7倍</span></div>
+<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">○</span><strong class="horse-name-lg">ラインジーク<span class="hpsm" data-hn="7" style="display:inline !important;width:auto !important;color:#1565c0;font-weight:bold;margin-left:.4em">◎</span></strong>
+<div class="jockey-row"><span>横山典弘</span><span class="odds-inline">4人気　8.2倍</span></div>
 <small>牡3　斤量57.0kg　馬体重442kg(+4)　美浦　水野貴広</small>
 </td>
-<td><span class="grade grade-b">B</span></td>
-<td class="total-score">80</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>7.0%</strong><small class="place-rate">複 29.0%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 92</span><i class="bar red" style="width:92%"></i></div>
-<div class="metric"><span>騎手 100</span><i class="bar blue" style="width:100%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 66</span><i class="bar gold" style="width:66.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 100</span><i class="bar cyan" style="width:100%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>2位</strong></td>
+<td><span class="finish-badge finish-plain">4着</span></td>
+<td><strong>11.8%</strong></td>
+
 
 </tr><tr><td class="frame frame-6">6</td><td>12</td>
-<td class="horse-main"><strong class="horse-name-lg">マサノユニコーン</strong>
-<div class="jockey-row"><span>デムーロ</span><span class="odds-inline">5人気　10.6倍</span></div>
+<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">▲</span><strong class="horse-name-lg">マサノユニコーン<span class="hpsm" data-hn="12" style="display:inline !important;width:auto !important;color:#1565c0;font-weight:bold;margin-left:.4em">☆</span></strong>
+<div class="jockey-row"><span>デムーロ</span><span class="odds-inline">6人気　14.3倍</span></div>
 <small>牡4　斤量58.0kg　馬体重476kg(+4)　美浦　小島茂之</small>
 </td>
-<td><span class="grade grade-b">B</span></td>
-<td class="total-score">76</td>
+<td><strong>3位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>3.2%</strong><small class="place-rate">複 19.2%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 78</span><i class="bar red" style="width:77.7%"></i></div>
-<div class="metric"><span>騎手 100</span><i class="bar blue" style="width:100%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 100</span><i class="bar cyan" style="width:100%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>10.9%</strong></td>
 
-</tr><tr><td class="frame frame-7">7</td><td>13</td>
-<td class="horse-main"><strong class="horse-name-lg">ドントゥザムーン</strong>
-<div class="jockey-row"><span>三浦皇成</span><span class="odds-inline">6人気　10.6倍</span></div>
-<small>牡4　斤量58.0kg　馬体重474kg(+4)　美浦　高木登</small>
+
+</tr><tr><td class="frame frame-3">3</td><td>6</td>
+<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">△</span><strong class="horse-name-lg">ジャスティンルマン<span class="hpsm" data-hn="6" style="display:inline !important;width:auto !important;color:#1565c0;font-weight:bold;margin-left:.4em">△</span></strong>
+<div class="jockey-row"><span>戸崎圭太</span><span class="odds-inline">4人気　8.0倍</span></div>
+<small>牡3　斤量57.0kg　馬体重542kg(-2)　栗東　杉山晴紀</small>
 </td>
-<td><span class="grade grade-c">C</span></td>
-<td class="total-score">75</td>
+<td><strong>4位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>2.3%</strong><small class="place-rate">複 17.1%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 62</span><i class="bar red" style="width:62.5%"></i></div>
-<div class="metric"><span>騎手 96</span><i class="bar blue" style="width:96.0%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 82</span><i class="bar purple" style="width:81.7%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 100</span><i class="bar cyan" style="width:100%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>7.8%</strong></td>
+
+
+</tr><tr><td class="frame frame-1">1</td><td>1</td>
+<td class="horse-main"><span class="mark-badge" style="display:inline-block;min-width:1.6em;text-align:center;margin-right:6px;padding:0 6px;border-radius:4px;background:#e53935;color:#fff;font-weight:800">☆</span><strong class="horse-name-lg">ピコテンダー<span class="hpsm" data-hn="1" style="display:inline !important;width:auto !important;color:#1565c0;font-weight:bold;margin-left:.4em">○</span></strong>
+<div class="jockey-row"><span>荻野極</span><span class="odds-inline">3人気　6.8倍</span></div>
+<small>牝4　斤量56.0kg　馬体重494kg(+2)　美浦　上原佑紀</small>
+</td>
+<td><strong>5位</strong></td>
+<td><span class="finish-badge finish-bronze">3着</span></td>
+<td><strong>7.1%</strong></td>
+
 
 </tr><tr><td class="frame frame-8">8</td><td>16</td>
 <td class="horse-main"><strong class="horse-name-lg">キョウエイカンフ</strong>
-<div class="jockey-row"><span>横山和生</span><span class="odds-inline">8人気　17.8倍</span></div>
+<div class="jockey-row"><span>横山和生</span><span class="odds-inline">7人気　15.0倍</span></div>
 <small>牡6　斤量58.0kg　馬体重526kg(+0)　美浦　勢司和浩</small>
 </td>
-<td><span class="grade grade-c">C</span></td>
-<td class="total-score">72</td>
+<td><strong>6位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>1.4%</strong><small class="place-rate">複 14.7%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 79</span><i class="bar red" style="width:79.2%"></i></div>
-<div class="metric"><span>騎手 83</span><i class="bar blue" style="width:83.1%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 80</span><i class="bar purple" style="width:79.6%"></i></div>
-<div class="metric"><span>展開(追込) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 92</span><i class="bar cyan" style="width:92.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>5.0%</strong></td>
 
-</tr><tr><td class="frame frame-7">7</td><td>14</td>
-<td class="horse-main"><strong class="horse-name-lg">ベルビースタローン</strong>
-<div class="jockey-row"><span>小林美駒</span><span class="odds-inline">9人気　20.8倍</span></div>
-<small>牝4　斤量54.0kg　馬体重508kg(+2)　美浦　戸田博文</small>
-</td>
-<td><span class="grade grade-c">C</span></td>
-<td class="total-score">65</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.4%</strong><small class="place-rate">複 11.8%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 59</span><i class="bar red" style="width:58.9%"></i></div>
-<div class="metric"><span>騎手 80</span><i class="bar blue" style="width:79.5%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 58</span><i class="bar purple" style="width:57.7%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 84</span><i class="bar gold" style="width:84.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 80</span><i class="bar cyan" style="width:80.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
-
-</tr><tr><td class="frame frame-5">5</td><td>10</td>
-<td class="horse-main"><strong class="horse-name-lg">オカメノコイ</strong>
-<div class="jockey-row"><span>吉村誠之助</span><span class="odds-inline">7人気　16.1倍</span></div>
-<small>牝4　斤量56.0kg　馬体重492kg(+8)　美浦　小笠倫弘</small>
-</td>
-<td><span class="grade grade-c">C</span></td>
-<td class="total-score">64</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.3%</strong><small class="place-rate">複 11.9%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 66</span><i class="bar red" style="width:66.0%"></i></div>
-<div class="metric"><span>騎手 73</span><i class="bar blue" style="width:73.2%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 63</span><i class="bar purple" style="width:63.3%"></i></div>
-<div class="metric"><span>展開(追込) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 72</span><i class="bar gold" style="width:72.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 60</span><i class="bar cyan" style="width:60.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
 
 </tr><tr><td class="frame frame-5">5</td><td>9</td>
 <td class="horse-main"><strong class="horse-name-lg">メイショウドライブ</strong>
-<div class="jockey-row"><span>永島まなみ</span><span class="odds-inline">10人気　25.4倍</span></div>
+<div class="jockey-row"><span>永島まなみ</span><span class="odds-inline">11人気　41.3倍</span></div>
 <small>牝4　斤量54.0kg　馬体重456kg(+4)　栗東　鈴木孝志</small>
 </td>
-<td><span class="grade grade-c">C</span></td>
-<td class="total-score">62</td>
+<td><strong>7位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.2%</strong><small class="place-rate">複 11.6%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 77</span><i class="bar red" style="width:76.8%"></i></div>
-<div class="metric"><span>騎手 53</span><i class="bar blue" style="width:53.1%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 84</span><i class="bar gold" style="width:84.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 80</span><i class="bar cyan" style="width:80.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>3.4%</strong></td>
 
-</tr><tr><td class="frame frame-2">2</td><td>3</td>
-<td class="horse-main"><strong class="horse-name-lg">キョウエイスレーヴ</strong>
-<div class="jockey-row"><span>長浜鴻緒</span><span class="odds-inline">15人気　62.1倍</span></div>
-<small>牡4　斤量57.0kg　馬体重444kg(-8)　美浦　萱野浩二</small>
-</td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">54</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.1%</strong><small class="place-rate">複 11.3%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 68</span><i class="bar red" style="width:67.8%"></i></div>
-<div class="metric"><span>騎手 48</span><i class="bar blue" style="width:47.8%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(差し) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 66</span><i class="bar gold" style="width:66.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 100</span><i class="bar cyan" style="width:100%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
 
-</tr><tr><td class="frame frame-2">2</td><td>4</td>
-<td class="horse-main"><strong class="horse-name-lg">レディサン</strong>
-<div class="jockey-row"><span>杉原誠人</span><span class="odds-inline">16人気　89.8倍</span></div>
-<small>牝3　斤量55.0kg　馬体重464kg(-4)　美浦　栗田徹</small>
+</tr><tr><td class="frame frame-7">7</td><td>14</td>
+<td class="horse-main"><strong class="horse-name-lg">ベルビースタローン</strong>
+<div class="jockey-row"><span>小林美駒</span><span class="odds-inline">10人気　31.4倍</span></div>
+<small>牝4　斤量54.0kg　馬体重508kg(+2)　美浦　戸田博文</small>
 </td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">54</td>
+<td><strong>8位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.1%</strong><small class="place-rate">複 11.3%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 66</span><i class="bar red" style="width:66.1%"></i></div>
-<div class="metric"><span>騎手 42</span><i class="bar blue" style="width:42.0%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 92</span><i class="bar purple" style="width:92%"></i></div>
-<div class="metric"><span>展開(追込) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 78</span><i class="bar gold" style="width:78.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 80</span><i class="bar cyan" style="width:80.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>3.0%</strong></td>
 
-</tr><tr><td class="frame frame-6">6</td><td>11</td>
-<td class="horse-main"><strong class="horse-name-lg">イノキ</strong>
-<div class="jockey-row"><span>菊沢一樹</span><span class="odds-inline">12人気　43.4倍</span></div>
-<small>牡4　斤量58.0kg　馬体重498kg(-6)　美浦　岩戸孝樹</small>
+
+</tr><tr><td class="frame frame-7">7</td><td>13</td>
+<td class="horse-main"><strong class="horse-name-lg">ドントゥザムーン</strong>
+<div class="jockey-row"><span>三浦皇成</span><span class="odds-inline">2人気　6.6倍</span></div>
+<small>牡4　斤量58.0kg　馬体重474kg(+4)　美浦　高木登</small>
 </td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">54</td>
-<td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.1%</strong><small class="place-rate">複 11.3%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 64</span><i class="bar red" style="width:64.4%"></i></div>
-<div class="metric"><span>騎手 45</span><i class="bar blue" style="width:44.7%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 50</span><i class="bar purple" style="width:49.7%"></i></div>
-<div class="metric"><span>展開(差し) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 53</span><i class="bar cyan" style="width:53.3%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>9位</strong></td>
+<td><span class="finish-badge finish-plain">5着</span></td>
+<td><strong>2.9%</strong></td>
+
 
 </tr><tr><td class="frame frame-3">3</td><td>5</td>
 <td class="horse-main"><strong class="horse-name-lg">アルジェンタージョ</strong>
-<div class="jockey-row"><span>佐藤翔馬</span><span class="odds-inline">11人気　25.8倍</span></div>
+<div class="jockey-row"><span>佐藤翔馬</span><span class="odds-inline">9人気　28.2倍</span></div>
 <small>牝5　斤量53.0kg　馬体重468kg(+0)　美浦　伊藤圭三</small>
 </td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">53</td>
+<td><strong>10位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.1%</strong><small class="place-rate">複 11.3%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 79</span><i class="bar green" style="width:78.6%"></i></div>
-<div class="metric"><span>馬場適性 57</span><i class="bar red" style="width:56.7%"></i></div>
-<div class="metric"><span>騎手 26</span><i class="bar blue" style="width:25.6%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 50</span><i class="bar purple" style="width:49.9%"></i></div>
-<div class="metric"><span>展開(差し) 45</span><i class="bar teal" style="width:45%"></i></div>
-<div class="metric"><span>斤量 90</span><i class="bar gold" style="width:90%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 59</span><i class="bar cyan" style="width:58.6%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>2.5%</strong></td>
+
+
+</tr><tr><td class="frame frame-5">5</td><td>10</td>
+<td class="horse-main"><strong class="horse-name-lg">オカメノコイ</strong>
+<div class="jockey-row"><span>吉村誠之助</span><span class="odds-inline">9人気　34.4倍</span></div>
+<small>牝4　斤量56.0kg　馬体重492kg(+8)　美浦　小笠倫弘</small>
+</td>
+<td><strong>11位</strong></td>
+<td><span class="finish-badge finish-gold">1着</span></td>
+<td><strong>2.5%</strong></td>
+
+
+</tr><tr><td class="frame frame-2">2</td><td>3</td>
+<td class="horse-main"><strong class="horse-name-lg">キョウエイスレーヴ</strong>
+<div class="jockey-row"><span>長浜鴻緒</span><span class="odds-inline">14人気　86.5倍</span></div>
+<small>牡4　斤量57.0kg　馬体重444kg(-8)　美浦　萱野浩二</small>
+</td>
+<td><strong>12位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.8%</strong></td>
+
+
+</tr><tr><td class="frame frame-6">6</td><td>11</td>
+<td class="horse-main"><strong class="horse-name-lg">イノキ</strong>
+<div class="jockey-row"><span>菊沢一樹</span><span class="odds-inline">12人気　73.4倍</span></div>
+<small>牡4　斤量58.0kg　馬体重498kg(-6)　美浦　岩戸孝樹</small>
+</td>
+<td><strong>13位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.8%</strong></td>
+
 
 </tr><tr><td class="frame frame-8">8</td><td>15</td>
 <td class="horse-main"><strong class="horse-name-lg">レイアポポ</strong>
-<div class="jockey-row"><span>原優介</span><span class="odds-inline">14人気　51.2倍</span></div>
+<div class="jockey-row"><span>原優介</span><span class="odds-inline">15人気　100.4倍</span></div>
 <small>牝4　斤量56.0kg　馬体重492kg(+2)　美浦　青木孝文</small>
 </td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">52</td>
+<td><strong>14位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.1%</strong><small class="place-rate">複 11.3%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 100</span><i class="bar green" style="width:100%"></i></div>
-<div class="metric"><span>馬場適性 64</span><i class="bar red" style="width:63.5%"></i></div>
-<div class="metric"><span>騎手 39</span><i class="bar blue" style="width:38.9%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 74</span><i class="bar purple" style="width:74.3%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 72</span><i class="bar gold" style="width:72.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 48</span><i class="bar cyan" style="width:48.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>1.5%</strong></td>
+
+
+</tr><tr><td class="frame frame-2">2</td><td>4</td>
+<td class="horse-main"><strong class="horse-name-lg">レディサン</strong>
+<div class="jockey-row"><span>杉原誠人</span><span class="odds-inline">16人気　173.8倍</span></div>
+<small>牝3　斤量55.0kg　馬体重464kg(-4)　美浦　栗田徹</small>
+</td>
+<td><strong>15位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.4%</strong></td>
+
 
 </tr><tr><td class="frame frame-1">1</td><td>2</td>
 <td class="horse-main"><strong class="horse-name-lg">ズバットマサムネ</strong>
-<div class="jockey-row"><span>小崎綾也</span><span class="odds-inline">13人気　44.4倍</span></div>
+<div class="jockey-row"><span>小崎綾也</span><span class="odds-inline">13人気　85.0倍</span></div>
 <small>セ5　斤量58.0kg　馬体重482kg(+0)　栗東　杉山佳明</small>
 </td>
-<td><span class="grade grade-d">D</span></td>
-<td class="total-score">48</td>
+<td><strong>16位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td><strong>0.0%</strong><small class="place-rate">複 11.2%</small></td>
-<td><div class="index-row">
-<div class="metric"><span>能力 71</span><i class="bar green" style="width:70.6%"></i></div>
-<div class="metric"><span>馬場適性 51</span><i class="bar red" style="width:51.0%"></i></div>
-<div class="metric"><span>騎手 50</span><i class="bar blue" style="width:50.4%"></i></div>
-<div class="metric"><span>調教 55</span><i class="bar orange" style="width:55%"></i></div>
-<div class="metric"><span>血統適性 55</span><i class="bar purple" style="width:55.0%"></i></div>
-<div class="metric"><span>展開(先行) 55</span><i class="bar teal" style="width:55%"></i></div>
-<div class="metric"><span>斤量 60</span><i class="bar gold" style="width:60.2%"></i></div>
-<div class="metric"><span>上がり 55</span><i class="bar pink" style="width:55%"></i></div>
-<div class="metric"><span>会場適性 80</span><i class="bar cyan" style="width:80.0%"></i></div>
-<div class="metric"><span>クラス補正 55</span><i class="bar lime" style="width:55%"></i></div></div></td>
+<td><strong>0.9%</strong></td>
+
 
 </tr>
 </tbody></table></section>
-<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>YUMA結論</h2></div>
 <div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">8</span>
-<div class="ranking-horse"><h3>ジャックナダル</h3><p>能力上位・騎手好相性・複勝圏安定・ダート短距離血統適性</p></div><span class="grade grade-b">B</span><strong>85</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">1</span>
-<div class="ranking-horse"><h3>ピコテンダー</h3><p>能力上位・複勝圏安定・ダート短距離血統適性</p></div><span class="grade grade-b">B</span><strong>83</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">6</span>
-<div class="ranking-horse"><h3>ジャスティンルマン</h3><p>能力上位・騎手好相性</p></div><span class="grade grade-b">B</span><strong>81</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">7</span>
-<div class="ranking-horse"><h3>ラインジーク</h3><p>能力上位・騎手好相性・ダート短距離血統適性</p></div><span class="grade grade-b">B</span><strong>80</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">12</span>
-<div class="ranking-horse"><h3>マサノユニコーン</h3><p>能力上位・騎手好相性・ダート短距離血統適性</p></div><span class="grade grade-b">B</span><strong>76</strong></div></article>
-<article class="dashboard-panel"><div class="panel-title"><h2>AI買い目候補</h2></div>
+<div class="ranking-horse"><h3>ジャックナダル</h3></div><span class="grade">1位</span><strong>35.8%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">7</span>
+<div class="ranking-horse"><h3>ラインジーク</h3></div><span class="grade">2位</span><strong>11.8%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">12</span>
+<div class="ranking-horse"><h3>マサノユニコーン</h3></div><span class="grade">3位</span><strong>10.9%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">6</span>
+<div class="ranking-horse"><h3>ジャスティンルマン</h3></div><span class="grade">4位</span><strong>7.8%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">1</span>
+<div class="ranking-horse"><h3>ピコテンダー</h3></div><span class="grade">5位</span><strong>7.1%</strong></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>YUMA買い目候補</h2></div>
 
 
 
@@ -446,14 +270,24 @@
 <div class="bet-box bet-candidate">
 <div class="bet-group"><span class="bet-kind">単勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span></p></div></div>
 <div class="bet-group"><span class="bet-kind">複勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span></p></div></div>
-
-
-<small>※ 過去成績を参考に、◎○▲△☆ から選定した「AI買い目候補」です。的中や利益を保証するものではありません。金額配分はしていません。</small>
+<div class="bet-group"><span class="bet-kind">馬連</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>○</b> 7 ラインジーク</span></p>
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>▲</b> 12 マサノユニコーン</span></p>
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>△</b> 6 ジャスティンルマン</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">ワイド</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>○</b> 7 ラインジーク</span></p>
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>▲</b> 12 マサノユニコーン</span></p>
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>△</b> 6 ジャスティンルマン</span></p>
+<p><span class="bet-uma"><b>○</b> 7 ラインジーク</span> － <span class="bet-uma"><b>▲</b> 12 マサノユニコーン</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">三連複</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 8 ジャックナダル</span> － <span class="bet-uma"><b>○</b> 7 ラインジーク</span> － <span class="bet-uma"><b>▲</b> 12 マサノユニコーン</span></p>
+</div></div>
+<small>※ 過去成績を参考に、◎○▲△☆ から選定した「YUMA買い目候補」です。的中や利益を保証するものではありません。金額配分はしていません。</small>
 </div></article>
 
-<article class="dashboard-panel"><div class="panel-title"><h2>◎ 市場抜きAI評価</h2></div>
-<p class="admin-note">市場抜きAI評価は準備中です（初回アクセス時に計算されるため反映まで数十秒かかる場合があります。ページを再読み込みしてください）。</p>
-</article></section></main>
+</section></main>
 <script>
 (function(){
   var el=document.getElementById('live-seconds');
