@@ -84,7 +84,7 @@
 <section class="race-tabs">
 <a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/1">1R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/2">2R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/3">3R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/4">4R</a><a class="race-tab-item active" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/5">5R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/6">6R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/7">7R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/8">8R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/9">9R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/10">10R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/11">11R</a><a class="race-tab-item" href="/local/predict/2026-10-12/%E5%B7%9D%E5%B4%8E/12">12R</a>
 </section>
-<!--PUBMETA {"committed_at": "2026-10-12T16:47:22", "display_state": "FINAL_LOCKED", "generated_at": "2026-10-13T20:43:59", "generation_started_at": "2026-10-13T20:43:59", "market_captured_at": null, "market_source": "CLEAN_RESULT_FINAL", "market_status": "OK", "model_hash": "7df97a2d5e64847d", "prediction_hash": "c83fa6646579c3c9", "prediction_locked_at": "2026-10-12T16:47:22", "prediction_status": "OK", "race_id": "2026-10-12|\u5ddd\u5d0e|5", "stage": "FINAL", "version_id": 894}--><p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">最終確定</span><small style="font-weight:400;margin-left:6px">(16:47時点)</small></p>
+<!--PUBMETA {"committed_at": "2026-10-12T16:47:22", "display_state": "FINAL_LOCKED", "generated_at": "2026-10-13T21:11:24", "generation_started_at": "2026-10-13T21:11:24", "market_captured_at": null, "market_source": "CLEAN_RESULT_FINAL", "market_status": "OK", "model_hash": "7df97a2d5e64847d", "prediction_hash": "c83fa6646579c3c9", "prediction_locked_at": "2026-10-12T16:47:22", "prediction_status": "OK", "race_id": "2026-10-12|\u5ddd\u5d0e|5", "stage": "FINAL", "version_id": 894}--><p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">最終確定</span><small style="font-weight:400;margin-left:6px">(16:47時点)</small></p>
 
 
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
@@ -250,7 +250,12 @@
   if(!el) return;
   var s=0;
   setInterval(function(){ s++; el.textContent=s; },1000);
-  setTimeout(function(){ location.reload(); }, 60000);
+  /* HM_RELOAD_GUARD (2026-10-13): never reload while a note is being typed / unsaved / saving */
+  function hmCanReload(){ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
+    var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
+  window.hmCanReload=hmCanReload;
+  function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
+  setTimeout(hmTryReload, 60000);
 })();
 </script>
 
