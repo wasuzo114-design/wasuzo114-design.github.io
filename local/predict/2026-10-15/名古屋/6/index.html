@@ -2,7 +2,7 @@
 
 <!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>名古屋6R AI予想 準備中</title>
+<title>名古屋6R 地方競馬予想</title>
 <link rel="stylesheet" href="/static/style.css"></head>
 <body style="visibility:hidden">
 
@@ -45,7 +45,7 @@
 })();
 </script>
 <header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
-<div><h1>AI競馬予想</h1><p>データ分析 × AI予想で勝率を最大化</p></div></a>
+<div><h1>YUMA競馬予想</h1><p>データ分析 × YUMA予想で勝率を最大化</p></div></a>
 <div class="scope-switch">
 <a class="scope-switch-button" href="/">中央競馬</a>
 <a class="scope-switch-button active" href="/local">地方競馬</a>
@@ -62,19 +62,201 @@
 
 </nav></header>
 <main class="race-page">
-<div class="top-back-row"><a class="back-button" href="/local">← 戻る</a></div>
-<div class="race-topbar"><div class="prediction-title"><div class="race-info-box">
+
+<div class="top-back-row"><a class="back-button" href="/local">← 戻る</a>
+<div class="venue-buttons">
+<a class="venue-button active" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/1">名古屋</a><a class="venue-button" href="/local/predict/2026-10-15/%E5%9C%92%E7%94%B0/1">園田</a><a class="venue-button" href="/local/predict/2026-10-15/%E5%B7%9D%E5%B4%8E/1">川崎</a><a class="venue-button" href="/local/predict/2026-10-15/%E9%96%80%E5%88%A5/1">門別</a>
+</div></div>
+<div class="race-topbar">
+<div class="prediction-title">
+<div class="race-info-box">
 <div class="race-title-row"><span class="race-number-badge">6R</span>
-<h1>C15組</h1></div>
+<h1>Ｃ１５組</h1></div>
 <div class="race-pill-row">
 <span class="pill">🕐 15:05発走</span>
 <span class="pill">ダート 1500m</span>
 <span class="pill">2026-10-15</span>
-<span class="pill">名古屋</span>
-</div></div></div></div>
-<section class="horse-table-wrap"><div class="empty-state">
-<h3>AI予想 準備中</h3>
-<p>出走馬情報の確定後、AI予想を表示します。</p>
-<p style="font-size:13px;opacity:.75;margin-top:10px">このページは自動で更新されません。時間をおいて再度ご確認ください。</p>
-</div></section>
-</main></body></html>
+<span class="pill">12頭立て</span>
+<span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
+</div>
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
+</div></div></div>
+<section class="race-tabs">
+<a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/1">1R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/2">2R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/3">3R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/4">4R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/5">5R</a><a class="race-tab-item active" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/6">6R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/7">7R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/8">8R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/9">9R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/10">10R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/11">11R</a><a class="race-tab-item" href="/local/predict/2026-10-15/%E5%90%8D%E5%8F%A4%E5%B1%8B/12">12R</a>
+</section>
+<!--PUBMETA {"committed_at": "2026-10-15T10:12:21", "display_state": "PRE", "generated_at": "2026-10-15T10:13:09", "generation_started_at": "2026-10-15T10:13:09", "market_captured_at": null, "market_source": "NONE", "market_status": "MISSING", "model_hash": "af0b169f0ca9dd85", "prediction_hash": "e56aff6ca975ffa2", "prediction_locked_at": null, "prediction_status": "OK", "race_id": "2026-10-15|\u540d\u53e4\u5c4b|6", "stage": "EARLY", "version_id": 1798}--><p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">当日更新</span><small style="font-weight:400;margin-left:6px">(10:12時点)</small></p>
+
+
+<section class="horse-table-wrap"><table class="horse-table"><thead><tr>
+<th>枠</th><th>馬番</th><th>馬名</th><th>ランク</th><th>着順</th><th>勝率</th></tr></thead>
+<tbody><tr><td class="frame frame-2">2</td><td>2</td>
+<td class="horse-main"><strong class="horse-name-lg">エターナルビジョン</strong>
+<div class="jockey-row"><span>友森翔</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　原口次（愛知）</small>
+</td>
+<td><strong>1位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>64.3%</strong></td>
+
+
+</tr><tr><td class="frame frame-3">3</td><td>3</td>
+<td class="horse-main"><strong class="horse-name-lg">フルーツベイビー</strong>
+<div class="jockey-row"><span>細川智</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　塚田隆（愛知）</small>
+</td>
+<td><strong>2位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>11.1%</strong></td>
+
+
+</tr><tr><td class="frame frame-1">1</td><td>1</td>
+<td class="horse-main"><strong class="horse-name-lg">コスモアマデウス</strong>
+<div class="jockey-row"><span>塚本征</span><span class="odds-inline"></span></div>
+<small>　斤量57.0kg　安部幸（愛知）</small>
+</td>
+<td><strong>3位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>9.7%</strong></td>
+
+
+</tr><tr><td class="frame frame-4">4</td><td>4</td>
+<td class="horse-main"><strong class="horse-name-lg">アルマフレイヤ</strong>
+<div class="jockey-row"><span>加藤聡</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　原口次（愛知）</small>
+</td>
+<td><strong>4位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>5.3%</strong></td>
+
+
+</tr><tr><td class="frame frame-8">8</td><td>12</td>
+<td class="horse-main"><strong class="horse-name-lg">メイショウバルキア</strong>
+<div class="jockey-row"><span>▲小笠羚</span><span class="odds-inline"></span></div>
+<small>　斤量52.0kg　植松則（愛知）</small>
+</td>
+<td><strong>5位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>4.9%</strong></td>
+
+
+</tr><tr><td class="frame frame-5">5</td><td>6</td>
+<td class="horse-main"><strong class="horse-name-lg">ルヴレアール</strong>
+<div class="jockey-row"><span>望月洵</span><span class="odds-inline"></span></div>
+<small>　斤量57.0kg　藤ケ男（愛知）</small>
+</td>
+<td><strong>6位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.4%</strong></td>
+
+
+</tr><tr><td class="frame frame-6">6</td><td>7</td>
+<td class="horse-main"><strong class="horse-name-lg">スージーハルワ</strong>
+<div class="jockey-row"><span>柿原翔</span><span class="odds-inline"></span></div>
+<small>　斤量57.0kg　宇都英（愛知）</small>
+</td>
+<td><strong>7位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.1%</strong></td>
+
+
+</tr><tr><td class="frame frame-5">5</td><td>5</td>
+<td class="horse-main"><strong class="horse-name-lg">キーサーバー</strong>
+<div class="jockey-row"><span>阪野学</span><span class="odds-inline"></span></div>
+<small>　斤量57.0kg　原口次（愛知）</small>
+</td>
+<td><strong>8位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.9%</strong></td>
+
+
+</tr><tr><td class="frame frame-7">7</td><td>9</td>
+<td class="horse-main"><strong class="horse-name-lg">サンルーナ</strong>
+<div class="jockey-row"><span>丹羽克</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　錦見勇（愛知）</small>
+</td>
+<td><strong>9位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.5%</strong></td>
+
+
+</tr><tr><td class="frame frame-6">6</td><td>8</td>
+<td class="horse-main"><strong class="horse-name-lg">アグネス</strong>
+<div class="jockey-row"><span>◇木之葵</span><span class="odds-inline"></span></div>
+<small>　斤量53.0kg　井上哲（愛知）</small>
+</td>
+<td><strong>10位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.3%</strong></td>
+
+
+</tr><tr><td class="frame frame-8">8</td><td>11</td>
+<td class="horse-main"><strong class="horse-name-lg">スマートエラブル</strong>
+<div class="jockey-row"><span>丸山真</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　錦見勇（愛知）</small>
+</td>
+<td><strong>11位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.2%</strong></td>
+
+
+</tr><tr><td class="frame frame-7">7</td><td>10</td>
+<td class="horse-main"><strong class="horse-name-lg">エムズオルフェ</strong>
+<div class="jockey-row"><span>加藤利</span><span class="odds-inline"></span></div>
+<small>　斤量55.0kg　錦見勇（愛知）</small>
+</td>
+<td><strong>12位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.1%</strong></td>
+
+
+</tr>
+</tbody></table></section>
+
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>YUMA結論</h2></div>
+<div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">2</span>
+<div class="ranking-horse"><h3>エターナルビジョン</h3></div><span class="grade">1位</span><strong>64.3%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">3</span>
+<div class="ranking-horse"><h3>フルーツベイビー</h3></div><span class="grade">2位</span><strong>11.1%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">1</span>
+<div class="ranking-horse"><h3>コスモアマデウス</h3></div><span class="grade">3位</span><strong>9.7%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">4</span>
+<div class="ranking-horse"><h3>アルマフレイヤ</h3></div><span class="grade">4位</span><strong>5.3%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">12</span>
+<div class="ranking-horse"><h3>メイショウバルキア</h3></div><span class="grade">5位</span><strong>4.9%</strong></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>YUMA買い目候補</h2></div>
+
+
+
+
+<div class="bet-box bet-candidate">
+<div class="bet-group"><span class="bet-kind">単勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">複勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">馬連</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>○</b> 3 フルーツベイビー</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>▲</b> 1 コスモアマデウス</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>△</b> 4 アルマフレイヤ</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">ワイド</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>○</b> 3 フルーツベイビー</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>▲</b> 1 コスモアマデウス</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>△</b> 4 アルマフレイヤ</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">三連複</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>○</b> 3 フルーツベイビー</span> － <span class="bet-uma"><b>▲</b> 1 コスモアマデウス</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>○</b> 3 フルーツベイビー</span> － <span class="bet-uma"><b>△</b> 4 アルマフレイヤ</span></p>
+<p><span class="bet-uma"><b>◎</b> 2 エターナルビジョン</span> － <span class="bet-uma"><b>○</b> 3 フルーツベイビー</span> － <span class="bet-uma"><b>☆</b> 12 メイショウバルキア</span></p>
+</div></div>
+<small>※ ◎○▲△☆ から機械的に作成した「YUMA買い目候補」です。地方競馬の買い目は過去成績の検証をしていません。的中や利益を保証するものではありません。金額配分はしていません。</small>
+</div></article></section></main>
+<script>
+(function(){
+  var el=document.getElementById('live-seconds');
+  if(!el) return;
+  var s=0;
+  setInterval(function(){ s++; el.textContent=s; },1000);
+  /* HM_RELOAD_GUARD (2026-10-13): never reload while a note is being typed / unsaved / saving */
+  function hmCanReload(){ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
+    var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
+  window.hmCanReload=hmCanReload;
+  function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
+  setTimeout(hmTryReload, 60000);
+})();
+</script>
+
+</body></html>
