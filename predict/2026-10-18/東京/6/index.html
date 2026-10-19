@@ -215,7 +215,7 @@
   var s=0;
   setInterval(function(){ s++; el.textContent=s; },1000);
   /* HM_RELOAD_GUARD (2026-10-13): never reload while a note is being typed / unsaved / saving */
-  function hmCanReload(){ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
+  function hmCanReload(){ if(window.__simBusy) return false; /* JRA_SIM3D_ADMIN_V1: never reload during a running / replaying SIM */ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
     var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
   window.hmCanReload=hmCanReload;
   function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
