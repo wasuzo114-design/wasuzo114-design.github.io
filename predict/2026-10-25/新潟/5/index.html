@@ -1,0 +1,135 @@
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新潟5R 出走表</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="central";
+  var base=(scope==="local")?"chikin":"chiki";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button active" href="/">中央競馬</a>
+<a class="scope-switch-button" href="/local">地方競馬</a>
+
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/">ホーム</a>
+
+<a class="nav-button" href="/history">データ分析</a>
+
+
+
+</nav></header>
+
+<main class="race-page">
+<div class="top-back-row"><a class="back-button" href="/">← 戻る</a></div>
+<div class="race-topbar">
+<div class="prediction-title">
+<div class="race-info-box">
+<div class="race-badge-row"><span class="race-number-badge">5R</span><span class="race-venue-badge">新潟</span></div>
+<h1>2歳新馬</h1>
+<div class="race-pill-row">
+<span class="pill">🕐 12:00発走</span>
+<span class="pill">芝 1400m</span>
+<span class="pill">18頭</span>
+</div>
+</div></div></div>
+<p class="predraw-banner" style="margin:10px 0;padding:8px 12px;border-radius:6px;background:#fff8e1;border:1px solid #f9a825;color:#5d4037;font-weight:600">出走表・枠順確定前です。枠番・馬番は公式発表後にこのページへ表示され、AI予想もそのときに追加されます。</p>
+<section class="horse-table-wrap"><table class="horse-table"><thead><tr>
+<th>枠</th><th>馬番</th><th>馬名</th></tr></thead>
+<tbody><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>アルジャンレオ</strong>
+<div class="jockey-row"><span>富田暁</span></div>
+<small>牡2　斤量56.0kg　調教師 宮地貴稔</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>エクセルスカイ</strong>
+<div class="jockey-row"><span>横山琉人</span></div>
+<small>牡2　斤量56.0kg　調教師 岩戸孝樹</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>オーケープライム</strong>
+<div class="jockey-row"><span>野中悠太郎</span></div>
+<small>セ2　斤量56.0kg　調教師 田島俊明</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>カフジペピーノ</strong>
+<div class="jockey-row"><span>柴田裕一郎</span></div>
+<small>牝2　斤量53.0kg　調教師 中竹和也</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>キーチラナキラ</strong>
+<div class="jockey-row"><span>国分恭介</span></div>
+<small>牡2　斤量56.0kg　調教師 牧浦充徳</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>クラフティ</strong>
+<div class="jockey-row"><span>吉村誠之助</span></div>
+<small>牝2　斤量55.0kg　調教師 高野友和</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>サークル</strong>
+<div class="jockey-row"><span>斎藤新</span></div>
+<small>牝2　斤量55.0kg　調教師 石坂公一</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>シャトースタービル</strong>
+<div class="jockey-row"><span>土田真翔</span></div>
+<small>牝2　斤量52.0kg　調教師 加藤和宏</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>タケル</strong>
+<div class="jockey-row"><span>吉田隼人</span></div>
+<small>牡2　斤量56.0kg　調教師 河嶋宏樹</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>ナバラ</strong>
+<div class="jockey-row"><span>杉原誠人</span></div>
+<small>牡2　斤量56.0kg　調教師 大和田成</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>バックトゥザスター</strong>
+<div class="jockey-row"><span>小沢大仁</span></div>
+<small>牡2　斤量56.0kg　調教師 伊藤大士</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>パロディ</strong>
+<div class="jockey-row"><span>河原田菜々</span></div>
+<small>牡2　斤量52.0kg　調教師 茶木太樹</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>パーシビア</strong>
+<div class="jockey-row"><span>石田拓郎</span></div>
+<small>牝2　斤量53.0kg　調教師 萱野浩二</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>マリンスター</strong>
+<div class="jockey-row"><span>武藤雅</span></div>
+<small>牡2　斤量56.0kg　調教師 柄崎将寿</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>ミスターキリシマ</strong>
+<div class="jockey-row"><span>森田誠也</span></div>
+<small>牡2　斤量53.0kg　調教師 笹田和秀</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>ミネットドール</strong>
+<div class="jockey-row"><span>今村聖奈</span></div>
+<small>牝2　斤量53.0kg　調教師 柴田卓</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>ユメイチズ</strong>
+<div class="jockey-row"><span>丸山元気</span></div>
+<small>牡2　斤量56.0kg　調教師 中尾秀正</small></td></tr><tr><td class="frame"></td><td></td>
+<td class="horse-main"><strong>ワイルドシャチョウ</strong>
+<div class="jockey-row"><span>松本大輝</span></div>
+<small>牡2　斤量56.0kg　調教師 森秀行</small></td></tr></tbody></table></section>
+<p class="live-caption">出走表は2026-10-22 16:11時点の公式発表です。</p>
+</main>
+</body></html>
