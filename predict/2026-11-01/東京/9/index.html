@@ -73,8 +73,8 @@
 <div class="race-info-box">
 <div class="race-badge-row"><span class="race-number-badge">9R</span><span class="race-venue-badge">東京</span></div>
 <h1>紅葉S</h1>
-<div class="race-pill-row">
-<span class="pill">🕐 14:25発走</span>
+<style>.race-pill-row .pill:not(.live-pill){border:none;background:none;padding-left:0;padding-right:10px;font-size:1.25rem;font-weight:700}.race-info-box{position:relative}.race-pill-row .live-pill{position:absolute;top:14px;right:18px}.race-pill-row #dl-pill{position:absolute;top:56px;right:18px;padding-right:0;text-align:right}@media(max-width:700px){.race-pill-row .live-pill,.race-pill-row #dl-pill{position:static}}</style><div class="race-pill-row">
+<span class="pill">🕐 14:25発走</span><span class="pill" id="dl-pill" data-start="2026-11-01T14:25:00" title="発走の2分前を目安にしています(購入方法により1〜2分の差があります)">締切 --:--(目安)</span><script>(function(){var el=document.getElementById('dl-pill');if(!el)return;var st=new Date(el.getAttribute('data-start'));if(isNaN(st))return;var dl=new Date(st.getTime()-120000);function p(n){return (n<10?'0':'')+n;}function tick(){var d=dl-new Date();var hm=p(dl.getHours())+':'+p(dl.getMinutes());if(d>900000){el.textContent='締切 '+hm+'(目安)';el.style.color='';}else if(d>0){var s=Math.floor(d/1000);el.textContent='締切 '+hm+'(目安) 残り '+p(Math.floor(s/60))+':'+p(s%60);el.style.color=s<180?'#c62828':'';}else{el.textContent='締切 '+hm+'(目安) 締切済み';el.style.color='#6b7280';}}tick();setInterval(tick,1000);})();</script>
 <span class="pill">芝 1600m</span>
 
 
@@ -280,7 +280,26 @@
     var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
   window.hmCanReload=hmCanReload;
   function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
-  setTimeout(hmTryReload, 60000);
+  /* LIVE_UPDATE_LIGHT_V1 (2026-11-02): 60秒ごとはオッズ/人気(+管理者の期待値)だけ差し替え。結果が出た/取得失敗/5回に1回は従来どおり全画面reload。メモ入力中は従来どおり止める */
+  var rows=[].slice.call(document.querySelectorAll('tbody tr')).filter(function(r){ return r.querySelector('.odds-inline'); });
+  var hs=rows.map(function(r){ return r.children[1].textContent.trim(); });
+  var m=location.pathname.match(/\/predict\/([^\/]+)\/([^\/]+)\/(\d+)/); var cyc=0;
+  function liveTick(){
+    if(!hmCanReload()){ setTimeout(liveTick,5000); return; }
+    cyc++; if(!m || !hs.length || cyc%5===0){ location.reload(); return; }
+    fetch('/api/live/jra/'+m[1]+'/'+m[2]+'/'+m[3]+'?h='+hs.join(','),{credentials:'same-origin',cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(j){
+        if(!j.ok || j.done){ location.reload(); return; }
+        rows.forEach(function(r){ var k=r.children[1].textContent.trim(), v=j.odds[k]; if(!v||!v[0]||!v[1]) return;
+          var oi=r.querySelector('.odds-inline'); var tn=oi.firstChild; if(tn && tn.nodeType===3) tn.nodeValue=v[0]+'人気　'+v[1]+'倍';
+          var ev=r.querySelector('.ev-col b');
+          if(ev){ var p=parseFloat((r.querySelector('td[style*="nowrap"] strong')||{}).textContent); if(p>0) ev.textContent=(p/100*v[1]).toFixed(2)+'倍'; }
+        });
+        s=0; el.textContent=0; setTimeout(liveTick,60000);
+      }).catch(function(){ location.reload(); });
+  }
+  setTimeout(liveTick, 60000);
 })();
 </script>
 

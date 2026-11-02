@@ -72,8 +72,8 @@
 <div class="race-info-box">
 <div class="race-title-row"><span class="race-number-badge">6R</span>
 <h1>2歳</h1></div>
-<div class="race-pill-row">
-<span class="pill">🕐 14:40発走</span>
+<style>.race-pill-row .pill:not(.live-pill){border:none;background:none;padding-left:0;padding-right:10px;font-size:1.25rem;font-weight:700}.race-info-box{position:relative}.race-pill-row .live-pill{position:absolute;top:14px;right:18px}.race-pill-row #dl-pill{position:absolute;top:56px;right:18px;padding-right:0;text-align:right}@media(max-width:700px){.race-pill-row .live-pill,.race-pill-row #dl-pill{position:static}}</style><div class="race-pill-row">
+<span class="pill">🕐 14:40発走</span><span class="pill" id="dl-pill" data-start="2026-11-02T14:40:00" title="発走の2分前を目安にしています(購入方法により1〜2分の差があります)">締切 --:--(目安)</span><script>(function(){var el=document.getElementById('dl-pill');if(!el)return;var st=new Date(el.getAttribute('data-start'));if(isNaN(st))return;var dl=new Date(st.getTime()-120000);function p(n){return (n<10?'0':'')+n;}function tick(){var d=dl-new Date();var hm=p(dl.getHours())+':'+p(dl.getMinutes());if(d>900000){el.textContent='締切 '+hm+'(目安)';el.style.color='';}else if(d>0){var s=Math.floor(d/1000);el.textContent='締切 '+hm+'(目安) 残り '+p(Math.floor(s/60))+':'+p(s%60);el.style.color=s<180?'#c62828':'';}else{el.textContent='締切 '+hm+'(目安) 締切済み';el.style.color='#6b7280';}}tick();setInterval(tick,1000);})();</script>
 <span class="pill">ダート 1400m</span>
 <span class="pill">2026-11-02</span>
 <span class="pill">12頭立て</span>
