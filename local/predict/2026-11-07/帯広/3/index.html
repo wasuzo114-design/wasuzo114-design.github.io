@@ -1,0 +1,213 @@
+
+
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>帯広3R 地方競馬AI予想</title>
+<link rel="stylesheet" href="/static/style.css"></head>
+<body style="visibility:hidden">
+
+<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
+<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
+<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
+<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
+<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
+<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
+</form>
+</div>
+<script>
+(function(){
+  var scope="local";
+  var base=(scope==="local")?"chikin":"chiki";
+  var now=new Date();
+  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
+  var key="site_pw_"+scope;
+  function unlock(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="none";
+  }
+  function showGate(){
+    document.body.style.visibility="visible";
+    var ov=document.getElementById("pw-gate-overlay");
+    if(ov) ov.style.display="flex";
+  }
+  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
+  window.__pwGateSubmit=function(){
+    var val=document.getElementById("pw-gate-input").value;
+    if(val===todayPw){
+      localStorage.setItem(key,todayPw);
+      unlock();
+    } else {
+      document.getElementById("pw-gate-error").style.display="block";
+    }
+    return false;
+  };
+})();
+</script>
+<header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
+<div><h1>AI競馬予想</h1><p>データ分析</p></div></a>
+<div class="scope-switch">
+<a class="scope-switch-button" href="/">中央競馬</a>
+<a class="scope-switch-button active" href="/local">地方競馬</a>
+
+</div>
+<nav class="navigation">
+<a class="nav-button" href="/local">ホーム</a>
+
+
+<a class="nav-button" href="/local/history">データ分析</a>
+
+
+
+
+</nav></header>
+<main class="race-page">
+
+<div class="top-back-row"><a class="back-button" href="/local">← 戻る</a>
+<div class="venue-buttons">
+<a class="venue-button" href="/local/predict/2026-11-07/%E4%BD%90%E8%B3%80/1">佐賀</a><a class="venue-button active" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/1">帯広</a><a class="venue-button" href="/local/predict/2026-11-07/%E9%AB%98%E7%9F%A5/1">高知</a>
+</div></div>
+<div class="race-topbar">
+<div class="prediction-title">
+<div class="race-info-box">
+<div class="race-title-row"><span class="race-number-badge">3R</span>
+<h1 title="牧祐樹&amp;藤田南結婚記念2歳D-3">牧祐樹&amp;藤田南結婚記念2歳D-3</h1></div>
+<style>.race-info-box h1{padding-right:250px;font-size:1.5rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}@media(max-width:700px){.race-info-box h1{padding-right:0}}.race-pill-row .pill:not(.live-pill){border:none;background:none;padding-left:0;padding-right:10px;font-size:1.25rem;font-weight:700}.race-info-box{position:relative}.race-pill-row .live-pill{position:absolute;top:14px;right:18px}.race-title-row .live-pill,.race-badge-row .live-pill{position:static!important;margin-left:16px;display:inline-block}.race-title-row h1{padding-right:0;flex:0 1 auto;min-width:0}.race-info-box.has-tb .race-title-row h1{padding-right:0}.race-title-row .live-pill{flex:none;white-space:nowrap}@media(min-width:701px){.race-info-box .race-title-row{flex-wrap:nowrap}}@media(min-width:1001px){.race-info-box.has-tb .race-title-row{max-width:calc(100% - 660px)}.race-info-box.has-tb .lx-right{margin-top:84px}.race-info-box.has-tb #dl-pill{top:100px!important}}.race-title-row,.race-badge-row{display:flex;align-items:center;flex-wrap:wrap}.race-pill-row #dl-pill{position:absolute;top:124px;right:18px;padding-right:0;text-align:right;font-size:1.7rem;font-weight:800}.race-pill-row #dl-pill.cd{font-size:2.3rem;font-variant-numeric:tabular-nums}@media(max-width:700px){.race-pill-row .live-pill,.race-pill-row #dl-pill{position:static}}</style><script>document.addEventListener('DOMContentLoaded',function(){var l=document.querySelector('.race-pill-row .live-pill'),t=document.querySelector('.race-title-row,.race-badge-row');if(l&&t)t.appendChild(l);});</script><div class="race-pill-row">
+<span class="pill">🕐 15:50発走</span><span class="pill" id="dl-pill" data-start="2026-11-07T15:50:00" title="発走の2分前を目安にしています(購入方法により1〜2分の差があります)">締切 --:--(目安)</span><script>(function(){var el=document.getElementById('dl-pill');if(!el)return;var st=new Date(el.getAttribute('data-start'));if(isNaN(st))return;var dl=new Date(st.getTime()-120000);function p(n){return (n<10?'0':'')+n;}function tick(){var d=dl-new Date();var hm=p(dl.getHours())+':'+p(dl.getMinutes());if(d>900000){el.textContent='締切 '+hm+'(目安)';el.style.color='';el.className='pill';}else if(d>0){var s=Math.floor(d/1000);el.className='pill cd';el.textContent='締切 '+hm+'(目安) 残り '+p(Math.floor(s/60))+':'+p(s%60);el.style.color=s<180?'#c62828':'';}else{el.textContent='締切 '+hm+'(目安) 締切済み';el.style.color='#6b7280';el.className='pill';}}tick();setInterval(tick,1000);})();</script>
+<span class="pill"> 200m</span>
+<span class="pill">2026-11-07</span>
+<span class="pill">9頭立て</span>
+<span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
+</div>
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
+</div></div></div>
+<section class="race-tabs">
+<a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/1">1R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/2">2R</a><a class="race-tab-item active" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/3">3R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/4">4R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/5">5R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/6">6R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/7">7R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/8">8R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/9">9R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/10">10R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/11">11R</a><a class="race-tab-item" href="/local/predict/2026-11-07/%E5%B8%AF%E5%BA%83/12">12R</a>
+</section>
+
+
+
+<section class="horse-table-wrap"><table class="horse-table"><thead><tr>
+<th>枠</th><th>馬番</th><th>馬名</th><th>AI</th><th>総合</th><th>着順</th><th>勝率</th></tr></thead>
+<tbody><tr><td class="frame frame-4">4</td><td>4</td>
+<td class="horse-main"><strong class="horse-name-lg">キンリュウ</strong>
+<div class="jockey-row"><span>赤塚健仁</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい村上慎一</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-5">5</td><td>5</td>
+<td class="horse-main"><strong class="horse-name-lg">ショウライトモモ</strong>
+<div class="jockey-row"><span>☆今井千尋</span><span class="odds-inline"></span></div>
+<small>牝2　斤量490.0kg　ばんえい今井茂雅</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-1">1</td><td>1</td>
+<td class="horse-main"><strong class="horse-name-lg">アアモンドドレミ</strong>
+<div class="jockey-row"><span>☆臼杵龍美</span><span class="odds-inline"></span></div>
+<small>牝2　斤量490.0kg　ばんえい村上慎一</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-3">3</td><td>3</td>
+<td class="horse-main"><strong class="horse-name-lg">アルバノチカラ</strong>
+<div class="jockey-row"><span>船山蔵人</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい田上忠夫</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-8">8</td><td>9</td>
+<td class="horse-main"><strong class="horse-name-lg">アーススノーパール</strong>
+<div class="jockey-row"><span>阿部優哉</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい坂本東一</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-7">7</td><td>7</td>
+<td class="horse-main"><strong class="horse-name-lg">オレノゴウリキ</strong>
+<div class="jockey-row"><span>鈴木恵介</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい槻舘重人</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-2">2</td><td>2</td>
+<td class="horse-main"><strong class="horse-name-lg">ジェイカイン</strong>
+<div class="jockey-row"><span>金田利貴</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい藤野俊一</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-8">8</td><td>8</td>
+<td class="horse-main"><strong class="horse-name-lg">アアモンドグール</strong>
+<div class="jockey-row"><span>☆吉田理人</span><span class="odds-inline"></span></div>
+<small>牡2　斤量510.0kg　ばんえい小北栄一</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr><tr><td class="frame frame-6">6</td><td>6</td>
+<td class="horse-main"><strong class="horse-name-lg">ホクセイタロウ</strong>
+<div class="jockey-row"><span>大友一馬</span><span class="odds-inline"></span></div>
+<small>牡2　斤量520.0kg　ばんえい大友栄人</small>
+</td>
+<td>-</td>
+<td class="total-score">-</td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><span class="v2-pending" title="帯広V2: 真正発走前市場がそろわずV2未確定">V2未確定</span></td>
+
+</tr>
+</tbody></table></section>
+
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
+<div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">4</span>
+<div class="ranking-horse"><h3>キンリュウ</h3></div></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">5</span>
+<div class="ranking-horse"><h3>ショウライトモモ</h3></div></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">1</span>
+<div class="ranking-horse"><h3>アアモンドドレミ</h3></div></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">3</span>
+<div class="ranking-horse"><h3>アルバノチカラ</h3></div></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number"></strong><span class="race-badge">9</span>
+<div class="ranking-horse"><h3>アーススノーパール</h3></div></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>AI買い目候補</h2></div>
+
+
+
+
+<p class="admin-note">AI予想確定後に表示されます。</p></article></section><style>.bot-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin-top:14px}.bot-pair>*{min-width:0}.bot-pair>.pd-wrap{display:flex;flex-direction:column;height:100%;margin-top:0;box-sizing:border-box}.bot-pair>.pd-wrap .pd-field{flex:1}.bot-pair>#style3-sec,.bot-pair>div>#nstyle3-sec{height:100%;margin-top:0!important;box-sizing:border-box}.bot-pair>div{display:flex;flex-direction:column}.bot-pair>div>#nstyle3-sec{flex:1}@media(max-width:900px){.bot-pair{grid-template-columns:1fr}.bot-pair>.pd-wrap,.bot-pair>#style3-sec,.bot-pair>div>#nstyle3-sec{height:auto}}</style></main>
+<script>
+(function(){
+  var el=document.getElementById('live-seconds');
+  if(!el) return;
+  var s=0;
+  setInterval(function(){ s++; el.textContent=s; },1000);
+  /* HM_RELOAD_GUARD (2026-10-13): never reload while a note is being typed / unsaved / saving */
+  function hmCanReload(){ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
+    var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
+  window.hmCanReload=hmCanReload;
+  function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
+  setTimeout(hmTryReload, 60000);
+})();
+</script>
+
+</body></html>
