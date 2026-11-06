@@ -33,7 +33,7 @@ input{width:100%;height:47px;padding:0 14px;color:var(--text);background:#ffffff
 .finish-badge.finish-gold{background:linear-gradient(135deg,#f7e08a,#c9a227);color:#3a2e00}
 .finish-badge.finish-silver{background:linear-gradient(135deg,#e6e9ec,#a8b0b8);color:#22282d}
 .finish-badge.finish-bronze{background:linear-gradient(135deg,#d79a6a,#8c5a2e);color:#2a1a08}
-.finish-badge.finish-plain{background:transparent;color:rgba(22,33,62,.35);font-weight:600}
+.finish-badge.finish-plain{background:transparent;color:#1f2937;font-weight:700}
 .finish-badge.finish-none{background:transparent;color:var(--muted);font-weight:600}
 .race-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}.race-card{min-height:230px;padding:17px;background:#ffffff;border:1px solid var(--card-border);border-radius:12px;transition:.2s;box-shadow:0 1px 3px rgba(20,40,90,.05)}.race-card:hover{transform:translateY(-4px);border-color:var(--gold)}.race-card.high-rating{border-color:rgba(244,67,54,.55)}.race-card.upset-race{border-color:rgba(34,181,115,.55)}.race-card-top{display:flex;justify-content:space-between}.race-card-top strong{font-size:29px}.start-time{margin-top:17px;color:var(--gold);font-size:18px;font-weight:800}.race-distance{margin-top:8px}.race-divider{height:1px;margin:18px 0;background:var(--border)}.ai-top-label{color:var(--muted);font-size:12px}.race-card h3{min-height:45px;margin-top:7px;font-size:15px}.race-score{display:flex;align-items:center;gap:8px;margin-top:10px}.race-score strong{margin-left:auto;font-size:22px}
 .grade{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;font-weight:800;color:#fff}.grade-ss{background:linear-gradient(135deg,var(--gold),var(--red));color:#111}
