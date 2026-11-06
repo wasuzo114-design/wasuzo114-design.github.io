@@ -1,7 +1,8 @@
 
+
 <!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>福島10R 出走表</title>
+<title>福島10R AI予想</title>
 <link rel="stylesheet" href="/static/style.css"></head>
 <body style="visibility:hidden">
 
@@ -60,70 +61,267 @@
 </nav></header>
 
 <main class="race-page">
-<div class="top-back-row"><a class="back-button" href="/">← 戻る</a></div>
+
+
+
+<div class="top-back-row"><a class="back-button" href="/">← 戻る</a>
+<div class="venue-buttons">
+<a class="venue-button" href="/predict/2026-11-07/%E4%BA%AC%E9%83%BD/1?sort=&amp;lv=">京都</a><a class="venue-button" href="/predict/2026-11-07/%E6%9D%B1%E4%BA%AC/1?sort=&amp;lv=">東京</a><a class="venue-button active" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/1?sort=&amp;lv=">福島</a>
+</div></div>
 <div class="race-topbar">
 <div class="prediction-title">
 <div class="race-info-box">
 <div class="race-badge-row"><span class="race-number-badge">10R</span><span class="race-venue-badge">福島</span></div>
-<h1>飯坂温泉特別</h1>
-<div class="race-pill-row">
-<span class="pill">🕐 14:45発走</span>
+<h1 title="飯坂温泉特別">飯坂温泉特別</h1>
+<style>.race-info-box h1{padding-right:250px;font-size:1.5rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}@media(max-width:700px){.race-info-box h1{padding-right:0}}.race-pill-row .pill:not(.live-pill){border:none;background:none;padding-left:0;padding-right:10px;font-size:1.25rem;font-weight:700}.race-info-box{position:relative}.race-pill-row .live-pill{position:absolute;top:14px;right:18px}.race-title-row .live-pill,.race-badge-row .live-pill{position:static!important;margin-left:16px;display:inline-block}.race-title-row h1{padding-right:0;flex:0 1 auto;min-width:0}.race-title-row .live-pill{flex:none;white-space:nowrap}.race-info-box .race-title-row{flex-wrap:nowrap}.race-title-row,.race-badge-row{display:flex;align-items:center;flex-wrap:wrap}.race-pill-row #dl-pill{position:absolute;top:124px;right:18px;padding-right:0;text-align:right;font-size:1.7rem;font-weight:800}.race-pill-row #dl-pill.cd{font-size:2.3rem;font-variant-numeric:tabular-nums}@media(max-width:700px){.race-pill-row .live-pill,.race-pill-row #dl-pill{position:static}}</style><script>document.addEventListener('DOMContentLoaded',function(){var l=document.querySelector('.race-pill-row .live-pill'),t=document.querySelector('.race-title-row,.race-badge-row');if(l&&t)t.appendChild(l);});</script><div class="race-pill-row">
+<span class="pill">🕐 14:45発走</span><span class="pill" id="dl-pill" data-start="2026-11-07T14:45:00" title="発走の2分前を目安にしています(購入方法により1〜2分の差があります)">締切 --:--(目安)</span><script>(function(){var el=document.getElementById('dl-pill');if(!el)return;var st=new Date(el.getAttribute('data-start'));if(isNaN(st))return;var dl=new Date(st.getTime()-120000);function p(n){return (n<10?'0':'')+n;}function tick(){var d=dl-new Date();var hm=p(dl.getHours())+':'+p(dl.getMinutes());if(d>900000){el.textContent='締切 '+hm+'(目安)';el.style.color='';el.className='pill';}else if(d>0){var s=Math.floor(d/1000);el.className='pill cd';el.textContent='締切 '+hm+'(目安) 残り '+p(Math.floor(s/60))+':'+p(s%60);el.style.color=s<180?'#c62828':'';}else{el.textContent='締切 '+hm+'(目安) 締切済み';el.style.color='#6b7280';el.className='pill';}}tick();setInterval(tick,1000);})();</script>
 <span class="pill">芝 1200m</span>
-<span class="pill">16頭</span>
+
+
+
+
+<span class="pill">16頭立て</span>
+<span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
 </div>
-</div></div></div>
-<p class="predraw-banner" style="margin:10px 0;padding:8px 12px;border-radius:6px;background:#fff8e1;border:1px solid #f9a825;color:#5d4037;font-weight:600">出走表・枠順確定前です。枠番・馬番は公式発表後にこのページへ表示され、AI予想もそのときに追加されます。</p>
+
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p>
+</div></div>
+</div>
+<section class="race-tabs">
+<a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/1?sort=&amp;lv=">1R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/2?sort=&amp;lv=">2R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/3?sort=&amp;lv=">3R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/4?sort=&amp;lv=">4R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/5?sort=&amp;lv=">5R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/6?sort=&amp;lv=">6R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/7?sort=&amp;lv=">7R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/8?sort=&amp;lv=">8R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/9?sort=&amp;lv=">9R</a><a class="active" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/10?sort=&amp;lv=">10R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/11?sort=&amp;lv=">11R</a><a class="" href="/predict/2026-11-07/%E7%A6%8F%E5%B3%B6/12?sort=&amp;lv=">12R</a>
+</section>
+<p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">前日</span><small style="font-weight:400;margin-left:6px">(10:30時点)</small></p>
+
 <section class="horse-table-wrap"><table class="horse-table"><thead><tr>
-<th>枠</th><th>馬番</th><th>馬名</th></tr></thead>
-<tbody><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>アイルドリアン</strong>
-<div class="jockey-row"><span>小沢大仁</span></div>
-<small>牝5　斤量56.0kg　調教師 井上智史</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ヴァンヴィーヴ</strong>
-<div class="jockey-row"><span>斎藤新</span></div>
-<small>牡5　斤量58.0kg　調教師 牧浦充徳</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>オオナミコナミ</strong>
-<div class="jockey-row"><span>田山旺佑</span></div>
-<small>牝5　斤量56.0kg　調教師 牧浦充徳</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>カレンデュラ</strong>
-<div class="jockey-row"><span>嶋田純次</span></div>
-<small>牝3　斤量55.0kg　調教師 室井潔</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>サンポーニャ</strong>
-<div class="jockey-row"><span>荻野極</span></div>
-<small>牝6　斤量56.0kg　調教師 池江泰寿</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>シラヌイ</strong>
-<div class="jockey-row"><span>川又賢治</span></div>
-<small>牝3　斤量55.0kg　調教師 高橋亮</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>タナブイハチターボ</strong>
-<div class="jockey-row"><span>国分恭介</span></div>
-<small>牡3　斤量57.0kg　調教師 大根田裕之</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>タマモブラウンタイ</strong>
-<div class="jockey-row"><span>丹内祐次</span></div>
-<small>牡4　斤量58.0kg　調教師 角田晃一</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ダンケルド</strong>
-<div class="jockey-row"><span>杉原誠人</span></div>
-<small>セ4　斤量58.0kg　調教師 森一誠</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>デアリングエア</strong>
-<div class="jockey-row"><span>菊沢一樹</span></div>
-<small>牝4　斤量56.0kg　調教師 菊沢隆徳</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>バンブルビー</strong>
-<div class="jockey-row"><span>横山琉人</span></div>
-<small>牡4　斤量58.0kg　調教師 浅利英明</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ピアストイヤーズ</strong>
-<div class="jockey-row"><span>石川裕紀人</span></div>
-<small>牡4　斤量58.0kg　調教師 小崎憲</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ホウオウヘッセン</strong>
-<div class="jockey-row"><span>丸山元気</span></div>
-<small>牡3　斤量57.0kg　調教師 田島俊明</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ミルトメロディー</strong>
-<div class="jockey-row"><span>河原田菜々</span></div>
-<small>牝3　斤量55.0kg　調教師 青木孝文</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ライツユーアップ</strong>
-<div class="jockey-row"><span>古川奈穂</span></div>
-<small>牝4　斤量56.0kg　調教師 角田晃一</small></td></tr><tr><td class="frame"></td><td></td>
-<td class="horse-main"><strong>ラスティングスノー</strong>
-<div class="jockey-row"><span>吉田隼人</span></div>
-<small>牝3　斤量55.0kg　調教師 池上昌和</small></td></tr></tbody></table></section>
-<p class="live-caption">出走表は2026-11-06 07:54時点の公式発表です。</p>
+<th>枠</th><th>馬番</th><th>馬名</th><th>ランク</th><th>着順</th><th>勝率</th></tr></thead>
+<tbody><tr><td class="frame frame-8">8</td><td>16</td>
+<td class="horse-main"><strong class="horse-name-lg">アイルドリアン</strong>
+<div class="jockey-row"><span>小沢大仁</span><span class="odds-inline"></span></div>
+<small>牝5　斤量56.0kg　栗東　井上智史</small>
+</td>
+<td><strong>1位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>24.6%</strong></td>
+
+
+</tr><tr><td class="frame frame-6">6</td><td>11</td>
+<td class="horse-main"><strong class="horse-name-lg">タナブイハチターボ</strong>
+<div class="jockey-row"><span>国分恭介</span><span class="odds-inline"></span></div>
+<small>牡3　斤量57.0kg　栗東　大根田裕之</small>
+</td>
+<td><strong>2位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>15.0%</strong></td>
+
+
+</tr><tr><td class="frame frame-3">3</td><td>5</td>
+<td class="horse-main"><strong class="horse-name-lg">ヴァンヴィーヴ</strong>
+<div class="jockey-row"><span>斎藤新</span><span class="odds-inline"></span></div>
+<small>牡5　斤量58.0kg　栗東　牧浦充徳</small>
+</td>
+<td><strong>3位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>9.7%</strong></td>
+
+
+</tr><tr><td class="frame frame-4">4</td><td>7</td>
+<td class="horse-main"><strong class="horse-name-lg">オオナミコナミ</strong>
+<div class="jockey-row"><span>田山旺佑</span><span class="odds-inline"></span></div>
+<small>牝5　斤量56.0kg　栗東　牧浦充徳</small>
+</td>
+<td><strong>4位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>7.1%</strong></td>
+
+
+</tr><tr><td class="frame frame-5">5</td><td>9</td>
+<td class="horse-main"><strong class="horse-name-lg">ダンケルド</strong>
+<div class="jockey-row"><span>杉原誠人</span><span class="odds-inline"></span></div>
+<small>セ4　斤量58.0kg　美浦　森一誠</small>
+</td>
+<td><strong>5位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>7.0%</strong></td>
+
+
+</tr><tr><td class="frame frame-8">8</td><td>15</td>
+<td class="horse-main"><strong class="horse-name-lg">タマモブラウンタイ</strong><span class="ana-badge" style="background:#6d28d9;color:#fff" title="逃げ穴=AI6位以下で過去走の逃げ率40%以上(短縮=今回200m以上の距離短縮) / 距離実績穴=AI6位以下で同じ面・距離帯の3着内率50%以上">距離実績穴</span>
+<div class="jockey-row"><span>丹内祐次</span><span class="odds-inline"></span></div>
+<small>牡4　斤量58.0kg　栗東　角田晃一</small>
+</td>
+<td><strong>6位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>5.3%</strong></td>
+
+
+</tr><tr><td class="frame frame-4">4</td><td>8</td>
+<td class="horse-main"><strong class="horse-name-lg">カレンデュラ</strong><span class="ana-badge" style="background:#6d28d9;color:#fff" title="逃げ穴=AI6位以下で過去走の逃げ率40%以上(短縮=今回200m以上の距離短縮) / 距離実績穴=AI6位以下で同じ面・距離帯の3着内率50%以上">距離実績穴</span>
+<div class="jockey-row"><span>嶋田純次</span><span class="odds-inline"></span></div>
+<small>牝3　斤量55.0kg　美浦　室井潔</small>
+</td>
+<td><strong>7位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>5.0%</strong></td>
+
+
+</tr><tr><td class="frame frame-3">3</td><td>6</td>
+<td class="horse-main"><strong class="horse-name-lg">ピアストイヤーズ</strong><span class="ana-badge" style="background:#6d28d9;color:#fff" title="逃げ穴=AI6位以下で過去走の逃げ率40%以上(短縮=今回200m以上の距離短縮) / 距離実績穴=AI6位以下で同じ面・距離帯の3着内率50%以上">距離実績穴</span>
+<div class="jockey-row"><span>石川裕紀人</span><span class="odds-inline"></span></div>
+<small>牡4　斤量58.0kg　栗東　小崎憲</small>
+</td>
+<td><strong>8位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>4.8%</strong></td>
+
+
+</tr><tr><td class="frame frame-7">7</td><td>14</td>
+<td class="horse-main"><strong class="horse-name-lg">ミルトメロディー</strong>
+<div class="jockey-row"><span>河原田菜々</span><span class="odds-inline"></span></div>
+<small>牝3　斤量55.0kg　美浦　青木孝文</small>
+</td>
+<td><strong>9位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>4.0%</strong></td>
+
+
+</tr><tr><td class="frame frame-2">2</td><td>3</td>
+<td class="horse-main"><strong class="horse-name-lg">ホウオウヘッセン</strong>
+<div class="jockey-row"><span>丸山元気</span><span class="odds-inline"></span></div>
+<small>牡3　斤量57.0kg　美浦　田島俊明</small>
+</td>
+<td><strong>10位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>3.7%</strong></td>
+
+
+</tr><tr><td class="frame frame-1">1</td><td>1</td>
+<td class="horse-main"><strong class="horse-name-lg">デアリングエア</strong>
+<div class="jockey-row"><span>菊沢一樹</span><span class="odds-inline"></span></div>
+<small>牝4　斤量56.0kg　美浦　菊沢隆徳</small>
+</td>
+<td><strong>11位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>3.6%</strong></td>
+
+
+</tr><tr><td class="frame frame-1">1</td><td>2</td>
+<td class="horse-main"><strong class="horse-name-lg">サンポーニャ</strong><span class="ana-badge" style="background:#6d28d9;color:#fff" title="逃げ穴=AI6位以下で過去走の逃げ率40%以上(短縮=今回200m以上の距離短縮) / 距離実績穴=AI6位以下で同じ面・距離帯の3着内率50%以上">逃げ穴・距離実績穴</span>
+<div class="jockey-row"><span>荻野極</span><span class="odds-inline"></span></div>
+<small>牝6　斤量56.0kg　栗東　池江泰寿</small>
+</td>
+<td><strong>12位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>3.5%</strong></td>
+
+
+</tr><tr><td class="frame frame-6">6</td><td>12</td>
+<td class="horse-main"><strong class="horse-name-lg">シラヌイ</strong>
+<div class="jockey-row"><span>川又賢治</span><span class="odds-inline"></span></div>
+<small>牝3　斤量55.0kg　栗東　高橋亮</small>
+</td>
+<td><strong>13位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>3.2%</strong></td>
+
+
+</tr><tr><td class="frame frame-7">7</td><td>13</td>
+<td class="horse-main"><strong class="horse-name-lg">ラスティングスノー</strong>
+<div class="jockey-row"><span>吉田隼人</span><span class="odds-inline"></span></div>
+<small>牝3　斤量55.0kg　美浦　池上昌和</small>
+</td>
+<td><strong>14位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.6%</strong></td>
+
+
+</tr><tr><td class="frame frame-5">5</td><td>10</td>
+<td class="horse-main"><strong class="horse-name-lg">バンブルビー</strong>
+<div class="jockey-row"><span>横山琉人</span><span class="odds-inline"></span></div>
+<small>牡4　斤量58.0kg　美浦　浅利英明</small>
+</td>
+<td><strong>15位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>1.0%</strong></td>
+
+
+</tr><tr><td class="frame frame-2">2</td><td>4</td>
+<td class="horse-main"><strong class="horse-name-lg">ライツユーアップ</strong>
+<div class="jockey-row"><span>古川奈穂</span><span class="odds-inline"></span></div>
+<small>牝4　斤量56.0kg　栗東　角田晃一</small>
+</td>
+<td><strong>16位</strong></td>
+<td><span class="finish-badge finish-none">―</span></td>
+<td><strong>0.7%</strong></td>
+
+
+</tr>
+</tbody></table></section>
+<section class="dashboard-grid prediction-bottom"><article class="dashboard-panel"><div class="panel-title"><h2>AI結論</h2></div>
+<div class="ranking-row ranking-row-wide"><strong class="ranking-number">◎</strong><span class="race-badge">16</span>
+<div class="ranking-horse"><h3>アイルドリアン</h3></div><span class="grade">1位</span><strong>24.6%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">○</strong><span class="race-badge">11</span>
+<div class="ranking-horse"><h3>タナブイハチターボ</h3></div><span class="grade">2位</span><strong>15.0%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">▲</strong><span class="race-badge">5</span>
+<div class="ranking-horse"><h3>ヴァンヴィーヴ</h3></div><span class="grade">3位</span><strong>9.7%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">△</strong><span class="race-badge">7</span>
+<div class="ranking-horse"><h3>オオナミコナミ</h3></div><span class="grade">4位</span><strong>7.1%</strong></div><div class="ranking-row ranking-row-wide"><strong class="ranking-number">☆</strong><span class="race-badge">9</span>
+<div class="ranking-horse"><h3>ダンケルド</h3></div><span class="grade">5位</span><strong>7.0%</strong></div></article>
+<article class="dashboard-panel"><div class="panel-title"><h2>AI買い目候補</h2></div>
+
+
+
+
+<div class="bet-box bet-candidate">
+<div class="bet-group"><span class="bet-kind">単勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">複勝</span><div class="bet-lines"><p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span></p></div></div>
+<div class="bet-group"><span class="bet-kind">馬連</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>○</b> 11 タナブイハチターボ</span></p>
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>▲</b> 5 ヴァンヴィーヴ</span></p>
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>△</b> 7 オオナミコナミ</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">ワイド</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>○</b> 11 タナブイハチターボ</span></p>
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>▲</b> 5 ヴァンヴィーヴ</span></p>
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>△</b> 7 オオナミコナミ</span></p>
+<p><span class="bet-uma"><b>○</b> 11 タナブイハチターボ</span> － <span class="bet-uma"><b>▲</b> 5 ヴァンヴィーヴ</span></p>
+</div></div>
+<div class="bet-group"><span class="bet-kind">三連複</span><div class="bet-lines">
+<p><span class="bet-uma"><b>◎</b> 16 アイルドリアン</span> － <span class="bet-uma"><b>○</b> 11 タナブイハチターボ</span> － <span class="bet-uma"><b>▲</b> 5 ヴァンヴィーヴ</span></p>
+</div></div>
+<small>※ 過去成績を参考に、◎○▲△☆ から選定した「AI買い目候補」です。的中や利益を保証するものではありません。金額配分はしていません。</small>
+</div></article>
+
+</section>
 </main>
+<script>
+(function(){
+  var el=document.getElementById('live-seconds');
+  if(!el) return;
+  var s=0;
+  setInterval(function(){ s++; el.textContent=s; },1000);
+  /* HM_RELOAD_GUARD (2026-10-13): never reload while a note is being typed / unsaved / saving */
+  function hmCanReload(){ if(window.__simBusy) return false; /* JRA_SIM3D_ADMIN_V1: never reload during a running / replaying SIM */ var a=document.activeElement; if(a && a.classList && a.classList.contains('race-note-input')) return false;
+    var l=document.querySelectorAll('.race-note-input'); for(var i=0;i<l.length;i++){ var m=l[i]._hm; if(m && (m.dirty||m.inflight||m.again)) return false; } return true; }
+  window.hmCanReload=hmCanReload;
+  function hmTryReload(){ if(hmCanReload()) location.reload(); else setTimeout(hmTryReload,5000); }
+  /* LIVE_UPDATE_LIGHT_V1 (2026-11-02): 60秒ごとはオッズ/人気(+管理者の期待値)だけ差し替え。結果が出た/取得失敗/5回に1回は従来どおり全画面reload。メモ入力中は従来どおり止める */
+  var rows=[].slice.call(document.querySelectorAll('tbody tr')).filter(function(r){ return r.querySelector('.odds-inline'); });
+  var hs=rows.map(function(r){ return r.children[1].textContent.trim(); });
+  var m=location.pathname.match(/\/predict\/([^\/]+)\/([^\/]+)\/(\d+)/); var cyc=0;
+  function liveTick(){
+    if(!hmCanReload()){ setTimeout(liveTick,5000); return; }
+    cyc++; if(!m || !hs.length || cyc%5===0){ location.reload(); return; }
+    fetch('/api/live/jra/'+m[1]+'/'+m[2]+'/'+m[3]+'?h='+hs.join(','),{credentials:'same-origin',cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(j){
+        if(!j.ok || j.done){ location.reload(); return; }
+        rows.forEach(function(r){ var k=r.children[1].textContent.trim(), v=j.odds[k]; if(!v||!v[0]||!v[1]) return;
+          var oi=r.querySelector('.odds-inline'); var tn=oi.firstChild; if(tn && tn.nodeType===3) tn.nodeValue=v[0]+'人気　'+v[1]+'倍';
+          var ev=r.querySelector('.ev-col b');
+          if(ev){ var p=parseFloat((r.querySelector('td[style*="nowrap"] strong')||{}).textContent); if(p>0) ev.textContent=(p/100*v[1]).toFixed(2)+'倍'; }
+        });
+        s=0; el.textContent=0; setTimeout(liveTick,60000);
+      }).catch(function(){ location.reload(); });
+  }
+  setTimeout(liveTick, 60000);
+})();
+</script>
+
 </body></html>
