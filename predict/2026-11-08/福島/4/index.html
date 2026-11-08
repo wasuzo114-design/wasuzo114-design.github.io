@@ -265,7 +265,7 @@
       .then(function(j){
         if(!j.ok || j.done){ location.reload(); return; }
         rows.forEach(function(r){ var k=r.children[1].textContent.trim(), v=j.odds[k]; if(!v||!v[0]||!v[1]) return;
-          var oi=r.querySelector('.odds-inline'); var tn=oi.firstChild; if(tn && tn.nodeType===3) tn.nodeValue=v[0]+'人気　'+v[1]+'倍';
+          var oi=r.querySelector('.odds-inline'); var tn=oi.firstChild; if(tn && tn.nodeType===3) tn.nodeValue=v[0]+'人気　'+Number(v[1]).toFixed(1)+'倍';      /* 2026-11-08: 2.0倍のように小数1桁で表示(2倍と出ていた) */
           var ev=r.querySelector('.ev-col b');
           if(ev){ var p=parseFloat((r.querySelector('td[style*="nowrap"] strong')||{}).textContent); if(p>0) ev.textContent=(p/100*v[1]).toFixed(2)+'倍'; }
         });
