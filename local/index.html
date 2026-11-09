@@ -4,46 +4,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI競馬予想 Ver.5</title>
 <link rel="stylesheet" href="/static/style.css"></head>
-<body style="visibility:hidden">
+<body>
 
-<div id="pw-gate-overlay" style="display:none;visibility:visible;position:fixed;inset:0;background:#0b1220;z-index:9999;align-items:center;justify-content:center">
-<form onsubmit="return __pwGateSubmit()" style="background:#fff;padding:28px 32px;border-radius:14px;text-align:center;min-width:260px;box-shadow:0 10px 30px rgba(0,0,0,.3)">
-<p style="margin:0 0 14px;font-weight:800;font-size:15px">パスワードを入力してください</p>
-<input type="password" id="pw-gate-input" autofocus style="width:100%;padding:10px 12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box">
-<button type="submit" style="width:100%;margin-top:10px;padding:10px;border:0;border-radius:8px;background:var(--gold,#f0ad2f);color:#111;font-weight:800;cursor:pointer">送信</button>
-<p id="pw-gate-error" style="display:none;color:#d92d20;margin:10px 0 0;font-size:13px">パスワードが違います</p>
-</form>
-</div>
-<script>
-(function(){
-  var scope="local";
-  var base=(scope==="local")?"chikin":"chiki";
-  var now=new Date();
-  var todayPw=base+String(now.getMonth()+1).padStart(2,"0")+String(now.getDate()).padStart(2,"0");
-  var key="site_pw_"+scope;
-  function unlock(){
-    document.body.style.visibility="visible";
-    var ov=document.getElementById("pw-gate-overlay");
-    if(ov) ov.style.display="none";
-  }
-  function showGate(){
-    document.body.style.visibility="visible";
-    var ov=document.getElementById("pw-gate-overlay");
-    if(ov) ov.style.display="flex";
-  }
-  if(localStorage.getItem(key)===todayPw){ unlock(); } else { showGate(); }
-  window.__pwGateSubmit=function(){
-    var val=document.getElementById("pw-gate-input").value;
-    if(val===todayPw){
-      localStorage.setItem(key,todayPw);
-      unlock();
-    } else {
-      document.getElementById("pw-gate-error").style.display="block";
-    }
-    return false;
-  };
-})();
-</script>
 <header class="header"><a class="logo-area" href="/"><div class="logo-mark"><img src="/static/logo.jpg" alt="ロゴ"></div>
 <div><h1>AI競馬予想</h1><p>データ分析</p></div></a>
 <div class="scope-switch">
@@ -94,7 +56,8 @@
 <div class="race-card-top"><strong>1R</strong></div>
 <p class="start-time">14:35 佐賀</p><p class="race-distance">ダート1300m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:53時点)</p><h3>◎ 8 クリアマインド</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 8 クリアマインド</h3>
+
 
 </a>
 
@@ -102,7 +65,8 @@
 <div class="race-card-top"><strong>2R</strong></div>
 <p class="start-time">15:10 佐賀</p><p class="race-distance">ダート1300m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:54時点)</p><h3>◎ 2 ツキヨノネガイ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 ツキヨノネガイ</h3>
+
 
 </a>
 
@@ -110,7 +74,8 @@
 <div class="race-card-top"><strong>3R</strong></div>
 <p class="start-time">15:45 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:55時点)</p><h3>◎ 1 スターチスブーケ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 1 スターチスブーケ</h3>
+
 
 </a>
 
@@ -118,7 +83,8 @@
 <div class="race-card-top"><strong>4R</strong></div>
 <p class="start-time">16:20 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:56時点)</p><h3>◎ 7 モラール</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 モラール</h3>
+
 
 </a>
 
@@ -126,7 +92,8 @@
 <div class="race-card-top"><strong>5R</strong></div>
 <p class="start-time">16:55 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:18時点)</p><h3>◎ 2 オーロクリューソス</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 オーロクリューソス</h3>
+
 
 </a>
 
@@ -134,7 +101,8 @@
 <div class="race-card-top"><strong>6R</strong></div>
 <p class="start-time">17:25 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:19時点)</p><h3>◎ 3 ユイアヴェニール</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 3 ユイアヴェニール</h3>
+
 
 </a>
 
@@ -142,7 +110,8 @@
 <div class="race-card-top"><strong>7R</strong></div>
 <p class="start-time">17:55 佐賀</p><p class="race-distance">ダート1300m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:20時点)</p><h3>◎ 3 ミセスジョーンズ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 3 ミセスジョーンズ</h3>
+
 
 </a>
 
@@ -150,7 +119,8 @@
 <div class="race-card-top"><strong>8R</strong></div>
 <p class="start-time">18:25 佐賀</p><p class="race-distance">ダート1300m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:21時点)</p><h3>◎ 4 ライジングハース</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 4 ライジングハース</h3>
+
 
 </a>
 
@@ -158,7 +128,8 @@
 <div class="race-card-top"><strong>9R</strong></div>
 <p class="start-time">19:00 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:22時点)</p><h3>◎ 6 ダイヤモンドフジ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 6 ダイヤモンドフジ</h3>
+
 
 </a>
 
@@ -166,7 +137,8 @@
 <div class="race-card-top"><strong>10R</strong></div>
 <p class="start-time">19:30 佐賀</p><p class="race-distance">ダート900m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:22時点)</p><h3>◎ 7 ハットメリリー</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 ハットメリリー</h3>
+
 
 </a>
 
@@ -174,7 +146,8 @@
 <div class="race-card-top"><strong>11R</strong></div>
 <p class="start-time">20:05 佐賀</p><p class="race-distance">ダート1860m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:23時点)</p><h3>◎ 11 ジーティーレイナ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 11 ジーティーレイナ</h3>
+
 
 </a>
 
@@ -182,7 +155,8 @@
 <div class="race-card-top"><strong>12R</strong></div>
 <p class="start-time">20:40 佐賀</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:23時点)</p><h3>◎ 13 モズナツノジン</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 13 モズナツノジン</h3>
+
 
 </a>
 
@@ -190,7 +164,8 @@
 <div class="race-card-top"><strong>1R</strong></div>
 <p class="start-time">12:40 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:51時点)</p><h3>◎ 2 サノノスレーヴ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 サノノスレーヴ</h3>
+
 
 </a>
 
@@ -198,7 +173,8 @@
 <div class="race-card-top"><strong>2R</strong></div>
 <p class="start-time">13:10 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:52時点)</p><h3>◎ 2 ムーヴザニードル</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 ムーヴザニードル</h3>
+
 
 </a>
 
@@ -206,7 +182,8 @@
 <div class="race-card-top"><strong>3R</strong></div>
 <p class="start-time">13:45 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:52時点)</p><h3>◎ 3 エコロガルダ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 3 エコロガルダ</h3>
+
 
 </a>
 
@@ -214,7 +191,8 @@
 <div class="race-card-top"><strong>4R</strong></div>
 <p class="start-time">14:20 名古屋</p><p class="race-distance">ダート920m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:53時点)</p><h3>◎ 8 バリウマ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 8 バリウマ</h3>
+
 
 </a>
 
@@ -222,7 +200,8 @@
 <div class="race-card-top"><strong>5R</strong></div>
 <p class="start-time">14:50 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:53時点)</p><h3>◎ 10 ヤングゼネラル</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 10 ヤングゼネラル</h3>
+
 
 </a>
 
@@ -230,7 +209,8 @@
 <div class="race-card-top"><strong>6R</strong></div>
 <p class="start-time">15:25 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:54時点)</p><h3>◎ 4 アージェンタイド</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 4 アージェンタイド</h3>
+
 
 </a>
 
@@ -238,7 +218,8 @@
 <div class="race-card-top"><strong>7R</strong></div>
 <p class="start-time">16:05 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:56時点)</p><h3>◎ 7 ペプチドマッハ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 ペプチドマッハ</h3>
+
 
 </a>
 
@@ -246,7 +227,8 @@
 <div class="race-card-top"><strong>8R</strong></div>
 <p class="start-time">16:40 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:18時点)</p><h3>◎ 1 アロハオエ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 1 アロハオエ</h3>
+
 
 </a>
 
@@ -254,7 +236,8 @@
 <div class="race-card-top"><strong>9R</strong></div>
 <p class="start-time">17:15 名古屋</p><p class="race-distance">ダート1700m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:19時点)</p><h3>◎ 10 アーマードトラック</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 10 アーマードトラック</h3>
+
 
 </a>
 
@@ -262,7 +245,8 @@
 <div class="race-card-top"><strong>10R</strong></div>
 <p class="start-time">17:50 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:20時点)</p><h3>◎ 2 トリスティ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 トリスティ</h3>
+
 
 </a>
 
@@ -270,7 +254,8 @@
 <div class="race-card-top"><strong>11R</strong></div>
 <p class="start-time">18:20 名古屋</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:21時点)</p><h3>◎ 7 トッピゴー</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 トッピゴー</h3>
+
 
 </a>
 
@@ -278,7 +263,8 @@
 <div class="race-card-top"><strong>12R</strong></div>
 <p class="start-time">18:55 名古屋</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:21時点)</p><h3>◎ 5 ウシワカマル</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 5 ウシワカマル</h3>
+
 
 </a>
 
@@ -286,7 +272,8 @@
 <div class="race-card-top"><strong>1R</strong></div>
 <p class="start-time">15:00 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:54時点)</p><h3>◎ 7 ゼルノードゥス</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 ゼルノードゥス</h3>
+
 
 </a>
 
@@ -294,7 +281,8 @@
 <div class="race-card-top"><strong>2R</strong></div>
 <p class="start-time">15:30 川崎</p><p class="race-distance">ダート900m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:55時点)</p><h3>◎ 2 トールキャット</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 2 トールキャット</h3>
+
 
 </a>
 
@@ -302,7 +290,8 @@
 <div class="race-card-top"><strong>3R</strong></div>
 <p class="start-time">16:00 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:55時点)</p><h3>◎ 7 ローノンバード</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 ローノンバード</h3>
+
 
 </a>
 
@@ -310,7 +299,8 @@
 <div class="race-card-top"><strong>4R</strong></div>
 <p class="start-time">16:30 川崎</p><p class="race-distance">ダート1500m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:56時点)</p><h3>◎ 5 アーキフェザー</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 5 アーキフェザー</h3>
+
 
 </a>
 
@@ -318,7 +308,8 @@
 <div class="race-card-top"><strong>5R</strong></div>
 <p class="start-time">17:00 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:18時点)</p><h3>◎ 12 シエルライズ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 シエルライズ</h3>
+
 
 </a>
 
@@ -326,7 +317,8 @@
 <div class="race-card-top"><strong>6R</strong></div>
 <p class="start-time">17:30 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:19時点)</p><h3>◎ 4 リコータイフォン</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 4 リコータイフォン</h3>
+
 
 </a>
 
@@ -334,7 +326,8 @@
 <div class="race-card-top"><strong>7R</strong></div>
 <p class="start-time">18:00 川崎</p><p class="race-distance">ダート900m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:20時点)</p><h3>◎ 6 ギガントマキア</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 6 ギガントマキア</h3>
+
 
 </a>
 
@@ -342,7 +335,8 @@
 <div class="race-card-top"><strong>8R</strong></div>
 <p class="start-time">18:30 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:21時点)</p><h3>◎ 7 テンクウノカガヤキ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 テンクウノカガヤキ</h3>
+
 
 </a>
 
@@ -350,7 +344,8 @@
 <div class="race-card-top"><strong>9R</strong></div>
 <p class="start-time">19:05 川崎</p><p class="race-distance">ダート900m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:22時点)</p><h3>◎ 6 ディセプティコン</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 6 ディセプティコン</h3>
+
 
 </a>
 
@@ -358,7 +353,8 @@
 <div class="race-card-top"><strong>10R</strong></div>
 <p class="start-time">19:40 川崎</p><p class="race-distance">ダート2000m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:22時点)</p><h3>◎ 5 ビルドラポール</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 5 ビルドラポール</h3>
+
 
 </a>
 
@@ -366,7 +362,8 @@
 <div class="race-card-top"><strong>11R</strong></div>
 <p class="start-time">20:15 川崎</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:23時点)</p><h3>◎ 9 マイケルマキシマス</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 9 マイケルマキシマス</h3>
+
 
 </a>
 
@@ -374,7 +371,8 @@
 <div class="race-card-top"><strong>12R</strong></div>
 <p class="start-time">20:50 川崎</p><p class="race-distance">ダート1600m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:23時点)</p><h3>◎ 4 チョコラテ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 4 チョコラテ</h3>
+
 
 </a>
 
@@ -382,7 +380,8 @@
 <div class="race-card-top"><strong>1R</strong></div>
 <p class="start-time">11:45 盛岡</p><p class="race-distance">ダート1000m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:51時点)</p><h3>◎ 7 アンジュリオ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 アンジュリオ</h3>
+
 
 </a>
 
@@ -390,7 +389,8 @@
 <div class="race-card-top"><strong>2R</strong></div>
 <p class="start-time">12:20 盛岡</p><p class="race-distance">ダート1000m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:51時点)</p><h3>◎ 5 ティンクルバレット</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 5 ティンクルバレット</h3>
+
 
 </a>
 
@@ -398,7 +398,8 @@
 <div class="race-card-top"><strong>3R</strong></div>
 <p class="start-time">12:55 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:51時点)</p><h3>◎ 6 ジュングロワール</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 6 ジュングロワール</h3>
+
 
 </a>
 
@@ -406,7 +407,8 @@
 <div class="race-card-top"><strong>4R</strong></div>
 <p class="start-time">13:30 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:52時点)</p><h3>◎ 7 ハニーアンバー</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 ハニーアンバー</h3>
+
 
 </a>
 
@@ -414,7 +416,8 @@
 <div class="race-card-top"><strong>5R</strong></div>
 <p class="start-time">14:05 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:52時点)</p><h3>◎ 7 スワトウ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 7 スワトウ</h3>
+
 
 </a>
 
@@ -422,7 +425,8 @@
 <div class="race-card-top"><strong>6R</strong></div>
 <p class="start-time">14:40 盛岡</p><p class="race-distance">ダート1000m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:53時点)</p><h3>◎ 10 ディスクリプション</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 10 ディスクリプション</h3>
+
 
 </a>
 
@@ -430,7 +434,8 @@
 <div class="race-card-top"><strong>7R</strong></div>
 <p class="start-time">15:15 盛岡</p><p class="race-distance">ダート1000m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:54時点)</p><h3>◎ 12 ハイモビリティ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 ハイモビリティ</h3>
+
 
 </a>
 
@@ -438,7 +443,8 @@
 <div class="race-card-top"><strong>8R</strong></div>
 <p class="start-time">15:50 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:55時点)</p><h3>◎ 12 ゴッドヴァレー</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 ゴッドヴァレー</h3>
+
 
 </a>
 
@@ -446,7 +452,8 @@
 <div class="race-card-top"><strong>9R</strong></div>
 <p class="start-time">16:25 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(08:56時点)</p><h3>◎ 12 アステローペ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 アステローペ</h3>
+
 
 </a>
 
@@ -454,7 +461,8 @@
 <div class="race-card-top"><strong>10R</strong></div>
 <p class="start-time">17:05 盛岡</p><p class="race-distance">ダート1400m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:18時点)</p><h3>◎ 10 シュガーストーン</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 10 シュガーストーン</h3>
+
 
 </a>
 
@@ -462,7 +470,8 @@
 <div class="race-card-top"><strong>11R</strong></div>
 <p class="start-time">17:40 盛岡</p><p class="race-distance">ダート1600m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:19時点)</p><h3>◎ 12 ソラーロ</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 ソラーロ</h3>
+
 
 </a>
 
@@ -470,7 +479,8 @@
 <div class="race-card-top"><strong>12R</strong></div>
 <p class="start-time">18:15 盛岡</p><p class="race-distance">ダート1600m</p>
 <div class="race-divider"></div>
-<p class="ai-top-label">AI 当日更新(09:20時点)</p><h3>◎ 12 オンラインボス</h3>
+<p class="ai-top-label">予想トップ</p><h3>◎ 12 オンラインボス</h3>
+
 
 </a>
 
@@ -481,25 +491,28 @@
 <section class="dashboard-grid">
 <article class="dashboard-panel"><div class="panel-title panel-title-center"><span>🏆</span><h2>今日の◎ TOP5（勝率順）</h2></div>
 <a class="ranking-row" href="/local/predict/2026-11-09/%E5%90%8D%E5%8F%A4%E5%B1%8B/9"><strong class="ranking-number">1</strong>
-<div class="ranking-horse"><p>名古屋9R　メンカリナン特別B1c</p><h3>◎ 10 アーマードトラック</h3></div>
+<div class="ranking-horse"><p>名古屋9R　メンカリナン特別Ｂ１ｃ</p><h3>◎ 10 アーマードトラック</h3></div>
 <strong>82.0%</strong></a>
 <a class="ranking-row" href="/local/predict/2026-11-09/%E4%BD%90%E8%B3%80/1"><strong class="ranking-number">2</strong>
-<div class="ranking-horse"><p>佐賀1R　2歳-5組</p><h3>◎ 8 クリアマインド</h3></div>
+<div class="ranking-horse"><p>佐賀1R　２歳－５組</p><h3>◎ 8 クリアマインド</h3></div>
 <strong>75.9%</strong></a>
 <a class="ranking-row" href="/local/predict/2026-11-09/%E7%9B%9B%E5%B2%A1/4"><strong class="ranking-number">3</strong>
-<div class="ranking-horse"><p>盛岡4R　C2六組</p><h3>◎ 7 ハニーアンバー</h3></div>
+<div class="ranking-horse"><p>盛岡4R　Ｃ２六組</p><h3>◎ 7 ハニーアンバー</h3></div>
 <strong>75.6%</strong></a>
 <a class="ranking-row" href="/local/predict/2026-11-09/%E4%BD%90%E8%B3%80/12"><strong class="ranking-number">4</strong>
-<div class="ranking-horse"><p>佐賀12R　SAGAリベFEVER14C2-14組</p><h3>◎ 13 モズナツノジン</h3></div>
+<div class="ranking-horse"><p>佐賀12R　熱狂のＬＡＳＴ　ＤＡＮＣＥ ＳＡＧＡリベＦＥＶＥＲ１４Ｃ２－１４組</p><h3>◎ 13 モズナツノジン</h3></div>
 <strong>72.3%</strong></a>
 <a class="ranking-row" href="/local/predict/2026-11-09/%E5%90%8D%E5%8F%A4%E5%B1%8B/2"><strong class="ranking-number">5</strong>
-<div class="ranking-horse"><p>名古屋2R　C28組</p><h3>◎ 2 ムーヴザニードル</h3></div>
+<div class="ranking-horse"><p>名古屋2R　Ｃ２８組</p><h3>◎ 2 ムーヴザニードル</h3></div>
 <strong>67.3%</strong></a>
 
 <a class="sample-link" style="margin-top:16px" href="/races">予想一覧へ →</a>
 </article>
 <div class="right-column">
 <article class="dashboard-panel"><div class="panel-title panel-title-center"><span>🎖️</span><h2>今週の重賞（◎）</h2></div>
-<p class="admin-note">今週は対象の重賞レースがありません。</p>
+<a class="ranking-row" href="/local/predict/2026-11-11/%E5%B7%9D%E5%B4%8E/11"><strong class="ranking-number">1</strong>
+<div class="ranking-horse"><p>2026-11-11　川崎11R　第37回 ロジータ記念3歳牝馬オープン重賞<span class="grade-tag grade-tag-重賞">重賞</span></p><h3>予想準備中<small style="display:block;font-weight:400;font-size:.7em"></small></h3></div>
+<strong>20:10</strong></a>
+
 </article></div></section>
 </main></body></html>
