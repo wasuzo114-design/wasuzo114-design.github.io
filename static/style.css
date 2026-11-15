@@ -135,28 +135,10 @@ input{width:100%;height:47px;padding:0 14px;color:var(--text);background:#ffffff
 }
 
 /* MOBILE_RESPONSIVE_20261115 v2: スマホ(767px以下)だけ。PC(768px以上)は一切変えない。横スクロールなし・表示のみ(データ/計算/取得は不変) */
-@media (max-width:767px){
-  html,body{max-width:100%}
-  .header{position:static}
-  /* レース情報: 開催場 → レース名 → 発走/距離/頭数/締切 → 展開/荒れ → 枠別/脚質別 の順 */
-  .race-page .race-info-box{display:flex;flex-direction:column}
-  .race-page .race-info-box.lx-flex{display:flex;flex-direction:column}
-  .race-page .race-info-box .lx-left{display:contents}
-  .race-page .race-info-box>.tb-card,.race-page .race-info-box .lx-left>.tb-card{order:20;margin-top:10px}
-  .header .navigation{width:100%;flex-wrap:wrap;overflow-x:visible}
-  .header .navigation .nav-button{flex:0 1 auto;white-space:normal}
-  .header .scope-switch{overflow-x:visible}
-  .race-page .race-info-box .race-pill-row{max-width:none;position:static;flex-wrap:wrap}
-  .race-page .race-info-box .race-pill-row .pill:not(.live-pill){font-size:1rem;white-space:normal}
-  .race-page .race-info-box .race-pill-row #dl-pill,.race-page .race-info-box .race-pill-row #dl-pill.cd,.race-page .race-info-box .race-pill-row .live-pill{position:static;top:auto;right:auto;text-align:left;font-size:1rem}
-  .race-page .race-info-box .race-title-row{flex-wrap:wrap;max-width:none}
-  .race-page .race-info-box .jx-row,.race-page .race-info-box .lx-right{margin-right:0}
-  .race-page .tbt-wrap{display:block}
-  .race-page .tbt{width:100%;margin-bottom:10px;box-sizing:border-box}
-  /* オッズ変動3パネル: 縦3段 */
+/* 1000px以下(iPhoneの横長レイアウトを含む): オッズ3パネル縦3段・予想表は1頭1カード */
+@media (max-width:1000px){
   .race-page .od6{overflow-x:visible}
   .race-page .od6 .od6-g{grid-template-columns:minmax(0,1fr);min-width:0;gap:10px}
-  /* 予想一覧表: 1頭=1カード(横スクロールなし) */
   .race-page .horse-table-wrap{overflow:visible;border:0;border-radius:0}
   .race-page .horse-table,.race-page .horse-table tbody{display:block;width:100%;border:0;background:transparent}
   .race-page .horse-table thead{display:none}
@@ -189,4 +171,26 @@ input{width:100%;height:47px;padding:0 14px;color:var(--text);background:#ffffff
   .race-page .horse-table .horse-main small,.race-page .horse-table .horse-main span{font-size:12.5px}
   .race-page .horse-table td:nth-child(3) .jockey-row{display:flex;flex-wrap:wrap;column-gap:8px;align-items:baseline}
   .race-page .horse-table td:nth-child(3) .odds-inline{white-space:nowrap}
+}
+/* 767px以下: その他のスマホ調整 */
+@media (max-width:767px){
+  html,body{max-width:100%}
+  .header{position:static}
+  /* レース情報: 開催場 → レース名 → 発走/距離/頭数/締切 → 展開/荒れ → 枠別/脚質別 の順 */
+  .race-page .race-info-box{display:flex;flex-direction:column}
+  .race-page .race-info-box.lx-flex{display:flex;flex-direction:column}
+  .race-page .race-info-box .lx-left{display:contents}
+  .race-page .race-info-box>.tb-card,.race-page .race-info-box .lx-left>.tb-card{order:20;margin-top:10px}
+  .header .navigation{width:100%;flex-wrap:wrap;overflow-x:visible}
+  .header .navigation .nav-button{flex:0 1 auto;white-space:normal}
+  .header .scope-switch{overflow-x:visible}
+  .race-page .race-info-box .race-pill-row{max-width:none;position:static;flex-wrap:wrap}
+  .race-page .race-info-box .race-pill-row .pill:not(.live-pill){font-size:1rem;white-space:normal}
+  .race-page .race-info-box .race-pill-row #dl-pill,.race-page .race-info-box .race-pill-row #dl-pill.cd,.race-page .race-info-box .race-pill-row .live-pill{position:static;top:auto;right:auto;text-align:left;font-size:1rem}
+  .race-page .race-info-box .race-title-row{flex-wrap:wrap;max-width:none}
+  .race-page .race-info-box .jx-row,.race-page .race-info-box .lx-right{margin-right:0}
+  .race-page .tbt-wrap{display:block}
+  .race-page .tbt{width:100%;margin-bottom:10px;box-sizing:border-box}
+  /* オッズ変動3パネル: 縦3段 */
+  /* 予想一覧表: 1頭=1カード(横スクロールなし) */
 }
