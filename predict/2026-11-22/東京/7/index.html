@@ -67,7 +67,7 @@ if(window.__TB0&&window.__TB0.cols&&window.__TB0.cols.length){try{draw(window.__
 <span class="pill live-pill">🔴 LIVE <span id="live-seconds">0</span>秒前</span>
 </div>
 
-<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p><div class="jx-row"><div class="jx-box" title="展開予想: 出走各馬の過去走の1角位置(前日まで)から、勝ち馬の脚質の確率。発走前に固定した値は記録され、結果と照合されます"><div class="jx-lab">展開予想</div><div class="jx-val">互角（逃げ・先行 54.1%）</div></div><div class="jx-box" title="荒れ = 勝ち馬がAIのTOP5の外から来ること(AI対象外のJRA新馬・障害・重賞は人気TOP5の外、オッズから暫定)。荒れ注意 = TOP5合計が低い or 混戦、固い = TOP5合計が高い"><div class="jx-lab">荒れ予想</div><div class="jx-val" style="font-size:.95em;line-height:1.55;white-space:nowrap"><span style="display:inline-block;min-width:3.4em">普通</span><span style="display:inline-block;min-width:10em">勝ち馬はTOP5内</span><span>67.3%</span></div><div class="jx-val" style="font-size:.95em;line-height:1.55;white-space:nowrap"><span style="display:inline-block;min-width:3.4em">荒れ</span><span style="display:inline-block;min-width:10em">勝ち馬がTOP5外</span><span>32.7%</span></div></div></div><style>.jx-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.jx-row>.jx-box:nth-child(1){grid-column:1;grid-row:1}.jx-row>.jx-box:nth-child(2){grid-column:2;grid-row:1}.jx-row>.pd-wrap{grid-column:2;grid-row:1/3}.jx-row.pd-none>.jx-box{grid-column:1/-1!important;grid-row:auto!important}.jx-row.pd-none{grid-template-columns:1fr 1fr}.jx-row.pd-none>.jx-box:nth-child(1){grid-column:1!important}.jx-row.pd-none>.jx-box:nth-child(2){grid-column:2!important}@media(max-width:700px){.jx-row{grid-template-columns:1fr}.jx-row>*{grid-column:auto!important;grid-row:auto!important}}.jx-box{flex:1 1 280px;border:1px solid #d0d7e2;border-radius:10px;padding:10px 14px;background:#f8fafc}.jx-lab{font-size:.8em;color:#64748b;font-weight:700}.jx-val{font-size:1.2em;font-weight:800;color:#0f172a;line-height:1.35}.jx-sub{font-size:.8em;color:#475569;margin-top:2px}.jx-na{color:#888;font-weight:600}</style>
+<p class="live-caption">オッズ・人気はリアルタイムに反映されます（60秒ごとに自動更新）</p><div class="jx-row"><div class="jx-box" title="展開予想: 出走各馬の過去走の1角位置(前日まで)から、勝ち馬の脚質の確率。発走前に固定した値は記録され、結果と照合されます"><div class="jx-lab">展開予想</div><div class="jx-val">互角（逃げ・先行 54.1%）</div></div><div class="jx-box" title="荒れ = 勝ち馬がAIのTOP5の外から来ること(AI対象外のJRA新馬・障害・重賞は人気TOP5の外、オッズから暫定)。荒れ注意 = TOP5合計が低い or 混戦、固い = TOP5合計が高い"><div class="jx-lab">荒れ予想</div><div class="jx-val" style="font-size:.95em;line-height:1.55;white-space:nowrap"><span style="display:inline-block;min-width:3.4em">普通</span><span style="display:inline-block;min-width:10em">勝ち馬はTOP5内</span><span>67.2%</span></div><div class="jx-val" style="font-size:.95em;line-height:1.55;white-space:nowrap"><span style="display:inline-block;min-width:3.4em">荒れ</span><span style="display:inline-block;min-width:10em">勝ち馬がTOP5外</span><span>32.8%</span></div></div></div><style>.jx-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.jx-row>.jx-box:nth-child(1){grid-column:1;grid-row:1}.jx-row>.jx-box:nth-child(2){grid-column:2;grid-row:1}.jx-row>.pd-wrap{grid-column:2;grid-row:1/3}.jx-row.pd-none>.jx-box{grid-column:1/-1!important;grid-row:auto!important}.jx-row.pd-none{grid-template-columns:1fr 1fr}.jx-row.pd-none>.jx-box:nth-child(1){grid-column:1!important}.jx-row.pd-none>.jx-box:nth-child(2){grid-column:2!important}@media(max-width:700px){.jx-row{grid-template-columns:1fr}.jx-row>*{grid-column:auto!important;grid-row:auto!important}}.jx-box{flex:1 1 280px;border:1px solid #d0d7e2;border-radius:10px;padding:10px 14px;background:#f8fafc}.jx-lab{font-size:.8em;color:#64748b;font-weight:700}.jx-val{font-size:1.2em;font-weight:800;color:#0f172a;line-height:1.35}.jx-sub{font-size:.8em;color:#475569;margin-top:2px}.jx-na{color:#888;font-weight:600}</style>
 </div></div>
 </div>
 <section class="race-tabs">
@@ -117,7 +117,7 @@ function load(){if(window.__OD6){draw(window.__OD6);return;}var q='/admin/odds_d
  fetch(q,{credentials:'same-origin',cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(j&&j.ok){draw(j);if(!j.finished){clearTimeout(timer);timer=setTimeout(load,5000);}}else{clearTimeout(timer);timer=setTimeout(load,5000);}}).catch(function(){clearTimeout(timer);timer=setTimeout(load,5000);});}
 document.addEventListener('visibilitychange',function(){if(!document.hidden)load();});
 load();})();</script>
-<p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">前日</span><small style="font-weight:400;margin-left:6px">(10:47時点)</small></p>
+<p class="ver-line" style="margin:6px 0;font-weight:700">予想: <span style="background:#e3f2fd;border:1px solid #1565c0;color:#0d47a1;border-radius:4px;padding:1px 8px">前日</span><small style="font-weight:400;margin-left:6px">(19:07時点)</small></p>
 
 <style>.ev-v1{margin-top:3px;font-size:.78em;line-height:1.5;color:#475569}.ev-v1 .ev-lab{display:inline-block;padding:0 5px;border:1px solid #cbd5e1;border-radius:6px;color:#64748b;margin-right:3px}.ev-v1 .ev-sub{color:#64748b}.ev-v1 .ev-ref{color:#94a3b8;font-style:italic}.ev-note{margin:4px 0;font-size:.75em;color:#64748b}</style><div class="x-share-row" style="margin:10px 0"><a class="x-share-button" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=%E6%9D%B1%E4%BA%AC7R%20AI%E4%BA%88%E6%83%B3%20%E2%97%8E%E3%83%B4%E3%82%A1%E3%83%AC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8B%20%E5%8B%9D%E7%8E%8716.0%25&url=https%3A%2F%2Fwasuzo114-design.github.io%2Fpredict%2F2026-11-22%2F%E6%9D%B1%E4%BA%AC%2F7" style="display:inline-block;padding:7px 14px;border-radius:999px;background:#111;color:#fff;font-weight:700;font-size:13px;text-decoration:none">Xでシェア</a></div><style>.hl-both{color:#d90429!important;font-weight:800;background:#ffe3e8;border-radius:3px;padding:0 3px}.hl-win{color:#e85d04!important;font-weight:800;background:#fff0e3;border-radius:3px;padding:0 3px}.hl-top3{color:#0077b6!important;font-weight:800;background:#e3f2fb;border-radius:3px;padding:0 3px}.hl-legend{font-size:12px;color:#475569;margin:6px 0;line-height:1.7}</style><p class="hl-legend">数字の色: <span class="hl-both">赤=勝率も3着内も高い</span> <span class="hl-win">橙=勝率が高い</span> <span class="hl-top3">青=3着内が高い</span>　基準(過去の実績で検証): 中央 勝率30%以上・3着内70%以上 ／ 地方 勝率40%以上・3着内70%以上(この基準以上の馬は、実際に当たった率も表示値に近い)</p><section class="horse-table-wrap"><table class="horse-table"><thead><tr>
 <th>枠</th><th>馬番</th><th>馬名</th><th>ランク</th><th>着順</th><th>勝率</th><th>飛び率</th><th>予測脚質</th><th>期待値</th><th>タグ</th></tr></thead>
@@ -128,9 +128,9 @@ load();})();</script>
 </td>
 <td><strong>1位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">16.0%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">40.2%</strong></div></td><td style="white-space:nowrap">59.8%</td>
+<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">16.0%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">40.1%</strong></div></td><td style="white-space:nowrap">59.9%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・4走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・4走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-5">5</td><td>9</td>
 <td class="horse-main"><strong class="horse-name-lg">モデレートゲイル</strong>
 <div class="jockey-row"><span>吉田豊</span><span class="odds-inline"></span></div>
@@ -140,7 +140,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">15.8%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">39.8%</strong></div></td><td style="white-space:nowrap">60.2%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-7">7</td><td>14</td>
 <td class="horse-main"><strong class="horse-name-lg">スワーヴゴダイヴァ</strong>
 <div class="jockey-row"><span>佐々木大輔</span><span class="odds-inline"></span></div>
@@ -150,7 +150,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">14.9%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">38.5%</strong></div></td><td style="white-space:nowrap">61.5%</td>
 
-<td style="white-space:nowrap" title="記録のある近走が1〜2走のみの平均・1走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-o" title="休み明け(363日)">休(363日)</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・1走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-o" title="休み明け(363日)">休(363日)</span></td>
 </tr><tr><td class="frame frame-5">5</td><td>10</td>
 <td class="horse-main"><strong class="horse-name-lg">ヴァルカンテソーロ</strong>
 <div class="jockey-row"><span>マーカンド</span><span class="odds-inline"></span></div>
@@ -160,7 +160,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">13.1%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">36.0%</strong></div></td><td style="white-space:nowrap">64.0%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">先行</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
 </tr><tr><td class="frame frame-8">8</td><td>15</td>
 <td class="horse-main"><strong class="horse-name-lg">タイセイデクスター</strong>
 <div class="jockey-row"><span>佐藤翔馬</span><span class="odds-inline"></span></div>
@@ -170,7 +170,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">7.0%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">24.8%</strong></div></td><td style="white-space:nowrap">75.2%</td>
 
-<td style="white-space:nowrap" title="記録のある近走が1〜2走のみの平均・2走">先行</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・2走">先行</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-2">2</td><td>4</td>
 <td class="horse-main"><strong class="horse-name-lg">パッセージピーク</strong>
 <div class="jockey-row"><span>菊沢一樹</span><span class="odds-inline"></span></div>
@@ -180,7 +180,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">6.1%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">22.8%</strong></div></td><td style="white-space:nowrap">77.2%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・4走">先行</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-pk" title="初ブリンカー">初ブリ</span><span class="htag htag-b" title="テン乗り">テン</span><span class="htag htag-o" title="休み明け(127日)">休(127日)</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・4走">逃げ</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-pk" title="初ブリンカー">初ブリ</span><span class="htag htag-b" title="テン乗り">テン</span><span class="htag htag-o" title="休み明け(127日)">休(127日)</span></td>
 </tr><tr><td class="frame frame-4">4</td><td>8</td>
 <td class="horse-main"><strong class="horse-name-lg">ゴールデンダガー</strong>
 <div class="jockey-row"><span>石田拓郎</span><span class="odds-inline"></span></div>
@@ -190,7 +190,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">5.9%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">22.1%</strong></div></td><td style="white-space:nowrap">77.9%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
 </tr><tr><td class="frame frame-1">1</td><td>1</td>
 <td class="horse-main"><strong class="horse-name-lg">クラリネットソナタ</strong>
 <div class="jockey-row"><span>丹内祐次</span><span class="odds-inline"></span></div>
@@ -198,9 +198,9 @@ load();})();</script>
 </td>
 <td><strong>8位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">5.9%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">22.0%</strong></div></td><td style="white-space:nowrap">78.0%</td>
+<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">5.8%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">22.0%</strong></div></td><td style="white-space:nowrap">78.0%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-3">3</td><td>5</td>
 <td class="horse-main"><strong class="horse-name-lg">オメガディコン</strong>
 <div class="jockey-row"><span>岩田康誠</span><span class="odds-inline"></span></div>
@@ -208,9 +208,9 @@ load();})();</script>
 </td>
 <td><strong>9位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">3.7%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">15.6%</strong></div></td><td style="white-space:nowrap">84.4%</td>
+<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">3.7%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">15.4%</strong></div></td><td style="white-space:nowrap">84.6%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-6">6</td><td>12</td>
 <td class="horse-main"><strong class="horse-name-lg">サトノシャムロック</strong>
 <div class="jockey-row"><span>小林美駒</span><span class="odds-inline"></span></div>
@@ -218,9 +218,9 @@ load();})();</script>
 </td>
 <td><strong>10位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">3.0%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">13.4%</strong></div></td><td style="white-space:nowrap">86.6%</td>
+<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">3.1%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">13.7%</strong></div></td><td style="white-space:nowrap">86.3%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
 </tr><tr><td class="frame frame-8">8</td><td>16</td>
 <td class="horse-main"><strong class="horse-name-lg">タイセイエムロード</strong>
 <div class="jockey-row"><span>大野拓弥</span><span class="odds-inline"></span></div>
@@ -230,7 +230,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">2.9%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">12.8%</strong></div></td><td style="white-space:nowrap">87.2%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-2">2</td><td>3</td>
 <td class="horse-main"><strong class="horse-name-lg">ピティロディア</strong>
 <div class="jockey-row"><span>木幡巧也</span><span class="odds-inline"></span></div>
@@ -240,7 +240,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">2.3%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">10.7%</strong></div></td><td style="white-space:nowrap">89.3%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"><span class="htag htag-b" title="テン乗り">テン</span></td>
 </tr><tr><td class="frame frame-1">1</td><td>2</td>
 <td class="horse-main"><strong class="horse-name-lg">オルブライト</strong>
 <div class="jockey-row"><span>野中悠太郎</span><span class="odds-inline"></span></div>
@@ -248,9 +248,9 @@ load();})();</script>
 </td>
 <td><strong>13位</strong></td>
 <td><span class="finish-badge finish-none">―</span></td>
-<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">1.6%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">7.9%</strong></div></td><td style="white-space:nowrap">92.1%</td>
+<td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">1.6%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">8.1%</strong></div></td><td style="white-space:nowrap">91.9%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-6">6</td><td>11</td>
 <td class="horse-main"><strong class="horse-name-lg">カイトヴィント</strong>
 <div class="jockey-row"><span>柴田大知</span><span class="odds-inline"></span></div>
@@ -260,7 +260,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">0.8%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">4.1%</strong></div></td><td style="white-space:nowrap">95.9%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">差し</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-3">3</td><td>6</td>
 <td class="horse-main"><strong class="horse-name-lg">トゥントゥントゥン</strong>
 <div class="jockey-row"><span>大久保友雅</span><span class="odds-inline"></span></div>
@@ -270,7 +270,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">0.6%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">3.2%</strong></div></td><td style="white-space:nowrap">96.8%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">中団</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">先行</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr><tr><td class="frame frame-7">7</td><td>13</td>
 <td class="horse-main"><strong class="horse-name-lg">ベイビールビオ</strong><span class="ana-badge" style="background:#6d28d9;color:#fff" title="逃げ穴=AI6位以下で過去走の逃げ率40%以上(短縮=今回200m以上の距離短縮) / 距離実績穴=AI6位以下で同じ面・距離帯の3着内率50%以上">距離実績穴</span>
 <div class="jockey-row"><span>杉原誠人</span><span class="odds-inline"></span></div>
@@ -280,7 +280,7 @@ load();})();</script>
 <td><span class="finish-badge finish-none">―</span></td>
 <td style="white-space:nowrap"><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">勝利</span><strong class="">0.5%</strong></div><div style="line-height:1.5"><span style="display:inline-block;min-width:3.2em;font-size:.82em;color:#64748b;font-weight:700">3着内</span><strong class="">2.6%</strong></div></td><td style="white-space:nowrap">97.4%</td>
 
-<td style="white-space:nowrap" title="記録のある直近5走の脚質の平均・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
+<td style="white-space:nowrap" title="順番通りの割り当て(相手メンバーと比べて、頭数から決まった人数)・5走">追込</td><td class="ev-col" style="white-space:nowrap;text-align:center">―</td><td class="tag-cell" style="min-width:150px;white-space:normal"></td>
 </tr>
 </tbody></table>
 <style>
@@ -300,7 +300,7 @@ load();})();</script>
 <div class="row"><span class="it"><span class="htag htag-g">調教抜群</span>：調教評価が高い馬</span><span class="it"><span class="htag htag-pk">初ブリンカー</span>：今回初めてブリンカーを着用する馬</span><span class="it"><span class="htag htag-o">休み明け</span>：休養明け（カッコ内は休養日数）</span></div>
 </div></div></section>
 <style>.bot-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin-top:14px}.bot-pair>*{min-width:0}.bot-pair>.pd-wrap{display:flex;flex-direction:column;height:100%;margin-top:0;box-sizing:border-box}.bot-pair>.pd-wrap .pd-field{flex:1}.bot-pair>#style3-sec,.bot-pair>div>#nstyle3-sec{height:100%;margin-top:0!important;box-sizing:border-box}.bot-pair>div{display:flex;flex-direction:column}.bot-pair>div>#nstyle3-sec{flex:1}@media(max-width:900px){.bot-pair{grid-template-columns:1fr}.bot-pair>.pd-wrap,.bot-pair>#style3-sec,.bot-pair>div>#nstyle3-sec{height:auto}}</style><div class="bot-pair"><div>
-<script>window.__SIMSTY={"status": "NOT_READY"};</script><section class="dashboard-panel" id="nstyle3-sec" style="margin-top:14px;display:none" data-date="2026-11-22" data-venue="東京" data-rn="7">
+<script>window.__SIMSTY={"status": "DONE", "race_id": "202605050507", "started_at": "2026-11-21T18:07:28", "race_date": "2026-11-22", "surface": "DIRT", "asof": "2026-11-21T18:07:29", "final_asof": false, "horses": [{"horse_no": 1, "E": 0.9792, "K": 1.279, "band": "sashi", "style": "差し", "pos": 12, "c3": 0.907, "c4": 0.933, "c3n": 5, "c4n": 5}, {"horse_no": 2, "E": 0.9139, "K": -0.025, "band": "oikomi", "style": "追込", "pos": 15, "c3": 0.878, "c4": 0.826, "c3n": 5, "c4n": 5}, {"horse_no": 3, "E": 0.6621, "K": 0.783, "band": "sashi", "style": "差し", "pos": 10, "c3": 0.736, "c4": 0.616, "c3n": 5, "c4n": 5}, {"horse_no": 4, "E": 0.3611, "K": -1.4, "band": "nige", "style": "逃げ", "pos": 1, "c3": 0.344, "c4": 0.386, "c3n": 4, "c4n": 4}, {"horse_no": 5, "E": 0.5705, "K": 0.024, "band": "sashi", "style": "差し", "pos": 9, "c3": 0.454, "c4": 0.519, "c3n": 5, "c4n": 5}, {"horse_no": 6, "E": 0.4694, "K": -1.087, "band": "senko", "style": "先行", "pos": 3, "c3": 0.357, "c4": 0.371, "c3n": 5, "c4n": 5}, {"horse_no": 7, "E": 0.7564, "K": 0.676, "band": "chudan", "style": "中団", "pos": 7, "c3": 0.408, "c4": 0.35, "c3n": 4, "c4n": 4}, {"horse_no": 8, "E": 0.6865, "K": 0.729, "band": "sashi", "style": "差し", "pos": 11, "c3": 0.504, "c4": 0.375, "c3n": 5, "c4n": 5}, {"horse_no": 9, "E": 0.4614, "K": 1.11, "band": "chudan", "style": "中団", "pos": 5, "c3": 0.429, "c4": 0.385, "c3n": 5, "c4n": 5}, {"horse_no": 10, "E": 0.4917, "K": -1.491, "band": "senko", "style": "先行", "pos": 4, "c3": 0.376, "c4": 0.31, "c3n": 5, "c4n": 5}, {"horse_no": 11, "E": 0.7417, "K": -0.316, "band": "chudan", "style": "中団", "pos": 6, "c3": 0.523, "c4": 0.494, "c3n": 5, "c4n": 5}, {"horse_no": 12, "E": 0.5792, "K": -0.69, "band": "oikomi", "style": "追込", "pos": 13, "c3": 0.475, "c4": 0.537, "c3n": 5, "c4n": 5}, {"horse_no": 13, "E": 0.9762, "K": -0.114, "band": "oikomi", "style": "追込", "pos": 16, "c3": 0.934, "c4": 0.917, "c3n": 5, "c4n": 5}, {"horse_no": 14, "E": 0.9444, "K": 1.726, "band": "chudan", "style": "中団", "pos": 8, "c3": 0.941, "c4": 0.941, "c3n": 1, "c4n": 1}, {"horse_no": 15, "E": 0.327, "K": -1.261, "band": "senko", "style": "先行", "pos": 2, "c3": 0.188, "c4": 0.132, "c3n": 2, "c4n": 2}, {"horse_no": 16, "E": 0.6565, "K": 0.059, "band": "oikomi", "style": "追込", "pos": 14, "c3": 0.679, "c4": 0.596, "c3n": 5, "c4n": 5}], "top3": {"nige": [4], "senko": [6, 15, 10], "chudan": [14, 9, 7], "sashi": [1, 3, 8], "oikomi": [16, 2, 13], "agari": [14, 1, 9]}, "style_v": 6, "corner": {"total": 16, "have3": 16, "cov3": 1.0, "have4": 16, "cov4": 1.0, "src": "HPE perf_runner_latest(過去走の公式通過順位)"}, "style_source": "PACE_TABLE", "no_history": [], "finished_at": "2026-11-21T18:07:33"};</script><section class="dashboard-panel" id="nstyle3-sec" style="margin-top:14px;display:none" data-date="2026-11-22" data-venue="東京" data-rn="7">
 <style>
 #nstyle3-sec table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}#nstyle3-sec th{width:84px;background:#f3f4f6;font-weight:700;text-align:center;padding:8px;border:1px solid var(--border)}
 #nstyle3-sec td{padding:6px 8px;border:1px solid var(--border)}#nstyle3-sec .b3{display:inline-block;width:56px;margin-right:6px;text-align:center;vertical-align:top}
